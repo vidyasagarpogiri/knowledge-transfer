@@ -1,0 +1,8 @@
+rvm get stable
+rvm install 2.1.2
+rvm use ruby-2.1.2@ITKnowledgeTransfer --ruby-version --create
+gem install rails
+rails new .
+echo "ruby-2.1.2" > .ruby-version
+echo "ITKnowledgeTransfer" > .ruby-gemset
+echo "rvm use ruby-2.1.2@ITKnowledgeTransfer" > .rvmrc
