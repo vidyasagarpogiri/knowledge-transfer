@@ -1,0 +1,10 @@
+<h2>New Question</h2><hr/>
+<%= form_for @question do |q| %>
+  <%= q.label :title %>
+  <%= q.text_field :title, :style => "margin: 0px 0px 10px; width: 906px;" %>
+  <%= q.label :content %>
+  <%= q.text_area :content, :style => "margin: 0px 0px 10px; width: 906px; height: 282px;" %>
+  <%= q.label :tags %>
+  <%= q.text_field :tags %><br/>
+  <%= q.submit 'Submit', :class => "btn btn-success" %>
+<% end %>
