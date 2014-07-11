@@ -1,9 +1,9 @@
 <%= form_for @code do |code| %>
 
   <%= code.label :title, "Title" %>
-  <%= code.text_field :title, :style => "width: 650px;" %><br>
+  <%= code.text_field :title, :style => "width: 750px;" %><br>
   <%= code.label :content, "Add Content" %>
-  <%= code.text_area :content, :style => "margin: 0px 0px 10px; width: 952px; height: 354px;" %>
+  <%= code.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 950px; height: 354px;" %>
   <%= code.label :tags, "Add Tags" %>
   <%= code.text_field :tags %><br>
   <%= code.submit "Save code snippet", :class => "btn btn-success"%>
