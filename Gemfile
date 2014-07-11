@@ -38,6 +38,11 @@ gem "twitter-bootstrap-rails"
 #use for bootsy wysiwig editor
 gem 'bootsy'
 
+
+
+#for devise gem 
+gem 'devise'
+gem "omniauth-google-oauth2"
 # Use unicorn as the app server
 # gem 'unicorn'
 
