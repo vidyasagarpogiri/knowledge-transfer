@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ITKnowledgeTransfer</title>
+  <title>Amzur Connect</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+ <div class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">Amzur Connect</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><%= link_to "Articles" %></li>
+          <li><%= link_to "Questions", questions_path %></li>
+          <li><%= link_to "Blog" %></li>
+          <li><%= link_to "Code Snippets" %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+ <br>
+ <br>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
