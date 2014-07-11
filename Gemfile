@@ -35,6 +35,9 @@ gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 
+#use for bootsy wysiwig editor
+gem 'bootsy'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
