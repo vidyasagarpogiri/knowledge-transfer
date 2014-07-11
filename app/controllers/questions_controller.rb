@@ -43,7 +43,7 @@ class QuestionsController < ApplicationController
   private
  
   def question_params
-    params.require(:question).permit(:title, :content, :tags)
+    params.require(:question).permit(:title, :content, :tags, :bootsy_image_gallery_id)
   end
  
   def find_params
