@@ -7,5 +7,8 @@
   <%= f.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 893px; height: 221px;" %><br>
   <%= f.label :tags, "Tags" %> 
   <%= f.text_field :tags %><br>
+  <%= f.label :tags, "Category" %> 
+  <%= f.select :category, options_from_collection_for_select(Category.all, :id, :title) %><br>
   <%= f.submit "Submit"%> 
 <% end %>
+
