@@ -1,1 +1,11 @@
-<h2>This is snippets index page<h2>
+<h2>List of Snippets</h2><hr>
+
+<% @code_all.each do |code| %>
+ <b>Title:</b><%=link_to code.title, code_snippet_path(code.id) %><br>
+ <b>Content:</b><%= code.content%><br>
+ <b>Tags:</b><%= code.tags %><br><hr>
+<%end%><br>
+
+
+
+<%= link_to "click to add new code snippet" ,new_code_snippet_path %>
