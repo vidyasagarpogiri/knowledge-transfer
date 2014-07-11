@@ -2,7 +2,7 @@
 
 <% @code_all.each do |code| %>
  <%=link_to code.title, code_snippet_path(code.id) %><br>
- <b>Content:</b><%= code.content%><br>
+ <b>Content:</b><%= truncate(code.content, :ommision=>"..read more", :length =>50) %><%= link_to "Read more",code_snippet_path(code.id) %><br>
  <b>Tags:</b><%= code.tags %><br><hr>
 <%end%><br>
 
