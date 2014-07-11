@@ -2,6 +2,6 @@
 <%= link_to 'Post New Question', new_question_path %><br/><hr/>
 <% @questions.each do |question| %>
     <%= link_to question.title, question_path(question.id) %><br/>
-    Content:<%= question.content %><br/>
+    Content:<%= raw(question.content) %><br/>
     Tags: <%= question.tags %><br/><hr/>
 <% end %>

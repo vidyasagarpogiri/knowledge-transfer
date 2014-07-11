@@ -18,3 +18,7 @@
 *.*~
 */*/*.*~
 .*
+
+public/*
+
+db/schema.rb

@@ -14,10 +14,4 @@
 //= require jquery_ujs
 //= require bootsy
 //= require twitter/bootstrap
-//= require turbolinks
 //= require_tree .
-
-$('document').ready(function(){
-  $.each($('i'), function(data){ $(this).attr('class' , $(this).attr('class').replace('glyphicon glyphicon', 'icon'));})
-  $.each($('span'), function(data){ $(this).attr('class' , $(this).attr('class').replace('glyphicon glyphicon', 'icon'));})
-});
