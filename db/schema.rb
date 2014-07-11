@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711084015) do
+
+ActiveRecord::Schema.define(version: 20140711091732) do
+
+  create_table "answers", force: true do |t|
+    t.text     "answer"
+    t.string   "tags"
+    t.float    "answer_accept_rate", limit: 24
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 
   create_table "articles", force: true do |t|
     t.string   "title"

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  answer: MyText
+  tags: MyString
+  answer_accept_rate: 1.5
+  user_id: 1
+
+two:
+  answer: MyText
+  tags: MyString
+  answer_accept_rate: 1.5
+  user_id: 1
