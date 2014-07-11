@@ -8,10 +8,11 @@ Rails.application.routes.draw do
     
     
     resources :questions
-    resources:articles 
+    resources :articles 
     resources :code_snippets 
     resources :comments
- 
+    resources :blogs
+
     mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 
 
