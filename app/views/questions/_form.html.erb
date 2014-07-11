@@ -4,21 +4,23 @@
   <%= q.label :content %>
   <%= q.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 906px; height: 282px;" %>
   <%= q.label :tags %>
-  <%= q.text_field :tags %><br/>
+  <%= q.hidden_field :tags %>
+   <input type="text" id="tag"><br>
   <span id="tags"></span><br/>
   <%= q.submit 'Submit', :class => "btn btn-success" %>
 <% end %>
 <script>
-  $('#question_tags').keyup(function(key){
+  $('#tag').keyup(function(key){
     if(key.keyCode == 13){
-      $('#tags').append($('#question_tags').val()+" ");
-      $('#question_tags').val("");
+      $('#tags').append($('#tag').val()+" ");
+      $('#question_tags').val($('#tags').text());
+      $('#tag').val("");
       }
   });
   
  //prevent enter key form submittion 
   
-  $("#question_tags").keydown(function(event){
+  $("#tag").keydown(function(event){
     if(event.keyCode == 13) {
       event.preventDefault();
       return false;
@@ -27,3 +29,7 @@
 
 
 </script>
+
+
+
+

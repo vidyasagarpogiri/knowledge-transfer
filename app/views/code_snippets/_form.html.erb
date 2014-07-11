@@ -1,10 +1,35 @@
 <%= form_for @code do |code| %>
 
   <%= code.label :title, "Title" %>
-  <%= code.text_field :title, :style => "width: 750px;" %><br>
+  <%= code.text_field :title, :style => "margin: 0px 0px 10px; width: 906px;" %><br>
   <%= code.label :content, "Add Content" %>
   <%= code.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 950px; height: 354px;" %>
-  <%= code.label :tags, "Add Tags" %>
-  <%= code.text_field :tags %><br>
-  <%= code.submit "Save code snippet", :class => "btn btn-success"%>
-<%end%>
+  <%= code.label :tags, "Tags" %>
+  <%= code.hidden_field :tags %> 
+    <input type="text" id="tag"><br>
+    <span id="tags"></span><br/>
+  <%= code.submit "Submit"%> 
+  <% end %>
+
+<script>
+  $('#tag').keyup(function(key){
+    if(key.keyCode == 13){
+      $('#tags').append($('#tag').val()+" ");
+      $('#code_tags').val($('#tags').text());
+      $('#tag').val("");
+      }
+  });
+  
+ //prevent enter key form submittion 
+  
+  $("#tag").keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+
+</script>
+
+
+

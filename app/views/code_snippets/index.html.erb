@@ -1,11 +1,17 @@
-<h2>List of Snippets</h2><hr>
-
+<h3>List of Snippets</h3>
+<hr>
+<%= link_to "New Code Snippet" ,new_code_snippet_path %><br><hr>
 <% @code_all.each do |code| %>
- <%=link_to code.title, code_snippet_path(code.id) %><br>
- <b>Content:</b><%= truncate(code.content, :ommision=>"..read more", :length =>50) %><%= link_to "Read more",code_snippet_path(code.id) %><br>
- <b>Tags:</b><%= code.tags %><br><hr>
-<%end%><br>
+    <%= link_to code.title, code_snippet_path(code.id) %><br/>
+    Content:<%= raw(code.content) %><br/>
+    Tags: <%= code.tags %><br/><hr/>
+<% end %>
 
 
 
-<%= link_to "click to add new code snippet" ,new_code_snippet_path %>
+
+
+
+
+
+

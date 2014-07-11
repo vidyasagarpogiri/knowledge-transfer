@@ -2,5 +2,5 @@
 Title:<%= @question.title %><br/>
 Content:<%= raw(@question.content) %><br/>
 Tags related:<%= @question.tags %><br/>
-<%= link_to 'edit', edit_question_path(@question)%>
-<%= link_to 'list of questions', questions_path%>
+<%= link_to 'Edit Question', edit_question_path(@question)%> | 
+<%= link_to 'All Questions', questions_path%>
