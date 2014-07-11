@@ -13,8 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140711093028) do
 
-
-
   create_table "answers", force: true do |t|
     t.text     "answer"
     t.string   "tags"
@@ -23,7 +21,6 @@ ActiveRecord::Schema.define(version: 20140711093028) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 
   create_table "articles", force: true do |t|
     t.string   "title"
