@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :questions
     resources:articles
     resources :code_snippets
+    resources :blogs
     mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 
 

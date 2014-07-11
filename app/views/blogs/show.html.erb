@@ -1,0 +1,9 @@
+<h1> Blog show </h1>
+
+<p><b>Title:</b><%= @blog.title %></p></br>
+<p><b>Content:</b><%= @blog.content %></p><br>
+<p><b>Tags:</b><%= @blog.tags %></p><br>
+
+<%= link_to "Show ", blogs_path %>  |
+<%= link_to "Back", blogs_path %>|
+<%= link_to "edit",edit_blog_path %>
