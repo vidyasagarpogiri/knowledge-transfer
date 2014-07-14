@@ -2,5 +2,11 @@
 Title:<%= @question.title %><br/>
 Content:<%= raw(@question.content) %><br/>
 Tags related:<%= @question.tags %><br/>
-<%= link_to 'Edit Question', edit_question_path(@question)%> | 
-<%= link_to 'All Questions', questions_path%>
+  <% if @question.category.present? %>
+    Category:<%= @question.category.title %><br>
+  <% end %>
+<%= link_to "Edit", edit_question_path(@question.id) %>
+<%= link_to "Show All", questions_path %>
+
+
+

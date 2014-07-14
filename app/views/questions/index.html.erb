@@ -3,6 +3,9 @@
 <% @questions.each do |question| %>
     <%= link_to question.title, question_path(question.id) %><br/>
     Content:<%= raw(question.content) %>
-    <%= link_to "Read More",question_path(question.id) %></p><br><br/>
-    Tags: <%= question.tags %><br/><hr/>
+    <%= link_to "Read More",question_path(question.id) %></p><br>
+    Tags: <%= question.tags %><br/>
+    <% if question.category.present? %>
+    <b>Category:</b><%= question.category.title %><br><hr/>
+  <% end %>
 <% end %>
