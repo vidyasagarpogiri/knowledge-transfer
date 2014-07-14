@@ -22,6 +22,11 @@
           <li><%= link_to "Questions", questions_path %></li>
           <li><%= link_to "Blog",blogs_path %></li>
           <li><%= link_to "Code Snippets", code_snippets_path %></li>
+          <% if session["oauth"].present? %>
+      <li><%= link_to "logout", destroy_user_session_path, id: "logout", :method=> :delete %></li>
+    <% else %>
+     <li> <%= link_to "login", new_user_session_path, id: "login" %></li>
+    <% end %>
         </ul>
       </div>
     </div>

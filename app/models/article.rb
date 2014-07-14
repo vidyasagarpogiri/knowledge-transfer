@@ -1,3 +1,6 @@
 class Article < ActiveRecord::Base
- has_many :comments, as: :commentable
+  include Bootsy::Container
+  has_many :comments, as: :commentable
+  belongs_to :category
+  belongs_to :user
 end
