@@ -2,13 +2,35 @@
 
 
 <%= f.label :title, "Title" %> 
-  <%= f.text_field :title %><br>
+  <%= f.text_field :title,:style => "margin: 0px 0px 10px; width: 906px;" %><br>
   <%= f.label :content, "Content" %>  
   <%= f.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 893px; height: 221px;" %><br>
-  <%= f.label :tags, "Tags" %> 
-  <%= f.text_field :tags %><br>
   <%= f.label :tags, "Category" %> 
-  <%= f.select :category, options_from_collection_for_select(Category.all, :id, :title) %><br>
+  <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :title) %><br>
+  <%= f.label :tags, "Tags" %> 
+  <%= f.hidden_field :tags %> 
+    <input type="text" id="tag"><br>
+    <span id="tags"></span><br/>
   <%= f.submit "Submit"%> 
 <% end %>
+  
+<script>
+  $('#tag').keyup(function(key){
+    if(key.keyCode == 13){
+      $('#tags').append($('#tag').val()+" ");
+      $('#article_tags').val($('#tags').text());
+      $('#tag').val("");
+      }
+  });
+  
+ //prevent enter key form submittion 
+  
+  $("#tag").keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+
+</script>
 
