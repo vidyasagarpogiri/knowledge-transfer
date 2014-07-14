@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
          
-         
+  has_many :articles  
          
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
       user.token = auth.credentials.token
       user.secret = auth.credentials.secret
       user.email = auth.info.email
+      user.name = auth.info.name
       user.save!
     end
   end

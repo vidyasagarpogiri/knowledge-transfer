@@ -9,16 +9,19 @@
   <%= f.hidden_field :tags %> 
   <input type="text" id="tag"><br>
   <span id="tags"></span><br/>
+  <i class="icon-plus-sign hand_sym" id="add_tag"></i><br>
   <%= f.submit "Submit"%> 
 <% end %>
 
 <script>
   $('#tag').keyup(function(key){
     if(key.keyCode == 13){
-      $('#tags').append($('#tag').val()+" ");
-      $('#blog_tags').val($('#tags').text());
-      $('#tag').val("");
+        add_tag();
       }
+  });
+  
+  $("#add_tag").click(function(){
+        add_tag();
   });
   
  //prevent enter key form submittion 
@@ -30,5 +33,9 @@
     }
   });
 
-
+  function add_tag(){
+      $('#tags').append($('#tag').val().trim()+" ");
+      $('#article_tags').val($('#tags').text());
+      $('#tag').val("");
+  }
 </script>

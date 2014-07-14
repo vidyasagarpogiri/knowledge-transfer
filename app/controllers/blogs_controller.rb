@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
-
+  before_filter :authenticate_user!, only: [:new, :edit]
+  
   def index
     @blogs = Blog.all
   end
@@ -16,7 +17,7 @@ class BlogsController < ApplicationController
   
   def show
     @blog = Blog.find(params[:id])
-     @comments = @blog.comments
+    @comments = @blog.comments
     @comment = Comment.new
   end
   

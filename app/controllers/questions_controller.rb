@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
   
+  before_filter :authenticate_user!, only: [:new, :edit]
+  
   # before_action is to perform action, before actions in the array
   before_action :find_params, only: [:show, :edit, :update, :destroy]
  
@@ -39,6 +41,7 @@ class QuestionsController < ApplicationController
     @question.destroy
     redirect_to questions_path
   end
+  
  
   private
  

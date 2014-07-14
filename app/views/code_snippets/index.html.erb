@@ -3,7 +3,8 @@
 <%= link_to "New Code Snippet" ,new_code_snippet_path %><br><hr>
 <% @code_all.each do |code| %>
     <%= link_to code.title, code_snippet_path(code.id) %><br/>
-    Content:<%= raw(code.content) %><br/>
+    
+    <b>Content:</b><%= truncate(code.content, :ommision => "...", :length => 20) %><%= link_to "Read More",code_snippet_path(code.id) %><br>
     Tags: <%= code.tags %><br/><hr/>
 <% end %>
 
