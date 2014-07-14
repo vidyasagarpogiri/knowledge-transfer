@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_filter :authenticate_user! only: [:new, :show, :edit]
+  before_filter :authenticate_user!, only: [:new, :show, :edit]
   
   def index
      @articles = Article.all
@@ -30,14 +30,7 @@ class ArticlesController < ApplicationController
     @article.update(params_articles)
     redirect_to @article
   end
-  
-  def authenticate
-     if current_user?
-      true
-     else
-     
-  end
-     
+      
   private
   
   def params_articles
