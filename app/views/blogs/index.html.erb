@@ -1,10 +1,11 @@
-<h1> List of Blog </h1>
+<h3> List of Blog </h3>
+<hr>
+<%= link_to "New Blog", new_blog_path %><br><hr>
 <% @blogs.each do |blog| %><br>
 <b>Title:</b><%= link_to blog.title, blog_path(blog.id) %><br>
 <b>Content:</b><%= truncate(blog.content, :ommision => "... Read More", :length => 20) %>
 <br><%= link_to "Read More",blogs_path(blog.id) %></p><br>
-<b>Tags:</b><%= blog.tags %><br><hr>
-  
-<% end %>  <br>
+<b>Tags:</b><%= blog.tags %><br><hr> 
+<% end %>
 
-<%= link_to "New Blog", new_blog_path %>
+

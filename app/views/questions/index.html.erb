@@ -1,7 +1,8 @@
-<h1>List of Questions</h1><hr/>
-<%= link_to 'Post New Question', new_question_path %><br/><hr/>
+<h3>List of Questions</h3><hr/>
+<%= link_to 'New Question', new_question_path %><br><hr/>
 <% @questions.each do |question| %>
     <%= link_to question.title, question_path(question.id) %><br/>
-    Content:<%= raw(question.content) %><br/>
+    Content:<%= raw(question.content) %>
+    <%= link_to "Read More",question_path(question.id) %></p><br><br/>
     Tags: <%= question.tags %><br/><hr/>
 <% end %>
