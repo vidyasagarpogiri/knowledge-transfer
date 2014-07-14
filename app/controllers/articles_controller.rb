@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_filter :authenticate_user! only: [:new, :show, :edit]
   
   def index
-    @articles = Article.all
+     @articles = Article.all
   end
   
   def new
@@ -17,6 +17,8 @@ class ArticlesController < ApplicationController
    
   def show
     @article = Article.find(params[:id])
+    @comments = @article.comments
+    @comment = Comment.new
   end
   
   def edit
