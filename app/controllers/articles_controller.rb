@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :edit]
   
   def index
      @articles = Article.all
@@ -9,7 +10,7 @@ class ArticlesController < ApplicationController
   end
   
   def create
-    @article = Article.new(params_articles)
+    @article = current_user.articles.new(params_articles)
     @article.save
     redirect_to @article
   end
@@ -29,7 +30,7 @@ class ArticlesController < ApplicationController
     @article.update(params_articles)
     redirect_to @article
   end
-     
+      
   private
   
   def params_articles
