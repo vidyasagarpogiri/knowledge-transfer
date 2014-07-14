@@ -5,8 +5,9 @@
   <%= f.text_field :title,:style => "margin: 0px 0px 10px; width: 906px;" %><br>
   <%= f.label :content, "Content" %>  
   <%= f.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 893px; height: 221px;" %><br>
+  <%= f.label :tags, "Category" %> 
+  <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :title) %><br>
   <%= f.label :tags, "Tags" %> 
-<<<<<<< HEAD
   <%= f.hidden_field :tags %> 
     <input type="text" id="tag"><br>
     <span id="tags"></span><br/>
@@ -32,13 +33,4 @@
   });
 
 </script>
-
-
-=======
-  <%= f.text_field :tags %><br>
-  <%= f.label :tags, "Category" %> 
-  <%= f.select :category, options_from_collection_for_select(Category.all, :id, :title) %><br>
-  <%= f.submit "Submit"%> 
-<% end %>
->>>>>>> e8cce341bcdc3d39cd0576ea5829aae5ec72620b
 

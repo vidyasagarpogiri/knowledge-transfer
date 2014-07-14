@@ -1,19 +1,15 @@
 <h3> Article Show Page </h3><hr>
 
-<p><b>Title:</b><%= @article.title %></p></br>
-<p><b>Content:</b><%= raw @article.content %></p><br>
-<p><b>Tags:</b><%= @article.tags %></p><br>
-<<<<<<< HEAD
-<%= link_to "Edit Article",edit_article_path(@article.id) %>
-<%= link_to "All Articles", articles_path %>
+<p><b>Title:</b> <%= @article.title %></p></br>
+<p><b>Content:</b> <%= raw @article.content %></p><br>
+<p><b>Tags:</b> <%= @article.tags %></p><br>
+<p><b>Category:</b> <%= @article.category.title %></p><br>
 
-=======
-<p><b>Category:</b><%= @article.category%></p><br>
 <div>
 <%= render 'comments/new' %>
 </div>
 <%= link_to "Edit",edit_article_path(@article.id) %>
 <%= link_to "Show All", articles_path %>
 <%= link_to "Back", articles_path %>
->>>>>>> e8cce341bcdc3d39cd0576ea5829aae5ec72620b
+
 
