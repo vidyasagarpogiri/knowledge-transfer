@@ -5,7 +5,9 @@
 <%= @code.content %><br>
 <b>Tags </b>
 <%= @code.tags %><br><br><br>
-<<<<<<< HEAD
+
+<%= link_to "Edit Code Snippet", edit_code_snippet_path %> &nbsp |&nbsp
+<%= link_to "All Code Snippet", code_snippets_path %><hr>
 
 <div>
 <%= render 'comments/index' %>
@@ -14,7 +16,4 @@
 
 <%= render 'comments/new' %>
 </div>
-
-<%= link_to "Edit Code Snippet", edit_code_snippet_path %>&nbsp
-<%= link_to "All Code Snippet", code_snippets_path %>
 
