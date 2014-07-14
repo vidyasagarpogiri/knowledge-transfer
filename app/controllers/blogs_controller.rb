@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
-
+  before_filter :authenticate_user!, only: [:new, :edit]
+  
   def index
     @blogs = Blog.all
   end
