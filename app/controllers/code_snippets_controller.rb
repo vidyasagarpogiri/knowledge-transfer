@@ -16,6 +16,7 @@ class CodeSnippetsController < ApplicationController
   def show
     #raise params.inspect
     @code =CodeSnippet.find(params[:id])
+    @comments = @code.comments
   end
   
   def edit

@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   
   def index
-    @articles = Article.all
+     @articles = Article.all
   end
   
   def new
@@ -16,10 +16,11 @@ class ArticlesController < ApplicationController
    
   def show
     @article = Article.find(params[:id])
+    @comments = @article.comments
+    @comment = Comment.new
   end
   
   def edit
-  #raise params.inspect
     @article = Article.find(params[:id])
   end
   

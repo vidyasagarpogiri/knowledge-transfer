@@ -3,6 +3,10 @@
 <p><b>Title:</b><%= @article.title %></p></br>
 <p><b>Content:</b><%= @article.content %></p><br>
 <p><b>Tags:</b><%= @article.tags %></p><br>
+
+<div>
+<%= render 'comments/index' %>
+</div>
 <div>
 <%= render 'comments/new' %>
 </div>
