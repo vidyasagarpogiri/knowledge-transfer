@@ -1,18 +1,34 @@
 Rails.application.routes.draw do
  
+    #devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
     root :to => 'home#index'
     
-
+    
     resources :questions
-    resources:articles
+    resources :articles
     resources :code_snippets
+    resources :categories
+    resources :code_snippets 
+    resources :comments
     resources :blogs
-    mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 
+
+    mount Bootsy::Engine => '/bootsy', as: 'bootsy'
+    
+    
+    #for devise
+    devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+    controllers: {omniauth_callbacks: "omniauth_callbacks"}
+    
+    
+    devise_scope :user do
+      get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+      get '/users/auth/:provider/callback' => 'omniauth_callbacks#all'
+    end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
