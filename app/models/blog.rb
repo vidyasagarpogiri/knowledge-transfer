@@ -1,7 +1,7 @@
 class Blog < ActiveRecord::Base
-
-   has_many :comments, as: :commentable
-
   include Bootsy::Container
+  has_many :comments, as: :commentable
+
+  
 
 end
