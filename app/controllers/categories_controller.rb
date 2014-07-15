@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
-
-   def index
+  
+  def index
     @categories = Category.all
   end
   
@@ -29,7 +29,8 @@ class CategoriesController < ApplicationController
   end
   
   def show_articles
-     @category_related_articles = Category.find(params[:id]).articles
+    @category = Category.find(params[:id])
+    @category_related_articles = @category.articles
   end
   
   def show_blogs
