@@ -4,7 +4,8 @@
  <b>Content </b>
 <%= @code.content %><br>
 <b>Tags </b>
-<%= @code.tags %><br><br><br>
+<%= @code.tags %><br><br>
+<%= @code.category.title %><br>
 
 <%= link_to "Edit Code Snippet", edit_code_snippet_path %> &nbsp |&nbsp
 <%= link_to "All Code Snippet", code_snippets_path %><hr>

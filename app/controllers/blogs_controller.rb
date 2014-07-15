@@ -10,6 +10,7 @@ class BlogsController < ApplicationController
   end
   
   def create
+    #raise params.inspect
     @blog = Blog.new(blogs_params)
     @blog.save
     redirect_to @blog
@@ -35,7 +36,7 @@ class BlogsController < ApplicationController
   private
   
   def blogs_params
-     params.require(:blog).permit(:title, :content, :tags)
+     params.require(:blog).permit(:title, :content, :tags, :category_id)
   end
   
 end

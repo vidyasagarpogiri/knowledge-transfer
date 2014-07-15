@@ -1,7 +1,7 @@
 <h3>List of Articles </h3><hr/>
 <%= link_to "Add New Article", new_article_path %><br><hr/>
 <% @articles.each do |article| %><br>
-<b>Title:</b><%= link_to article.title, article_path(article.id) %><br>
+<%= link_to article.title, article_path(article.id) %><br>
 <b>Content:</b><%= raw(article.content) %><%= link_to "Read More",article_path(article.id) %><br>
 <b>Tags:</b><%= article.tags %><br>
   <% if article.category.present? %>
