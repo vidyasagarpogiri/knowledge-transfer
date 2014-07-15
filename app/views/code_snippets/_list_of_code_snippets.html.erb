@@ -1,6 +1,6 @@
 
 <% code_snippets.each do |code| %>
-    <%= link_to code.title, code_snippet_path(code.id) %><br/>
+   <h4> <%= link_to code.title, code_snippet_path(code.id) %></h4>
     
     <b>Content:</b><%= truncate(code.content, :ommision => "...", :length => 20) %><%= link_to "Read More",code_snippet_path(code.id) %><br>
     <b>Tags:</b> <%= code.tags %><br/>

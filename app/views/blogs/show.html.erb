@@ -2,9 +2,9 @@
 <p><b>Content:</b> <br><%= raw @blog.content %></p><br>
 <p><b>Tags:</b> <%= @blog.tags %></p><br>
 <p><b>Category:</b> <%= @blog.category.title %></p><br>
-  <% if @blog.category.present? %>
-   <b> Category:</b> <%= @blog.category.title %><br><br>
-  <% end %>
+ 
+   
+  
   <%= link_to "Edit",edit_blog_path(@blog.id) %>
 <%= link_to "Show All", blogs_path %>
 <%= link_to "Back", blogs_path %>
