@@ -33,15 +33,15 @@ class CategoriesController < ApplicationController
   end
   
   def show_blogs
-     @category_related_articles = Category.find(params[:id]).articles
+     @category_related_blogs = Category.find(params[:id]).blogs
   end
   
   def show_code_snippets
-     @category_related_articles = Category.find(params[:id]).articles
+     @category_related_code_snippets = Category.find(params[:id]).snippets
   end
   
   def show_questions
-     @category_related_articles = Category.find(params[:id]).articles
+     @category_related_questions = Category.find(params[:id]).questions
   end
      
   private

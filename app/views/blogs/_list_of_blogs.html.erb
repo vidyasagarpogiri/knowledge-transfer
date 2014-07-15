@@ -1,6 +1,7 @@
-<% @blogs.each do |blog| %><br>
+<% blogs.each do |blog| %><br>
 <b>Title:</b><%= link_to blog.title, blog_path(blog.id) %><br>
 <b>Content:</b><%= truncate(blog.content, :ommision => "... Read More", :length => 20) %>
 <br><%= link_to "Read More",blogs_path(blog.id) %></p><br>
 <b>Tags:</b><%= blog.tags %><br><hr> 
+<b>Category:</b><%= link_to blog.category.title, show_blogs_category_path(blog.category.id) %><br><hr>
 <% end %>
