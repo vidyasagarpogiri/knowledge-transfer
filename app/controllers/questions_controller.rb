@@ -23,6 +23,7 @@ class QuestionsController < ApplicationController
   end
  
   def show
+    #@comments=@question.comments
   end
  
   def edit
@@ -46,7 +47,7 @@ class QuestionsController < ApplicationController
   private
  
   def question_params
-    params.require(:question).permit(:title, :content, :tags, :bootsy_image_gallery_id)
+    params.require(:question).permit(:title, :content, :tags, :bootsy_image_gallery_id, :category_id)
   end
  
   def find_params
