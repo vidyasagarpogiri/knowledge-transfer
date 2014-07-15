@@ -1,0 +1,6 @@
+<% articles.each do |article| %><br>
+  <b>Title:</b><%= link_to article.title, article_path(article.id) %><br>
+  <b>Content:</b><%= raw(article.content) %><%= link_to "Read More",article_path(article.id) %><br>
+  <b>Tags:</b><%= article.tags %><br>
+  <b>Category:</b><%= link_to article.category.title, show_articles_category_path(article.category.id) %><br><hr>
+<% end %>

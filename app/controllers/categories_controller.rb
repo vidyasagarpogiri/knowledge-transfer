@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-  
 
    def index
     @categories = Category.all
@@ -27,6 +26,22 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.update(params_categories)
     redirect_to @category
+  end
+  
+  def show_articles
+     @category_related_articles = Category.find(params[:id]).articles
+  end
+  
+  def show_blogs
+     @category_related_articles = Category.find(params[:id]).articles
+  end
+  
+  def show_code_snippets
+     @category_related_articles = Category.find(params[:id]).articles
+  end
+  
+  def show_questions
+     @category_related_articles = Category.find(params[:id]).articles
   end
      
   private
