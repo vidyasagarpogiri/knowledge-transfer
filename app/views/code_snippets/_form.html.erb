@@ -8,9 +8,9 @@
   <%= code.select :category_id, options_from_collection_for_select(Category.all, :id, :title) %><br>
   <%= code.label :tags, "Tags" %>
   <%= code.hidden_field :tags %> 
-    <input type="text" id="tag"><br>
-    <span id="tags"></span><br/>
+    <input type="text" id="tag">
     <i class="icon-plus-sign hand_sym" id="add_tag"></i><br>
+    <span id="tags"></span><br/>
   <%= code.submit "Submit"%> 
   <% end %>
 

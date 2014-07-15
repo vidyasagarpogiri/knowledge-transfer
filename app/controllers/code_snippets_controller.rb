@@ -1,7 +1,7 @@
 class CodeSnippetsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :edit]
   def index
-    @code_all = CodeSnippet.all  
+    @code_snippets = CodeSnippet.all  
   end
   
   def new
