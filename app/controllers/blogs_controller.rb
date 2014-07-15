@@ -1,6 +1,8 @@
 class BlogsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :edit]
   
+  before_filter :user_identification, only: :edit 
+  
   def index
     @blogs = Blog.all
   end
@@ -38,6 +40,16 @@ class BlogsController < ApplicationController
   
   def blogs_params
      params.require(:blog).permit(:title, :content, :tags, :category_id)
+  end
+  
+  def user_identification
+   @blog = Blog.find(params[:id])
+    if @blog.user_id ==current_user.id
+      true
+    else
+       flash[:notice]= "you are not autherised for this action"
+       redirect_to @blog
+    end 
   end
   
 end

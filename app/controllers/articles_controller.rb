@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :edit]
   
+  before_filter :user_identification, only: :edit 
+  
   def index
      @articles = Article.all
   end
@@ -43,4 +45,13 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :content, :tags, :category_id)
   end
   
+   def user_identification
+   @article = Article.find(params[:id])
+    if @article.user_id ==current_user.id
+      true
+    else
+       flash[:notice]= "you are not autherised for this action"
+       redirect_to @article
+    end 
+  end
 end
