@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140715060222) do
 
+
   create_table "answers", force: true do |t|
     t.text     "answer"
     t.string   "tags"
@@ -85,7 +86,10 @@ ActiveRecord::Schema.define(version: 20140715060222) do
     t.string   "commentable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.string   "title"
