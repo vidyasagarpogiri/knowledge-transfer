@@ -3,8 +3,10 @@ class QuestionsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :edit]
   
   # before_action is to perform action, before actions in the array
-  before_action :find_params, only: [:show, :edit, :update, :destroy]
- 
+  before_action :find_params, only: [:show, :edit, :update, :destroy, :user_identification]
+  
+  before_filter :user_identification, only: :edit 
+  
   def index
     @questions=Question.all
   end
@@ -23,9 +25,10 @@ class QuestionsController < ApplicationController
   end
  
   def show
+    @user=User.find_by_id(@question.user_id)
   end
  
-  def edit
+  def edit 
   end
  
   def update
@@ -51,6 +54,15 @@ class QuestionsController < ApplicationController
  
   def find_params
     @question=Question.find(params[:id])
+  end
+   
+  def user_identification
+    if @question.user_id ==current_user.id
+      true
+    else
+       flash[:notice]= "you are not autherised for this action"
+       redirect_to @question
+    end 
   end
 
 end
