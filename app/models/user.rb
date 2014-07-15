@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          
   has_many :articles  
   has_many :questions
+  has_many :comments
+  has_many :code_snippets
          
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
