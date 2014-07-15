@@ -37,7 +37,7 @@ class CategoriesController < ApplicationController
   end
   
   def show_code_snippets
-     @category_related_code_snippets = Category.find(params[:id]).snippets
+     @category_related_code_snippets = Category.find(params[:id]).code_snippets
   end
   
   def show_questions
