@@ -43,7 +43,6 @@ class CodeSnippetsController < ApplicationController
   def user_identification
    @code = CodeSnippet.find(params[:id])
     if @code.user_id ==current_user.id
-      true
     else
        flash[:notice]= "you are not autherised for this action"
        redirect_to @code

@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  
+  before_action :find_category, only: [:show_articles, :show_blogs, :show_code_snippets, :show_questions]
   def index
     @categories = Category.all
   end
@@ -29,20 +29,19 @@ class CategoriesController < ApplicationController
   end
   
   def show_articles
-    @category = Category.find(params[:id])
     @category_related_articles = @category.articles
   end
   
   def show_blogs
-     @category_related_blogs = Category.find(params[:id]).blogs
+     @category_related_blogs =@category.blogs
   end
   
   def show_code_snippets
-     @category_related_code_snippets = Category.find(params[:id]).code_snippets
+     @category_related_code_snippets = @category.code_snippets
   end
   
   def show_questions
-     @category_related_questions = Category.find(params[:id]).questions
+     @category_related_questions = @category.questions
   end
      
   private
@@ -51,4 +50,7 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:title)
   end
   
+  def find_category
+    @category=Category.find(params[:id])
+  end 
 end
