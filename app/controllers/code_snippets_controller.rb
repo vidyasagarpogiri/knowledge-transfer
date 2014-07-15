@@ -10,7 +10,7 @@ class CodeSnippetsController < ApplicationController
   
   def create
     #raise params.inspect
-    @code= CodeSnippet.create(code_params)
+    @code= current_user.code_snippets.create(code_params)
     redirect_to @code
   end
   

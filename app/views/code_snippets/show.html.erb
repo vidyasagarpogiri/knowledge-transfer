@@ -1,15 +1,27 @@
-<h3> <%= @code.title %> </h3><hr>
-<p><b>Content:</b> <br><%= raw @code.content %></p><br>
-<p><b>Tags:</b> <%= @code.tags %></p><br>
-<p><b>Category:</b> <%= @code.category.title %></p><br>
-<%= link_to "Edit", edit_code_snippet_path %> 
+<h3> <%= @code.title %> </h3>
+<hr>
+<p>
+  <b>Content:</b> <br><%= raw @code.content %>
+</p><br>
+<p>
+  <b>Tags:</b> <%= @code.tags %>
+</p><br>
+<p>
+  <b>Category:</b> <%= @code.category.title %>
+</p><br>
+
+<% if current_user.present? %>
+  <% if @code.user_id == current_user.id %>
+    <%= link_to "Edit", edit_code_snippet_path %> 
+  <% end %>
+<% end %>
 <%= link_to "Show All", code_snippets_path %>
-<%= link_to "Back", code_snippets_path %>
+
 <div>
-<%= render 'comments/index' %>
+  <%= render 'comments/index' %>
 </div>
 <div>
-<%= render 'comments/new' %>
+  <%= render 'comments/new' %>
 </div>
 
 

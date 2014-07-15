@@ -6,12 +6,13 @@ class BlogsController < ApplicationController
   end
   
   def new
+  #raise params.inspect
     @blog = Blog.new
   end
   
   def create
     #raise params.inspect
-    @blog = Blog.new(blogs_params)
+    @blog = current_user.blogs.new(blogs_params)
     @blog.save
     redirect_to @blog
   end
