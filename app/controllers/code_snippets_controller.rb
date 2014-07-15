@@ -9,6 +9,7 @@ class CodeSnippetsController < ApplicationController
   end
   
   def create
+    raise params.inspect
     @code= CodeSnippet.create(code_params)
     redirect_to @code
   end
@@ -32,7 +33,7 @@ class CodeSnippetsController < ApplicationController
   private
   
   def code_params
-    params.require(:code_snippet).permit(:title, :content, :tags)
+    params.require(:code_snippet).permit(:title, :content, :tags, :category_id)
   end
   
 end

@@ -5,7 +5,10 @@
     <%= link_to code.title, code_snippet_path(code.id) %><br/>
     
     <b>Content:</b><%= truncate(code.content, :ommision => "...", :length => 20) %><%= link_to "Read More",code_snippet_path(code.id) %><br>
-    Tags: <%= code.tags %><br/><hr/>
+    <b>Tags:</b> <%= code.tags %><br/>
+      <% if code.category.present? %>
+        <b>Category:</b><%= code.category.title %><br><hr/>
+      <% end %>
 <% end %>
 
 

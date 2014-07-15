@@ -3,7 +3,9 @@
 <p><b>Title:</b><%= @blog.title %></p></br>
 <p><b>Content:</b><%= @blog.content %></p><br>
 <p><b>Tags:</b><%= @blog.tags %></p><br>
-
+  <% if @blog.category.present? %>
+   <b> Category:</b> <%= @blog.category.title %><br>
+  <% end %>
 <div>
 <%= render 'comments/index' %>
 </div>
@@ -11,11 +13,9 @@
 <%= render 'comments/new' %>
 </div>
 
-<%= link_to "Back", blogs_path %>|
 
-<%= link_to "edit",edit_blog_path %>
+<%= link_to "edit", edit_blog_path(@blog.id) %>
 
-<%= link_to "Edit Blog",edit_blog_path %> |
-<%= link_to "All Blog", blogs_path %>
+<%= link_to "All Blogs", blogs_path %>
 
 
