@@ -58,7 +58,6 @@ class QuestionsController < ApplicationController
    
   def user_identification
     if @question.user_id ==current_user.id
-      true
     else
        flash[:notice]= "you are not autherised for this action"
        redirect_to @question
