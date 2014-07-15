@@ -1,7 +1,8 @@
 class CodeSnippetsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :edit]
   
-   before_filter :user_identification, only: :edit
+  before_filter :user_identification, only: :edit
+  
   def index
     @code_snippets = CodeSnippet.all  
   end
@@ -18,6 +19,7 @@ class CodeSnippetsController < ApplicationController
   
   def show
     #raise params.inspect
+    @user=User.find_by_id(@code.user_id)
     @code =CodeSnippet.find(params[:id])
     @comments = @code.comments
   end

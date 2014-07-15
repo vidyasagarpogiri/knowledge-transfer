@@ -22,6 +22,15 @@ Rails.application.routes.draw do
     resources :code_snippets 
     resources :comments
     resources :blogs
+    
+    resources :users do
+      member do
+        get 'user_articles'
+        get 'user_blogs'
+        get 'user_code_snippets'
+        get 'user_questions'
+      end
+    end
 
 
     mount Bootsy::Engine => '/bootsy', as: 'bootsy'

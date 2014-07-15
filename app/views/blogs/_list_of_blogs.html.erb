@@ -3,5 +3,6 @@
 <b>Content:</b><%= truncate(blog.content, :ommision => "... Read More", :length => 20) %>
 <%= link_to "Read More", blog_path(blog.id) %><br>
 <b>Tags:</b><%= blog.tags %><br>
+<b>posted by:</b><%= link_to blog.user.name, user_blogs_user_path(blog.user.id) %>
 <b>Category:</b><%= link_to blog.category.title, show_blogs_category_path(blog.category.id) %><br><hr>
 <% end %>
