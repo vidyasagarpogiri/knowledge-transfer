@@ -19,7 +19,7 @@ class CodeSnippetsController < ApplicationController
   
   def show
     #raise params.inspect
-    @user=User.find_by_id(@code.user_id)
+    
     @code =CodeSnippet.find(params[:id])
     @comments = @code.comments
   end

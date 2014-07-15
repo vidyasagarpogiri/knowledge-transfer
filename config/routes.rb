@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :code_snippets 
     resources :comments
     resources :blogs
-     resources :users, except: :show do
+     resources :users, except: [:show, :destroy] do
       member do
         get 'user_articles'
         get 'user_blogs'
