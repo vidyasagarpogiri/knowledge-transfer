@@ -14,9 +14,9 @@ Rails.application.routes.draw do
     resources :categories do 
       member do 
         get 'show_articles'
-        get 'blogs'
-        get 'code_snippets'
-        get 'questions'
+        get 'show_blogs'
+        get 'show_code_snippets'
+        get 'show_questions'
       end
     end
     resources :code_snippets 
