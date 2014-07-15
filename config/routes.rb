@@ -11,7 +11,14 @@ Rails.application.routes.draw do
     resources :questions
     resources :articles
     resources :code_snippets
-    resources :categories
+    resources :categories do 
+      member do 
+        get 'show_articles'
+        get 'show_blogs'
+        get 'show_code_snippets'
+        get 'show_questions'
+      end
+    end
     resources :code_snippets 
     resources :comments
     resources :blogs
@@ -29,7 +36,9 @@ Rails.application.routes.draw do
       get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
       get '/users/auth/:provider/callback' => 'omniauth_callbacks#all'
     end
-
+    
+    
+    
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
