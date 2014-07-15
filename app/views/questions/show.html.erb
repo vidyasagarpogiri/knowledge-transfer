@@ -1,12 +1,10 @@
-<h1>Question</h1><hr/>
-Title:<%= @question.title %><br/>
-Content:<%= raw(@question.content) %><br/>
-Tags related:<%= @question.tags %><br/>
-  <% if @question.category.present? %>
-    Category:<%= @question.category.title %><br>
-  <% end %>
+<h3><%= @question.title %></h3><hr/>
+<p><b>Content:</b> <br><%= raw @question.content %></p><br>
+<p><b>Tags:</b> <%= @question.tags %></p><br>
+<p><b>Category:</b> <%= @question.category.title %></p><br>
+
 <%= link_to "Edit", edit_question_path(@question.id) %>
 <%= link_to "Show All", questions_path %>
-
+<%= link_to "Back", questions_path %>
 
 
