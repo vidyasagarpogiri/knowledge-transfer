@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140715060222) do
 
-
   create_table "answers", force: true do |t|
     t.text     "answer"
     t.string   "tags"

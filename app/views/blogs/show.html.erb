@@ -4,7 +4,7 @@
 <p><b>Content:</b><%= @blog.content %></p><br>
 <p><b>Tags:</b><%= @blog.tags %></p><br>
   <% if @blog.category.present? %>
-    Category:<%= @blog.category.title %><br>
+   <b> Category:</b> <%= @blog.category.title %><br>
   <% end %>
 <div>
 <%= render 'comments/index' %>

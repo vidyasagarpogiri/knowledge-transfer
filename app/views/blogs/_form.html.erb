@@ -7,10 +7,11 @@
   <%= f.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 906px; height: 282px;" %>
   <%= f.label :tags, "Category" %> 
   <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :title) %><br>
-  <%= f.label :tags, "Tags" %>
-  <input type="text" id="tag"><br>
-  <span id="tags"></span><br/>
+  <%= f.label :tags, "Tags" %> 
+  <%= f.hidden_field :tags %> 
+  <input type="text" id="tag">
   <i class="icon-plus-sign hand_sym" id="add_tag"></i><br>
+  <span id="tags"></span><br/>
   <%= f.submit "Submit"%> 
 <% end %>
 
@@ -36,7 +37,7 @@
 
   function add_tag(){
       $('#tags').append($('#tag').val().trim()+" ");
-      $('#article_tags').val($('#tags').text());
+      $('#blog_tags').val($('#tags').text());
       $('#tag').val("");
   }
 </script>
