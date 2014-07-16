@@ -2,6 +2,8 @@
 <p><b>Content:</b> <br><%= raw @question.content %></p><br>
 <p><b>Tags:</b> <%= @question.tags %></p><br>
 <p><b>Category:</b> <%= @question.category.title %></p><br>
+
+
 <p><b>posted by:</b><%= @question.user.name %><br/>
   <% if current_user.present? %>
     <% if @question.user_id == current_user.id %>
