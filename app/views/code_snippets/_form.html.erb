@@ -1,4 +1,14 @@
+
+
 <%= form_for @code do |code| %>
+
+    <strong>
+      <% if flash[:error] %>
+        <div class="alert alert-error"><%= flash[:error] %></div>
+       <% elsif flash[:success] %>
+       <div class="alert alert-success"><%= flash[:success] %></div>
+      <% end %>
+     </strong>
 
   <%= code.label :title, "Title" %>
   <%= code.text_field :title, :style => "margin: 0px 0px 10px; width: 906px;" %><br>
@@ -13,6 +23,7 @@
     <span id="tags"></span><br/>
   <%= code.submit "Submit"%> 
   <% end %>
+  
 
 <script>
   $('#tag').keyup(function(key){

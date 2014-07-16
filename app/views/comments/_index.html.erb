@@ -1,4 +1,5 @@
 <h3>Comments</h3><hr>
+
 <div id="comments">
     <% @comments.each do |comment| %>
       <strong>Posted <%= time_ago_in_words(comment.created_at) %> ago</strong>&nbsp
@@ -6,4 +7,11 @@
       <%=  comment.content %><hr>
     <% end %>
 
+    <strong>
+      <% if flash[:error] %>
+        <div class="alert alert-error"><%= flash[:error] %></div>
+       <% elsif flash[:success] %>
+       <div class="alert alert-success"><%= flash[:success] %></div>
+      <% end %>
+     </strong>
 </div>
