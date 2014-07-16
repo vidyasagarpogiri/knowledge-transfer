@@ -1,3 +1,4 @@
+<%= render "shared/validations"%>
 <%= form_for Comment.new do |comment| %>
   <input type="hidden" value="<%= params[:id]%>" name="commentable_id">
   <input type="hidden" value="<%= (params[:controller]).classify %>" name="commentable_type">
@@ -5,5 +6,5 @@
     <%= comment.text_area :content, :style => "width: 750px;", :name=>"content"%><br>
     <%= comment.submit "comment", :class => "btn btn-success"%>
   <% end %>
-<%end%>
+<% end %>
 

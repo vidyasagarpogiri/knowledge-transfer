@@ -16,12 +16,15 @@ class QuestionsController < ApplicationController
   end
  
   def create
-    @question=current_user.questions.new(question_params)
-    if @question.save
+    @question = current_user.questions.new(question_params)
+     if @question.save
+      flash[:success] = "Successfully saved"
       redirect_to @question
-    else
-      render 'new'
-    end
+       else
+        flash[:error] = "Title and content should not be empty"
+        render "new"
+     end
+    
   end
  
   def show
