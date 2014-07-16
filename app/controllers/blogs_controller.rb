@@ -13,10 +13,15 @@ class BlogsController < ApplicationController
   end
   
   def create
-    #raise params.inspect
     @blog = current_user.blogs.new(blogs_params)
-    @blog.save
-    redirect_to @blog
+     if @blog.save
+      flash[:success] = "Successfully saved"
+      redirect_to @blog
+       else
+        flash[:error] = "Title and content should not be empty"
+        render "new"
+     end
+    
   end
   
   def show

@@ -1,7 +1,8 @@
 <% blogs.each do |blog| %><br>
 <h4><%= link_to blog.title, blog_path(blog.id) %></h4>
 
-<b>Content:</b><%= truncate(blog.content, :ommision => "... Read More", :length => 20) %>
+<%= truncate(blog.content, :ommision => "... Read More", :length => 20) %>
+
 <%= link_to "Read More", blog_path(blog.id) %><br>
 <b>Tags:</b><%= blog.tags %><br>
 

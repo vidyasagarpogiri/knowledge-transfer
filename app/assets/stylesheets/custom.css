@@ -1,7 +1,7 @@
 @media screen and (max-width: 980px) {
 
 ul.nav li:hover a{
-  background:white !important;
+  background:#FFF !important;
 }
 
 .posts{
@@ -186,7 +186,7 @@ ul.nav li a
 
 ul.nav li a:hover
 {
-  color: #D6FF51 !important;
+  color: #000 /*#D6FF51*/ !important;
 }
 
 

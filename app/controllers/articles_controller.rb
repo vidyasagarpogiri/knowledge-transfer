@@ -13,8 +13,14 @@ class ArticlesController < ApplicationController
   
   def create
     @article = current_user.articles.new(params_articles)
-    @article.save
-    redirect_to @article
+    if @article.save
+      flash[:success] = "Successfully saved"
+      redirect_to @article
+    else
+      flash[:error] = "Title and content should not be empty"
+      render "new"
+    end
+    
   end
    
   def show
