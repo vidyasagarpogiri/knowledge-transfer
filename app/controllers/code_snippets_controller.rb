@@ -4,7 +4,7 @@ class CodeSnippetsController < ApplicationController
   before_filter :user_identification, only: :edit
   
   def index
-    @code_snippets = CodeSnippet.all  
+    @code_snippets = CodeSnippet.order(:id).page(params[:page]).per(4)
   end
   
   def new

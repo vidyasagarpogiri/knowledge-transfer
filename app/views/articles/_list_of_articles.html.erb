@@ -1,8 +1,13 @@
 <% articles.each do |article| %><br>
   <h4><%= link_to article.title, article_path(article.id) %></h4>
-  <b> Content:</b><%= truncate(article.content, :ommision => "... Read More", :length => 30) %>
+  <%= truncate(article.content, :ommision => "... Read More", :length => 30) %>
     <%= link_to "Read More",article_path(article.id) %><br>
   <b>Tags:</b><%= article.tags %><br>
   <b>Category:</b><%= link_to article.category.title, show_articles_category_path(article.category.id) %><br>
   <b>Posted by:</b><%= link_to article.user.name, user_articles_user_path(article.user.id) %><hr>
 <% end %>
+
+<div id="paginator">
+  <%= paginate @articles, :remote => true %>
+</div>
+
