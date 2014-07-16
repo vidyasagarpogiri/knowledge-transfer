@@ -2,9 +2,9 @@
   <%= render "shared/validations" %>
   
   <%= code.label :title, "Title" %>
-  <%= code.text_field :title, :style => "margin: 0px 0px 10px; width: 906px;" %><br>
+  <%= code.text_field :title, :style => "margin: 0px 0px 10px; width: 650px;" %><br>
   <%= code.label :content, "Add Content" %>
-  <%= code.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 950px; height: 354px;" %>
+  <%= code.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 650px; height: 354px;" %>
   <%= code.label :tags, "Category" %> 
   <%= code.select :category_id, options_from_collection_for_select(Category.all, :id, :title) %><br>
   <%= code.label :tags, "Tags" %>
