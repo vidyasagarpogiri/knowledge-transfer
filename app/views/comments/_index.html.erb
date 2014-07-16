@@ -7,11 +7,5 @@
       <%=  comment.content %><hr>
     <% end %>
 
-    <strong>
-      <% if flash[:error] %>
-        <div class="alert alert-error"><%= flash[:error] %></div>
-       <% elsif flash[:success] %>
-       <div class="alert alert-success"><%= flash[:success] %></div>
-      <% end %>
-     </strong>
+  <%= render "shared/validations"%>
 </div>

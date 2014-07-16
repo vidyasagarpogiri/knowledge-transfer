@@ -13,13 +13,13 @@ class CodeSnippetsController < ApplicationController
   
   def create
     #raise params.inspect
-    
-    if @code= current_user.code_snippets.create(code_params)
+    @code= current_user.code_snippets.create(code_params)
+    if @code.save
       flash[:success] = "Successfully saved"
       redirect_to @code
     else
       flash[:error] = "Title and content should not be empty"
-      redirect_to @code  
+      render "new"
     end
     
   end
