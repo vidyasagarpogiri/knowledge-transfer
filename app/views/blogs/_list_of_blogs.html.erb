@@ -1,5 +1,5 @@
 <% blogs.each do |blog| %><br>
-<h4><%= link_to blog.title, blog_path(blog.id) %></h4>
+<%= link_to blog.title, blog_path(blog.id) %>
 
 <%= truncate(blog.content, :ommision => "... Read More", :length => 20) %>
 

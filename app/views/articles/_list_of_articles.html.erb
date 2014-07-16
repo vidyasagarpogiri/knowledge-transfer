@@ -1,5 +1,5 @@
 <% articles.each do |article| %><br>
-  <h4><%= link_to article.title, article_path(article.id) %></h4>
+  <%= link_to article.title, article_path(article.id) %>
   <%= truncate(article.content, :ommision => "... Read More", :length => 30) %>
     <%= link_to "Read More",article_path(article.id) %><br>
   <b>Tags:</b><%= article.tags %><br>
