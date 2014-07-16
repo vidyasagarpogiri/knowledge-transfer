@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   before_filter :user_identification, only: :edit 
   
   def index
-    @questions=Question.all
+     @questions=Question.order(:id).page(params[:page]).per(4)
   end
  
   def new

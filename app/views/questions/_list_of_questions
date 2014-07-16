@@ -6,5 +6,13 @@
    <b>posted by:</b><%= link_to question.user.name, user_questions_user_path(question.user.id) %><br>
    <b>Category:</b><%= link_to question.category.title, show_questions_category_path(question.category.id) %><br>
    <b>Numbers Of Answers:</b><%= question.answers.count %><br><br><hr/>
+
 <% end %>
+
+   
+   <div id="paginator">
+   <%= paginate @questions, :remote => true %>
+   </div>
+   
+ 
 
