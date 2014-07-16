@@ -8,4 +8,31 @@
       <%= link_to "Edit", edit_question_path(@question.id) %>
     <% end %>
   <% end %>
-<%= link_to "Show All", questions_path %>
+
+<div class="answer-index">
+  <%= render 'answers/index' %>
+</div>
+
+
+
+
+<a href="#" id="answer-link">Answer this question </a>
+<div id="answer-form">
+  <h4>Answer</h4>
+  <%= render "answers/new" %>
+</div>
+
+
+<script>
+//We are hiding answer form first. 
+// after clicking the link, we are showing answer form . 
+
+  $(function(){
+    $('#answer-form').hide();
+  });
+  
+  $("#answer-link").click(function(){
+    $("#answer-link").hide();
+    $('#answer-form').show();
+  });
+</script>

@@ -1,0 +1,7 @@
+<% i=1 %>
+<% @answers.each do |answer| %>
+    <b>Answer<%= i %>:<br></b><%= raw(answer.content) %><br>
+    <b>posted by:</b><%= answer.user.name %>
+    <strong>Posted <%= time_ago_in_words(answer.created_at) %> ago</strong>&nbsp<hr>
+    <% i = i+1 %>
+<% end %>

@@ -8,9 +8,13 @@ Rails.application.routes.draw do
     root :to => 'home#index'
     
     
-    resources :questions
+    resources :questions do 
+      resources :answers
+    end
+    
     resources :articles
     resources :code_snippets
+    
     resources :categories do 
       member do 
         get 'show_articles'
