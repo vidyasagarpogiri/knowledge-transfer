@@ -14,7 +14,7 @@
   <% if session["oauth"].present? %>
       <!-- <li><a href="#"><%= session["oauth"]["first_name"] %></a></li> -->
       <li>
-        <%= link_to "Logout", destroy_user_session_path, id: "logout", :method=> :delete %>
+        <%= link_to "Logout", destroy_user_session_path, id: "logout" %>
       </li>
   <% else %>
       <li> 
