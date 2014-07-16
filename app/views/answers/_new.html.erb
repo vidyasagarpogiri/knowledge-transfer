@@ -1,6 +1,6 @@
 <%= form_for [@question,  @answer] do |answer| %>
   <% if current_user %>
-    <%= answer.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 893px; height: 221px;"%><br>
+    <%= answer.bootsy_area :content %><br>
     <%= answer.submit "post answer", :class => "btn btn-success"%>
   <% end %>
-<%end%>
+<% end %>

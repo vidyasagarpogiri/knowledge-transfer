@@ -8,9 +8,7 @@
    <b>Numbers Of Answers:</b><%= question.answers.count %><br><br><hr/>
 
 <% end %>
-
-   
-   <div id="paginator">
+  <div id="paginator">
    <%= paginate @questions, :remote => true %>
    </div>
    
