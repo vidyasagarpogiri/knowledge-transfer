@@ -7,3 +7,7 @@
   <b>Posted by:</b><%= link_to article.user.name, user_articles_user_path(article.user.id) %><hr>
 <% end %>
 
+<div id="paginator">
+  <%= paginate @articles, :remote => true %>
+</div>
+
