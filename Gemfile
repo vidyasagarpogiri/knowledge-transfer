@@ -38,7 +38,8 @@ gem "twitter-bootstrap-rails"
 #use for bootsy wysiwig editor
 gem 'bootsy'
 
-
+#for pagination
+gem "kaminari"
 
 #for devise gem 
 gem 'devise'

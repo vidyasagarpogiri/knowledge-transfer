@@ -6,3 +6,4 @@
   <b>Category:</b><%= link_to article.category.title, show_articles_category_path(article.category.id) %><br>
   <b>Posted by:</b><%= link_to article.user.name, user_articles_user_path(article.user.id) %><hr>
 <% end %>
+
