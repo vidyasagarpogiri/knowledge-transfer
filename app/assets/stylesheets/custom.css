@@ -140,7 +140,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49c0f0', end
 color: #F5F0F1;
 text-transform: capitalize;
 font-weight: bold;
-padding: 5px;
+padding-top: 30px;
+padding-left: 155px;
+position: absolute;
 }
 
 
@@ -184,7 +186,7 @@ ul.nav li a
 
 ul.nav li a:hover
 {
-  color: #000 !important;
+  color: #D6FF51 !important;
 }
 
 
@@ -222,7 +224,10 @@ span p strong
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
 }
 
-
+.nav a.active{
+  color:#DBFF67 !important;
+  font-weight:bold;
+}
 
 
 
