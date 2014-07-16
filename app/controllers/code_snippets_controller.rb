@@ -14,7 +14,14 @@ class CodeSnippetsController < ApplicationController
   def create
     #raise params.inspect
     @code= current_user.code_snippets.create(code_params)
-    redirect_to @code
+    if @code.save
+      flash[:success] = "Successfully saved"
+      redirect_to @code
+    else
+      flash[:error] = "Title and content should not be empty"
+      render "new"
+    end
+    
   end
   
   def show
@@ -25,10 +32,16 @@ class CodeSnippetsController < ApplicationController
   def edit
     @code = CodeSnippet.find(params[:id])
   end
+  
   def update
    @code = CodeSnippet.find(params[:id])
-   @code.update(code_params)
-   redirect_to @code
+   if @code.update(code_params)
+     flash[:success] = "Successfully updated"
+     redirect_to @code
+     else
+      flash[:error] = "Title and content should not be empty"
+      redirect_to @code  
+    end
   end
   
   private

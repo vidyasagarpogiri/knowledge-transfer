@@ -3,6 +3,8 @@
     
     <b>Content:</b><%= truncate(code.content, :ommision => "...", :length => 20) %><%= link_to "Read More",code_snippet_path(code.id) %><br>
     <b>Tags:</b> <%= code.tags %><br/>
+
+
     <b>Category:</b><%= link_to code.category.title, show_code_snippets_category_path(code.category.id) %><br>
     <b>Posted by:</b><%= link_to code.user.name, user_code_snippets_user_path(code.user.id) %><hr/>
 <% end %>

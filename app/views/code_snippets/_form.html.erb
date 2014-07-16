@@ -1,5 +1,6 @@
 <%= form_for @code do |code| %>
-
+  <%= render "shared/validations" %>
+  
   <%= code.label :title, "Title" %>
   <%= code.text_field :title, :style => "margin: 0px 0px 10px; width: 906px;" %><br>
   <%= code.label :content, "Add Content" %>
