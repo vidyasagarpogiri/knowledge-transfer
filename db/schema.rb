@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715060222) do
+ActiveRecord::Schema.define(version: 20140716061207) do
 
   create_table "answers", force: true do |t|
-    t.text     "answer"
+    t.text     "content"
     t.string   "tags"
     t.float    "answer_accept_rate", limit: 24
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "question_id"
   end
 
   create_table "articles", force: true do |t|
