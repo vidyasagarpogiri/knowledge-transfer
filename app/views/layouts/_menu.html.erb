@@ -1,0 +1,24 @@
+<ul class="nav">
+  <li>
+    <%= link_to "Articles",articles_path, :class=>params[:controller]=="articles"? "active":"" %>
+  </li>
+  <li>
+    <%= link_to "Questions", questions_path, :class=>params[:controller]=="questions"? "active":"" %>
+  </li>
+  <li>
+    <%= link_to "Blog",blogs_path, :class=>params[:controller]=="blogs"? "active":"" %>
+  </li>
+  <li>
+    <%= link_to "Code Base", code_snippets_path, :class=>params[:controller]=="code_snippets"? "active":"" %>
+  </li>
+  <% if session["oauth"].present? %>
+      <!-- <li><a href="#"><%= session["oauth"]["first_name"] %></a></li> -->
+      <li>
+        <%= link_to "Logout", destroy_user_session_path, id: "logout", :method=> :delete %>
+      </li>
+  <% else %>
+      <li> 
+        <%= link_to "Login", new_user_session_path, id: "login" %>
+      </li>
+  <% end %>
+</ul>
