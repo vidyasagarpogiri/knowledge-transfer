@@ -14,14 +14,3 @@
  *= require_self
  *= require bootsy
  */
- 
- 
- 
- .navbar .nav
- {
-  left :670px;
- }
- 
- .hand_sym{
-  cursor:pointer;
- }
