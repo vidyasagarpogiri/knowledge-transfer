@@ -28,6 +28,12 @@ class QuestionsController < ApplicationController
   end
  
   def show
+    @answers = @question.answers
+    @answer = Answer.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
  
   def edit 

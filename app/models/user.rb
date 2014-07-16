@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :code_snippets
   has_many :blogs
+  has_many :answers
          
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
