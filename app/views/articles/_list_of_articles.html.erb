@@ -14,7 +14,8 @@
         </p>
         <div class="clear"></div>
       <h4><%= link_to article.title, article_path(article.id), :class=>"post_title"  %></h4>
-      <%= truncate(article.content, :ommision => "... Read More", :length => 350) %>
+      <%# truncate(article.content, :ommision => "... Read More", :length => 350) %>
+        <span class="content_in_list"><%= raw(article.content) %></span>
         <%= link_to "Read More",article_path(article.id) %><br>
       <p class="pull-right posted_by">
         <i class="icon-user"></i> <%= link_to article.user.name, user_articles_user_path(article.user.id) %>

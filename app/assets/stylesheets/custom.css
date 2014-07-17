@@ -308,7 +308,11 @@ color: rgb(49, 62, 100);
 }
 
 .tags_list{
-float:right;
+  float:right;
 }
 
-
+.content_in_list{
+  height: 40px;
+  overflow: hidden;
+  display: block;
+}
