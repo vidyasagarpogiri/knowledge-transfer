@@ -72,10 +72,11 @@ margin:0px;
 
 .custom_hero_unit
 {
-  height:190px !important;
+  height:165px !important;
   padding:0px !important;
   border-radius:0px;
   background-color: rgb(239, 247, 251);
+  box-shadow: 1px 2px 1px #C7C7C7
 }
 
 .custom_hero_unit .title_div{
@@ -119,7 +120,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49c0f0', end
 .post_content ul li a
 {
  color : black;
- font-size :15px;
+ font-size :13px;
+}
+
+.custom_hero_unit li {
+line-height: 25px;
 }
 
 .navbar .navbar-inverse .navbar-fixed-top
@@ -232,6 +237,7 @@ span p strong
   width: 100%;
   margin-top: -7px;
   padding-top: 10px;
+  box-shadow: 4px 0px 10px #888888;
 }
 
 .main_nav{
@@ -239,10 +245,41 @@ span p strong
 }
 
 .main_content{
-background-color: rgb(246, 246, 246);
-padding: 21px;
+  background-color: rgb(246, 246, 246);
+  padding: 10px;
+  margin-left: 0px;
+  margin-right: 10px;
+  box-shadow: 0px 4px 1px #888888;
+}
+
+.main_container .span12{
+  margin-left:0px;
+}
+
+.main_container .side_bar{
+  margin-left:0px;
 }
 
 .h3_title{
   float:left;
+}
+
+.post_title{
+  color: rgb(29, 29, 88);
+}
+
+.post_content{
+  color: #423F3F;
+}
+
+.label-info a{
+  color:white;
+}
+
+.label-inverse a{
+  color:white;
+}
+
+.h5_comment{
+color: rgb(49, 62, 100);
 }

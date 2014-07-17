@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_filter :user_identification, only: :edit 
   
   def index
-     @articles = Article.order(:id).page(params[:page]).per(2)
+     @articles = Article.order(:id).page(params[:page]).per(4)
   end
   
   def new
