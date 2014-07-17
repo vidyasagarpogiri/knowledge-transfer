@@ -38,7 +38,13 @@ class BlogsController < ApplicationController
     @blog.update(blogs_params)
     redirect_to @blog
   end
-     
+  
+  def tags
+    @blogs = Blog.where("tags LIKE ?",  "%#{params[:tag]}%").page(params[:page]).per(4)
+    respond_to do |format|
+      format.js
+    end
+  end   
   
   private
   
