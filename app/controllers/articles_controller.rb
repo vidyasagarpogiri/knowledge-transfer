@@ -43,6 +43,13 @@ class ArticlesController < ApplicationController
     @article.update(params_articles)
     redirect_to @article
   end
+  
+  def tags
+    @articles = Article.where("tags LIKE ?",  "%#{params[:tag]}%").page(params[:page]).per(4)
+    respond_to do |format|
+      format.js
+    end
+  end
       
   private
   
