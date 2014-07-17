@@ -1,3 +1,8 @@
+<% if current_user.present? %>
+  <% if @question.user_id == current_user.id %>
+      <%= link_to "EDIT",edit_question_path(@question.id), :class=>"icon-edit pull-right" %>
+<% end %><br/>
+    
 <p class="pull-right">
 <% @question.tags.split(',').each do |tag| %> 
   <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= tag %></a></span>
@@ -18,13 +23,7 @@
   <i class="icon-time"></i> <%= format_time(@question.created_at) %>
 </p>
 
-<p><b>Posted by:</b><%= @question.user.name %><br/>
-    <% if current_user.present? %>
-    <% if @question.user_id == current_user.id %>
-      <%= link_to "Edit", edit_question_path(@question.id) %>
-    <% end %>
-
-
+<b>Posted by:</b><%= @question.user.name %><br/>
 
 <div class="answer-index">
   <%= render 'answers/index' %>
