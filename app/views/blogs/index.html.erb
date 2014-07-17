@@ -1,10 +1,7 @@
-<h3> List of Posts </h3><hr>
-<%= link_to "Create New Post", new_blog_path %><br><hr/>
+<h3 class="h3_title">List of Posts </h3>
+<div class="btn btn-link pull-right"><i class="icon-plus-sign"></i> <%= link_to "Create New Post", new_blog_path %></div>
+<div class="clear"></div>
 
 <div class="blog_list">
 <%= render "list_of_blogs", :blogs=>@blogs%>
 </div>
-
-
-
-

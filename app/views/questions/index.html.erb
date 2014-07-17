@@ -1,8 +1,7 @@
-<h3>List of Questions</h3><hr/>
-<%= link_to 'Post A New Question', new_question_path %><br><hr/>
-
+<h3 class="h3_title">List of Questions</h3>
+<div class="btn btn-link pull-right"><i class="icon-plus-sign"></i> <%= link_to "Post A New Question", new_question_path %></div>
+<div class="clear"></div>
 
 <div class="questions_list">
   <%= render "list_of_questions", :questions=>@questions %>
 </div>
-

@@ -2,19 +2,19 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:user_articles, :user_blogs, :user_code_snippets, :user_questions]
   
   def user_articles
-    @user_related_articles = @user.articles
+    @user_related_articles = @user.articles.order(:id).page(params[:page]).per(4)
   end
   
   def user_blogs
-     @user_related_blogs = @user.blogs
+     @user_related_blogs = @user.blogs.order(:id).page(params[:page]).per(4)
   end
   
   def user_code_snippets
-     @user_related_code_snippets = @user.code_snippets
+     @user_related_code_snippets = @user.code_snippets.order(:id).page(params[:page]).per(4)
   end
   
   def user_questions
-     @user_related_questions = @user.questions
+     @user_related_questions = @user.questions.order(:id).page(params[:page]).per(4)
   end
   
   private
