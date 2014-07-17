@@ -1,5 +1,7 @@
-<h3> <%= @code.title %> </h3><hr>
+<h4> <%= @code.title %> </h4><hr>
 
 
-  
-<%= render :partial => 'form' %>
+<%= render 'form' %>
+
+<%= link_to 'Show', @code %> 
+<%= link_to 'Back', code_snippets_path %>
