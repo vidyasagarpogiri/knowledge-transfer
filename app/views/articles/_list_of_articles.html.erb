@@ -9,11 +9,11 @@
         <p>
             <span class="label label-inverse">
                 <i class="icon-briefcase"></i> 
-                <%= link_to article.category.title, show_articles_category_path(article.category.id) %>
+                <%= link_to article.category.title, show_articles_category_path(article.category.id)%>
              </span>
         </p>
         <div class="clear"></div>
-      <h4><%= link_to article.title, article_path(article.id) %></h4>
+      <h4><%= link_to article.title, article_path(article.id), :class=>"post_title"  %></h4>
       <%= truncate(article.content, :ommision => "... Read More", :length => 350) %>
         <%= link_to "Read More",article_path(article.id) %><br>
       <p class="pull-right posted_by">

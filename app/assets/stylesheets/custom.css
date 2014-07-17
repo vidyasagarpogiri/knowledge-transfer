@@ -264,7 +264,7 @@ span p strong
   float:left;
 }
 
-.post_title{
+.post_title, a.post_title{
   color: rgb(29, 29, 88);
 }
 
@@ -310,3 +310,5 @@ color: rgb(49, 62, 100);
 .tags_list{
 float:right;
 }
+
+
