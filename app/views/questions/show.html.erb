@@ -19,7 +19,7 @@
 </p>
 
 <p><b>Posted by:</b><%= @question.user.name %><br/>
-  <% if current_user.present? %>
+    <% if current_user.present? %>
     <% if @question.user_id == current_user.id %>
       <%= link_to "Edit", edit_question_path(@question.id) %>
     <% end %>
