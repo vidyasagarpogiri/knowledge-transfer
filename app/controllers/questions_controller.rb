@@ -50,7 +50,13 @@ class QuestionsController < ApplicationController
       @question.destroy
       redirect_to questions_path
     end
-  
+    
+    def tags
+      @questions = Question.where("tags LIKE ?",  "%#{params[:tag]}%").page(params[:page]).per(4)
+      respond_to do |format|
+        format.js
+      end
+    end
  
     private
  
