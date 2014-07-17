@@ -16,10 +16,13 @@
 <% end %>
 
 <% content_for :recent_posts do %>
-  <ul>
-   <% Article.all.limit(5).each do |article| %>
-     <li><%= link_to truncate(article.title, :ommision => "... Read More", :length => 25), article %></li> 
-   <% end %>
-  </ul>
+  <div class="title_div">Recent Articles</div>
+    <div class="post_content">
+      <ul>
+        <% Article.all.limit(5).each do |article| %>
+          <li><%= link_to truncate(article.title, :ommision => "... Read More", :length => 25), article %></li> 
+        <% end %>
+      </ul>
+   </div>
 <% end %>
 
