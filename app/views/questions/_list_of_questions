@@ -1,7 +1,9 @@
 <% questions.each do |question| %>
+
    <h4> <%= link_to question.title, question_path(question.id) %><br/></h4>
    <%= truncate(question.content, :ommision => "... Read More", :length => 30) %>
     <%= link_to "Read More",question_path(question.id) %><br>
+
    <b> Tags:</b> <%= question.tags %><br/>
    <b>Posted by:</b><%= link_to question.user.name, user_questions_user_path(question.user.id) %><br>
    <b>Category:</b><%= link_to question.category.title, show_questions_category_path(question.category.id) %><br>
@@ -9,7 +11,7 @@
 
 <% end %>
   <div id="paginator">
-   <%= paginate @questions, :remote => true %>
+   <%= paginate questions, :remote => true %>
    </div>
    
  
