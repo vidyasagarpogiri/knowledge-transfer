@@ -13,16 +13,18 @@
   <%= raw @question.content %>
 </p>
 
+<p class="pull-right posted_by">
+  <i class="icon-user"></i> <%= @question.user.name %>
+  <i class="icon-time"></i> <%= format_time(@question.created_at) %>
+</p>
+
 <p><b>Posted by:</b><%= @question.user.name %><br/>
   <% if current_user.present? %>
     <% if @question.user_id == current_user.id %>
       <%= link_to "Edit", edit_question_path(@question.id) %>
     <% end %>
 
-<p class="pull-right posted_by">
-  <i class="icon-user"></i> <%= @question.user.name %>
-  <i class="icon-time"></i> <%= format_time(@question.created_at) %>
-</p>
+
 
 <div class="answer-index">
   <%= render 'answers/index' %>
