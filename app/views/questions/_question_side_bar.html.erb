@@ -1,0 +1,27 @@
+<% content_for :categories  do %>
+  <ul>
+    <% Category.all.limit(5).each do |category| %>
+      <li><%= link_to category.title, show_questions_category_path(category) %></li>
+    <% end %>        
+  </ul>
+<% end %>
+
+<% content_for :users do %>
+  <ul>
+    <% User.all.limit(5).each do |user| %>
+      <li><%= link_to user.name, user_questions_user_path(user) %></li>
+    <% end %>               
+  </ul>
+<% end %>
+
+
+<% content_for :recent_posts do %>
+  <div class="title_div">Recent questions</div>
+    <div class="post_content">
+      <ul>
+         <% Question.all.limit(5).each do |question| %>
+           <li><%= link_to truncate(question.title, :ommision => "... Read More", :length => 25), question %></li> 
+         <% end %>
+      </ul>
+   </div>
+<% end %>
