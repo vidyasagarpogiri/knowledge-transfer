@@ -283,3 +283,26 @@ span p strong
 .h5_comment{
 color: rgb(49, 62, 100);
 }
+
+.posted_by{
+  /*
+  background-color: rgb(197, 221, 236);
+  width: auto;
+  padding: 0px 20px;
+  box-shadow: 0px 2px 6px #868080;
+  */
+  font-size: 12px;
+  color: rgb(121, 121, 121);
+}
+
+#comments .comment{
+  background: rgb(229, 233, 238);
+  border-radius: 5px;
+  padding: 5px;
+  overflow: overlay;
+  color: rgb(58, 39, 39);
+}
+
+.comment_user_name{
+  color: rgb(29, 29, 88);
+}
