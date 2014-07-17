@@ -1,0 +1,27 @@
+<% content_for :categories  do %>
+  <ul>
+    <% Category.all.limit(5).each do |category| %>
+      <li><%= link_to category.title, show_articles_category_path(category) %></li>
+    <% end %>        
+  </ul>
+<% end %>
+
+
+<% content_for :users do %>
+  <ul>
+    <% User.all.limit(5).each do |user| %>
+      <li><%= link_to user.name, user_articles_user_path(user) %></li>
+    <% end %>               
+  </ul>
+<% end %>
+
+<% content_for :recent_posts do %>
+  <ul>
+                <li><a href="#"><i class=""></i> Link </a></li>
+                <li><a href="#"><i class=""></i> Link 2</a></li>
+                <li><a href="#"><i class=""></i> Link 3</a></li>
+                <li><a href="#"><i class=""></i> Link 4</a></li>
+                <li><a href="#"><i class=""></i> Link 5</a></li>
+              </ul>
+<% end %>
+
