@@ -17,11 +17,9 @@
 
 <% content_for :recent_posts do %>
   <ul>
-                <li><a href="#"><i class=""></i> Link </a></li>
-                <li><a href="#"><i class=""></i> Link 2</a></li>
-                <li><a href="#"><i class=""></i> Link 3</a></li>
-                <li><a href="#"><i class=""></i> Link 4</a></li>
-                <li><a href="#"><i class=""></i> Link 5</a></li>
-              </ul>
+   <% Article.all.limit(5).each do |article| %>
+     <li><%= link_to truncate(article.title, :ommision => "... Read More", :length => 25), article %></li> 
+   <% end %>
+  </ul>
 <% end %>
 
