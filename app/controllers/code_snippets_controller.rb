@@ -4,7 +4,7 @@ class CodeSnippetsController < ApplicationController
   before_filter :user_identification, only: :edit
   
   def index
-    @code_snippets = CodeSnippet.order(:id).page(params[:page]).per(4)
+    @code_snippets = CodeSnippet.order('created_at DESC').page(params[:page]).per(4)
   end
   
   def new
@@ -51,11 +51,11 @@ class CodeSnippetsController < ApplicationController
   end
   
   def user_identification
-   @code = CodeSnippet.find(params[:id])
+    @code = CodeSnippet.find(params[:id])
     if @code.user_id ==current_user.id
     else
-       flash[:notice]= "you are not autherised for this action"
-       redirect_to @code
+      flash[:notice]= "you are not autherised for this action"
+      redirect_to @code
     end 
   end
 end

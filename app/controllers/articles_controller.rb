@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_filter :user_identification, only: :edit 
   
   def index
-     @articles = Article.order(:id).page(params[:page]).per(4)
+     @articles = Article.order('created_at DESC').page(params[:page]).per(4)
   end
   
   def new
@@ -20,7 +20,6 @@ class ArticlesController < ApplicationController
       flash[:error] = "Title and content should not be empty"
       render "new"
     end
-    
   end
    
   def show
@@ -51,12 +50,12 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :content, :tags, :category_id)
   end
   
-   def user_identification
+  def user_identification
    @article = Article.find(params[:id])
-    if @article.user_id ==current_user.id
-    else
-       flash[:notice]= "you are not autherised for this action"
-       redirect_to @article
-    end 
+   if @article.user_id ==current_user.id
+   else
+    flash[:notice]= "you are not autherised for this action"
+    redirect_to @article
+   end 
   end
 end
