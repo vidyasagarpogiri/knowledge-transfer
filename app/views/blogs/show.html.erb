@@ -2,13 +2,13 @@
     <% if @blog.user_id == current_user.id %>
       <%= link_to "EDIT",edit_blog_path(@blog.id), :class=>"icon-edit pull-right" %>
     <% end %>
-  <% end %> 
+<% end %> 
   
- <div class="clear"></div>
+<div class="clear"></div>
 <p class="pull-right">
 <% @blog.tags.split(',').each do |tag| %> 
   <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= tag %></a></span>
-  <% end %>
+<% end %>
 </p>
 <p>
    <span class="label label-inverse"><i class="icon-briefcase"></i> <a href="#"><%= @blog.category.title %></a></span>
@@ -20,8 +20,7 @@
   <%= raw @blog.content %>
 </p>
 
-  
-<%= #link_to "Show All", blogs_path %>
+
 
 <p class="pull-right posted_by">
   <i class="icon-user"></i> <%= @blog.user.name %>

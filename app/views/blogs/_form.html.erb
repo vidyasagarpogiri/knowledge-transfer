@@ -31,7 +31,7 @@
     $.each($('#tags span span'), function( index, value ) {
       all_tags = $(this).text().trim()+","+all_tags;
     });
-    $('#article_tags').val(all_tags);
+    $('#blog_tags').val(all_tags);
   } 
   
   
@@ -41,7 +41,7 @@
     $.each($('#tags span span'), function( index, value ) {
       all_tags = $(this).text().trim()+","+all_tags;
     });
-    $('#article_tags').val(all_tags);
+    $('#blog_tags').val(all_tags);
   }
   
   display_tags();
@@ -66,8 +66,8 @@
   });
 
   function add_tag(){
-      $('#tags').text($('#tag').val().trim()+","+$('#blogs_tags').val());
-      $('#blogs_tags').val($('#tags').text());
+      $('#tags').text($('#tag').val().trim()+","+$('#blog_tags').val());
+      $('#blog_tags').val($('#tags').text());
       $('#tag').val("");
       display_tags();
   }
