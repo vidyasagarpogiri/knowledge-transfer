@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   before_filter :user_identification, only: :edit 
   
   def index
-    @blogs = Blog.order(:id).page(params[:page]).per(4)
+    @blogs = Blog.order(:id).page(params[:page]).per(2)
   end
   
   def new
