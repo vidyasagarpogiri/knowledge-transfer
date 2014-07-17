@@ -11,7 +11,7 @@
 
 <% end %>
   <div id="paginator">
-   <%= paginate @questions, :remote => true %>
+   <%= paginate questions, :remote => true %>
    </div>
    
  
