@@ -1,22 +1,30 @@
-<h3> <%= @article.title %> </h3><hr>
-
-<p><b>Content:</b> <br><%= raw @article.content %></p><br>
-<p><b>Tags:</b> <%= @article.tags %></p><br>
-<p><b>Category:</b> <%= @article.category.title %></p><br>
-
+<p class="pull-right">
+<% @article.tags.split(',').each do |tag| %> 
+  <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= tag %></a></span>
+  <% end %>
+</p>
+<p>
+   <span class="label label-inverse"><i class="icon-briefcase"></i> <a href="#"><%= @article.category.title %></a></span>
+</p>
+<h4 class="post_title">
+  <%= @article.title %> 
+</h4>
+<p class="post_content">
+  <%= raw @article.content %>
+</p>
 <% if current_user.present? %>
   <% if @article.user_id == current_user.id %>
     <%= link_to "Edit",edit_article_path(@article.id) %>
   <% end %>
 <% end %>
 
-<%= link_to "Show All", articles_path %>
+<%# link_to "Show All", articles_path %>
 
 <div>
-<%= render 'comments/index' %>
+  <%= render 'comments/index' %>
 </div>
 <div>
-<%= render 'comments/new' %>
+  <%= render 'comments/new' %>
 </div>
 
 
