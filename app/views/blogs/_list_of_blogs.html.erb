@@ -1,5 +1,5 @@
 <% blogs.each do |blog| %><br>
-<%= link_to blog.title, blog_path(blog.id) %>
+<h4><%= link_to blog.title, blog_path(blog.id) %></h4>
 
 <%= truncate(blog.content, :ommision => "... Read More", :length => 20) %>
 
@@ -15,4 +15,3 @@
 <div id="paginator">
   <%= paginate blogs, :remote => true %>
 </div>
-

@@ -19,13 +19,13 @@
 <% end %>
 
 <%# link_to "Show All", articles_path %>
-
+<p class="pull-right posted_by">
+  <i class="icon-user"></i> <%= @article.user.name %>
+  <i class="icon-time"></i> <%= format_time(@article.created_at) %>
+</p>
 <div>
   <%= render 'comments/index' %>
 </div>
 <div>
   <%= render 'comments/new' %>
 </div>
-
-
-
