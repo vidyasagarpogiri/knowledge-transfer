@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   before_filter :user_identification, only: :edit 
   
   def index
-    @blogs = Blog.order('created_at DESC').page(params[:page]).per(2)
+    @blogs = Blog.order('created_at DESC').page(params[:page]).per(4)
   end
   
   def new
@@ -38,7 +38,13 @@ class BlogsController < ApplicationController
     @blog.update(blogs_params)
     redirect_to @blog
   end
-     
+  
+  def tags
+    @blogs = Blog.where("tags LIKE ?",  "%#{params[:tag]}%").page(params[:page]).per(4)
+    respond_to do |format|
+      format.js
+    end
+  end   
   
   private
   

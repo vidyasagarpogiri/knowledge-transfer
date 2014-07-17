@@ -28,4 +28,16 @@
       </ul>
    </div>
 <% end %>
-
+<% content_for :tags do %>
+  <ul>
+    <% a= [] %>
+      <% Blog.all.map(&:tags).each do |tag| %>
+        <%  a<<tag.split(",") %>
+      <% end %>
+      <% a=  a.flatten.uniq %>
+      
+      <% a.each do |tag|%>
+        <li><%= link_to tag, tags_blogs_path(:tag => tag), :remote => true %></li>
+      <% end %>
+  </ul>
+ <% end %>
