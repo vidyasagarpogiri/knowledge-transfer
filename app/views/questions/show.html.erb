@@ -1,8 +1,11 @@
 <% if current_user.present? %>
   <% if @question.user_id == current_user.id %>
-      <%= link_to "EDIT",edit_question_path(@question.id), :class=>"icon-edit pull-right" %>
-<% end %><br/>
     
+    <%= link_to "Edit", edit_question_path(@question.id), :class=>"icon-edit pull-right" %><br/>
+  <% end %>
+<% end %>
+<div class="clear"></div>
+
 <p class="pull-right">
 <% @question.tags.split(',').each do |tag| %> 
   <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= tag %></a></span>
@@ -25,6 +28,8 @@
 
 <b>Posted by:</b><%= @question.user.name %><br/>
 
+
+
 <div class="answer-index">
   <%= render 'answers/index' %>
 </div>
@@ -38,7 +43,7 @@
   <%= render "answers/new" %>
 </div>
 
-  <% end %>
+  
 <script>
 //We are hiding answer form first. 
 // after clicking the link, we are showing answer form . 

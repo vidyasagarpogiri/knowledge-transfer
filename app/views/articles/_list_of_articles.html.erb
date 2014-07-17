@@ -1,12 +1,29 @@
-<% articles.each do |article| %>
-  <h4><%= link_to article.title, article_path(article.id) %></h4>
-  <%= truncate(article.content, :ommision => "... Read More", :length => 30) %>
-    <%= link_to "Read More",article_path(article.id) %><br>
-  <b>Tags:</b><%= article.tags %><br>
-  <b>Category:</b><%= link_to article.category.title, show_articles_category_path(article.category.id) %><br>
-  <b>Posted by:</b><%= link_to article.user.name, user_articles_user_path(article.user.id) %><hr/>
-<% end %>
-
+<div id="comments">
+  <% articles.each do |article| %>
+    <div class="comment">
+        <p class="pull-right">
+          <% article.tags.split(",").each do|tag| %>
+            <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= tag %></a></span>
+          <% end %>
+        </p>
+        <p>
+            <span class="label label-inverse">
+                <i class="icon-briefcase"></i> 
+                <%= link_to article.category.title, show_articles_category_path(article.category.id)%>
+             </span>
+        </p>
+        <div class="clear"></div>
+      <h4><%= link_to article.title, article_path(article.id), :class=>"post_title"  %></h4>
+      <%= truncate(article.content, :ommision => "... Read More", :length => 350) %>
+        <%= link_to "Read More",article_path(article.id) %><br>
+      <p class="pull-right posted_by">
+        <i class="icon-user"></i> <%= link_to article.user.name, user_articles_user_path(article.user.id) %>
+        <i class="icon-time"></i> <%= (article.created_at) %>
+      </p>
+    </div>
+    <br/>
+  <% end %>  
+</div>
 <div id="paginator">
   <%= paginate articles, :remote => true %>
 </div>
