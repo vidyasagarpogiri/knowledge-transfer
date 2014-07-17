@@ -1,2 +1,9 @@
-<h2><%= @user.name %></h2>
-<%=  render 'blogs/list_of_blogs', :blogs=>@user_related_blogs %>
+<h3 class="h3_title"><%= @user.name %></h3>
+
+<div class="btn btn-link pull-right"><i class="icon-plus-sign"></i> <%= link_to "Create A Post", new_article_path %></div>
+<div class="clear"></div>
+
+<div class="list_of_articles">
+  <%=  render 'blogs/list_of_blogs', :blogs=>@user_related_blogs %>
+</div>
+
