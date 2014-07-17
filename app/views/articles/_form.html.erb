@@ -14,7 +14,9 @@
     <span id="tags"></span><br/>
   <%= f.submit "Submit"%> 
 <% end %>
-  
+ 
+ <%= render "articles/article_side_bar" %>
+ 
 <script>
   $('#tag').keyup(function(key){
     if(key.keyCode == 13){
