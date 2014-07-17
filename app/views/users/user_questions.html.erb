@@ -1,2 +1,9 @@
-<h2><%= @user.name %></h2>
-<%=  render 'questions/list_of_questions', :questions=>@user_related_questions %>
+<h3 class="h3_title"><%= @user.name %></h3>
+
+<div class="btn btn-link pull-right"><i class="icon-plus-sign"></i> <%= link_to "Post A Question", new_article_path %></div>
+<div class="clear"></div>
+
+<div class="list_of_articles">
+  <%=  render 'questions/list_of_questions', :questions=>@user_related_questions %>
+</div>
+

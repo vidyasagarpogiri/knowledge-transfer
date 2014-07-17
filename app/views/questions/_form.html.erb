@@ -13,6 +13,11 @@
     <span id="tags"></span><br/>
   <%= q.submit "Submit"%> 
 <% end %>
+
+
+<%= render "questions/question_side_bar" %>
+
+
 <script>
   $('#tag').keyup(function(key){
     if(key.keyCode == 13){

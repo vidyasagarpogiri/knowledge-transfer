@@ -1,0 +1,29 @@
+<% content_for :categories  do %>
+  <ul>
+    <% Category.all.limit(5).each do |category| %>
+      <li><%= link_to category.title, show_code_snippets_category_path(category) %></li>
+    <% end %>        
+  </ul>
+<% end %>
+
+<% content_for :users do %>
+  <ul>
+    <% User.all.limit(5).each do |user| %>
+      <li><%= link_to user.name, user_code_snippets_user_path(user) %></li>
+    <% end %>               
+  </ul>
+<% end %>
+
+<% content_for :recent_posts do %>
+  <div class="title_div">Recent Codes</div>
+    <div class="post_content">
+      <ul>
+         <% CodeSnippet.all.limit(5).each do |code| %>
+           <li><%= link_to truncate(code.title, :ommision => "... Read More", :length => 25), code %></li> 
+         <% end %>
+      </ul>
+   </div>
+<% end %>
+
+
+

@@ -1,21 +1,29 @@
-<h3> <%= @code.title %> </h3>
-<hr>
+<p class="pull-right">
+<% @code.tags.split(',').each do |tag| %> 
+  <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= tag %></a></span>
+  <% end %>
+</p>
 <p>
-  <b>Content:</b> <br><%= raw @code.content %>
-</p><br>
-<p>
-  <b>Tags:</b> <%= @code.tags %>
-</p><br>
-<p>
-  <b>Category:</b> <%= @code.category.title %>
-</p><br>
-
+   <span class="label label-inverse"><i class="icon-briefcase"></i> <a href="#"><%= @code.category.title %></a></span>
+</p>
+<h4 class="post_title">
+  <%= @code.title %> 
+</h4>
+<p class="post_content">
+  <%= raw @code.content %>
+</p>
+<p><b>Posted by:</b> <%= @code.user.name %></p><br>
 <% if current_user.present? %>
   <% if @code.user_id == current_user.id %>
     <%= link_to "Edit", edit_code_snippet_path %> 
   <% end %>
 <% end %>
 <%= link_to "Show All", code_snippets_path %>
+
+<p class="pull-right posted_by">
+  <i class="icon-user"></i> <%= @code.user.name %>
+  <i class="icon-time"></i> <%= format_time(@code.created_at) %>
+</p>
 
 <div>
   <%= render 'comments/index' %>
@@ -26,4 +34,4 @@
 
 
 
-
+<%= render "code_snippets/code_snippet_side_bar" %>

@@ -1,7 +1,23 @@
-<h3><%= @question.title %></h3><hr/>
-<p><b>Content:</b> <br><%= raw @question.content %></p><br>
-<p><b>Tags:</b> <%= @question.tags %></p><br>
-<p><b>Category:</b> <%= @question.category.title %></p><br>
+<p class="pull-right">
+<% @question.tags.split(',').each do |tag| %> 
+  <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= tag %></a></span>
+  <% end %>
+</p>
+<p>
+   <span class="label label-inverse"><i class="icon-briefcase"></i> <a href="#"><%= @question.category.title %></a></span>
+</p>
+<h4 class="post_title">
+  <%= @question.title %> 
+</h4>
+<p class="post_content">
+  <%= raw @question.content %>
+</p>
+
+<p class="pull-right posted_by">
+  <i class="icon-user"></i> <%= @question.user.name %>
+  <i class="icon-time"></i> <%= format_time(@question.created_at) %>
+</p>
+
 <p><b>Posted by:</b><%= @question.user.name %><br/>
   <% if current_user.present? %>
     <% if @question.user_id == current_user.id %>
@@ -37,3 +53,7 @@
     $('#answer-form').show();
   });
 </script>
+
+
+
+<%= render "questions/question_side_bar" %>
