@@ -2,9 +2,21 @@
   <h4><%= link_to article.title, article_path(article.id) %></h4>
   <%= truncate(article.content, :ommision => "... Read More", :length => 30) %>
     <%= link_to "Read More",article_path(article.id) %><br>
-  <b>Tags:</b><%= article.tags %><br>
+  
   <b>Category:</b><%= link_to article.category.title, show_articles_category_path(article.category.id) %><br>
-  <b>Posted by:</b><%= link_to article.user.name, user_articles_user_path(article.user.id) %><hr/>
+  <p class="pull-right">
+    <% article.tags.split(',').each do |tag| %> 
+        <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= tag %></a></span>
+      <% end %>
+   </p><br>
+    
+    
+    <p class="pull-right posted_by">
+      <i class="icon-user"></i><%= link_to article.user.name, user_articles_user_path(article.user.id) %>
+      <i class="icon-time"></i> <%= format_time(article.created_at) %>
+    </p>
+     <div class="clear"></div><hr>
+    
 <% end %>
 
 <div id="paginator">

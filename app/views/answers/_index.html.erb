@@ -1,7 +1,23 @@
-<% i=1 %>
-<% @answers.each do |answer| %>
-    <b>Answer<%= i %>:<br></b><%= raw(answer.content) %><br>
-    <b>posted by:</b><%= answer.user.name %>
-    <strong>Posted <%= time_ago_in_words(answer.created_at) %> ago</strong>&nbsp<hr>
-    <% i = i+1 %>
-<% end %>
+<br/>
+<h5 class="h5_comment">Answers <i class=" icon-comment"></i></h5>
+<%# i=1 %>
+<div id="comments">
+  <% @answers.each do |answer| %>
+     <p class="comment">
+     <i class="icon-user"></i> <b class="comment_user_name"><%= answer.user.name %></b> <br>
+
+      <%# = i %></b><%= raw(answer.content) %>
+      <br/>
+        <span class="pull-right posted_by">
+          <i class="icon-time"></i> <%= format_time(answer.created_at) %>
+        </span>
+      </p>
+      <div class="clear"></div>
+      <%# i = i+1 %>
+    <% end %>
+</div>
+
+    
+      
+         
+      

@@ -2,9 +2,22 @@
    <h4><%= link_to code.title, code_snippet_path(code.id) %></h4>
    <%= truncate(code.content, :ommision => "...", :length => 20) %>
     <%= link_to "Read More",code_snippet_path(code.id) %><br>
-    <b>Tags:</b> <%= code.tags %><br/>
+    
     <b>Category:</b><%= link_to code.category.title, show_code_snippets_category_path(code.category.id) %><br>
-    <b>Posted by:</b><%= link_to code.user.name, user_code_snippets_user_path(code.user.id) %><hr/>
+    
+    <p class="pull-right">
+      <% code.tags.split(',').each do |tag| %> 
+        <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= tag %></a></span>
+      <% end %>
+    </p><br>
+    
+    
+    <p class="pull-right posted_by">
+      <i class="icon-user"></i><%= link_to code.user.name, user_code_snippets_user_path(code.user.id) %>
+      <i class="icon-time"></i> <%= format_time(code.created_at) %>
+    </p>
+     <div class="clear"></div><hr>
+    
 <% end %>
 
 
@@ -13,3 +26,7 @@
 </div>
 
 <%= render "code_snippets/code_snippet_side_bar" %>
+
+
+
+

@@ -1,6 +1,6 @@
 <%= form_for [@question,  @answer] do |answer| %>
   <% if current_user %>
-    <%= answer.bootsy_area :content %><br>
-    <%= answer.submit "post answer", :class => "btn btn-success"%>
+    <%= answer.bootsy_area :content, :class=>"span9" %><br>
+    <%= answer.submit "post answer", :class => "btn btn-success pull-right"%>
   <% end %>
 <% end %>
