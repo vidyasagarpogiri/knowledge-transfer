@@ -27,6 +27,10 @@ Rails.application.routes.draw do
     get '/tags/code_snippets' => 'code_snippets#tags'
     get '/tags/questions' => 'questions#tags'
     
+
+    get '/tags/articles' => 'articles#tags'
+    
+  
     resources :comments
     resources :blogs
      resources :users, except: [:show, :destroy] do
