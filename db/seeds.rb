@@ -39,7 +39,7 @@ Blog.create(:title => "Ubuntu web server utilizing Apache2, Passenger, and using
 
 Question.create(:title => "Rails Seed confusion",:content => "I'm having trouble seeding my database using seed.rb",:tags => "rails",:category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )              
 Question.create(:title => "Rails find_or_create by more than one attribute?",:content => "I'm having trouble seeding my database using seed.rb",:tags => "rails",:category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )  
-Question.create(:title => "Rails engine / How to use seed?",:content => "I have created a Rails Engine. I am having trouble using the seed command, if I run rake db:seed I get the error: uninitialized constant",:tags => "rails",:category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )   
+Question.create(:title => "Rails engine / How to use seed?",:content => "I have created a Rails Engine. I am having trouble using the seed command, if I run rake db:seed I get the error: uninitialized constant",:tags => "rails,ruby on rails,git hub",:category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )   
 Question.create(:title => "no route matches controller",:content => "I get the following error Routing Error - No route matche controller - groups }",:tags => "ruby on rails",:category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )    
 
 
