@@ -34,7 +34,7 @@
   });
 
   function add_tag(){
-      $('#tags').append($('#tag').val().trim()+" ");
+      $('#tags').append($('#tag').val().trim()+","+$('#tags').val());
       $('#question_tags').val($('#tags').text());
       $('#tag').val("");
   }

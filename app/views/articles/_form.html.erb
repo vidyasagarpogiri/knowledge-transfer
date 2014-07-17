@@ -11,11 +11,20 @@
   <%= f.hidden_field :tags %> 
     <input type="text" id="tag">
     <i class="icon-plus-sign hand_sym" id="add_tag"></i><br>
-    <span id="tags"></span><br/>
+    <span id="tags"></span><br/><br/>
   <%= f.submit "Submit"%> 
 <% end %>
   
 <script>
+  
+  function display_tags(){
+    $('#tags').html("");
+    $.each($('#article_tags').val().split(","), function( index, value ) {
+      $('#tags').append("<span class='label label-inverse'>"+value+"</span> ");
+    });
+  } 
+  display_tags();
+ 
   $('#tag').keyup(function(key){
     if(key.keyCode == 13){
         add_tag();
@@ -36,8 +45,9 @@
   });
 
   function add_tag(){
-      $('#tags').append($('#tag').val().trim()+" ");
+      $('#tags').text($('#tag').val().trim()+","+$('#article_tags').val());
       $('#article_tags').val($('#tags').text());
       $('#tag').val("");
+      display_tags();
   }
 </script>
