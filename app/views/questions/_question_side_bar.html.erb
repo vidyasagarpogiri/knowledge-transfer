@@ -29,7 +29,7 @@
 <% content_for :tags do %>
   <ul>
     <% a= [] %>
-      <% CodeSnippet.all.map(&:tags).each do |tag| %>
+      <% Question.all.map(&:tags).each do |tag| %>
         <%  a<<tag.split(",") %>
       <% end %>
       <% a=  a.flatten.uniq %>
