@@ -21,7 +21,4 @@ class CommentsController < ApplicationController
       def comment_params
         params.permit(:content, :commentable_id, :commentable_type)
       end
-      
-     
-
 end
