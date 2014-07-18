@@ -1,0 +1,34 @@
+<% if current_user.present? %>
+  <% if @article.user_id == current_user.id %>
+    <%= link_to "EDIT",edit_article_path(@article.id), :class=>"icon-edit pull-right" %><br/>
+  <% end %>
+<% end %>
+<div class="clear"></div>
+<p class="pull-right">
+<% @article.tags.split(',').each do |tag| %> 
+  <span class="label label-info"><i class=" icon-tag"></i> <%= link_to tag, tags_articles_path(:tag => tag), :remote => true %></span>
+  <% end %>
+</p>
+<p>
+   <span class="label label-inverse"><i class="icon-briefcase"></i><%= link_to @article.category.title, show_articles_category_path(@article.category.id)%></span>
+</p>
+<h4 class="post_title">
+  <%= @article.title %> 
+</h4>
+<p class="post_content">
+  <%= raw @article.content %>
+</p>
+
+<%# link_to "Show All", articles_path %>
+<p class="pull-right posted_by">
+  <i class="icon-user"></i> <%= @article.user.name %>
+  <i class="icon-time"></i> <%= format_time(@article.created_at) %>
+</p>
+<div>
+  <%= render 'comments/index' %>
+</div>
+<div>
+  <%= render 'comments/new' %>
+</div>
+
+<%= render "articles/article_side_bar" %>
