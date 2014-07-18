@@ -20,12 +20,14 @@
   <%= raw @blog.content %>
 </p>
 
-
+<div class="clear"></div>
 
 <p class="pull-right posted_by">
   <i class="icon-user"></i> <%= @blog.user.name %>
   <i class="icon-time"></i> <%= format_time(@blog.created_at) %>
 </p>
+
+<div class="clear"></div>
 
 <div>
 <%= render 'comments/index' %>

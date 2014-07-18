@@ -18,12 +18,15 @@
 <p class="post_content">
   <%= raw @code.content %>
 </p>
-
+<div class="clear"></div>
 <%# link_to "Show All", code_snippets_path %>
 <p class="pull-right posted_by">
   <i class="icon-user"></i> <%= @code.user.name %>
   <i class="icon-time"></i> <%= format_time(@code.created_at) %>
 </p>
+
+<div class="clear"></div>
+
 <div>
   <%= render 'comments/index' %>
 </div>

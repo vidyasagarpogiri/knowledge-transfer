@@ -21,10 +21,14 @@
   <%= raw @question.content %>
 </p>
 
+<div class="clear"></div>
+
 <p class="pull-right posted_by">
   <i class="icon-user"></i> <%= @question.user.name %>
   <i class="icon-time"></i> <%= format_time(@question.created_at) %>
 </p>
+
+<div class="clear"></div>
 
 <b>Posted by:</b><%= @question.user.name %><br/>
 
