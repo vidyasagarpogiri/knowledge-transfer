@@ -31,7 +31,7 @@
 <% content_for :tags do %>
   <ul>
     <% a= [] %>
-      <% Blog.all.map(&:tags).limit(5).each do |tag| %>
+      <% Blog.all.map(&:tags).each do |tag| %>
         <%  a<<tag.split(",") %>
       <% end %>
       <% a=  a.flatten.uniq %>
