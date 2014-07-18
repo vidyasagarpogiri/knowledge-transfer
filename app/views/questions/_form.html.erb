@@ -17,33 +17,7 @@
 
 <%= render "questions/question_side_bar" %>
 
-
-<script>
-  $('#tag').keyup(function(key){
-    if(key.keyCode == 13){
-        add_tag();
-      }
-  });
-  
-  $("#add_tag").click(function(){
-        add_tag();
-  });
-  
- //prevent enter key form submittion 
-  
-  $("#tag").keydown(function(event){
-    if(event.keyCode == 13) {
-      event.preventDefault();
-      return false;
-    }
-  });
-
-  function add_tag(){
-      $('#tags').append($('#tag').val().trim()+","+$('#tags').val());
-      $('#question_tags').val($('#tags').text());
-      $('#tag').val("");
-  }
-</script>
+<%= render "questions/script" %>
 
 
 

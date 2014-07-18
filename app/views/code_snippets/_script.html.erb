@@ -1,0 +1,54 @@
+<script>
+  
+  function display_tags(){
+    $('#tags').html("");
+    $.each($('#code_snippet_tags').val().split(","), function( index, value ) {
+      if(value.trim()!=""){
+        $('#tags').append("<span class='label label-inverse'><span>"+value+" </span><a href='#' onclick='remove_tag(this)'>x</a></span> ");
+      }    
+    });
+    var all_tags = "";
+    $.each($('#tags span span'), function( index, value ) {
+      all_tags = $(this).text().trim()+","+all_tags;
+    });
+    $('#code_snippet_tags').val(all_tags);
+  } 
+  
+  
+  function remove_tag(obj){
+    $(obj).parent().remove();
+    var all_tags = "";
+    $.each($('#tags span span'), function( index, value ) {
+      all_tags = $(this).text().trim()+","+all_tags;
+    });
+    $('#code_snippet_tags').val(all_tags);
+  }
+  
+  display_tags();
+ 
+  $('#tag').keyup(function(key){
+    if(key.keyCode == 13){
+        add_tag();
+      }
+  });
+  
+  $("#add_tag").click(function(){
+        add_tag();
+  });
+  
+ //prevent enter key form submittion 
+  
+  $("#tag").keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+
+  function add_tag(){
+      $('#tags').text($('#tag').val().trim()+","+$('#code_snippet_tags').val());
+      $('#code_snippet_tags').val($('#tags').text());
+      $('#tag').val("");
+      display_tags();
+  }
+</script>
