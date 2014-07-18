@@ -1,42 +1,4 @@
-<% if current_user.present? %>
-    <% if @blog.user_id == current_user.id %>
-      <%= link_to "EDIT",edit_blog_path(@blog.id), :class=>"icon-edit pull-right" %>
-    <% end %>
-<% end %> 
-  
-<div class="clear"></div>
-<p class="pull-right">
-<% @blog.tags.split(',').each do |tag| %> 
-  <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= tag %></a></span>
-<% end %>
-</p>
-<p>
-   <span class="label label-inverse"><i class="icon-briefcase"></i> <a href="#"><%= @blog.category.title %></a></span>
-</p>
-<h4 class="post_title">
-  <%= @blog.title %> 
-</h4>
-<p class="post_content">
-  <%= raw @blog.content %>
-</p>
-
-
-
-<p class="pull-right posted_by">
-  <i class="icon-user"></i> <%= @blog.user.name %>
-  <i class="icon-time"></i> <%= format_time(@blog.created_at) %>
-</p>
-
-<div>
-<%= render 'comments/index' %>
+<div class="blog_list">
+  <%= render "blogs/show_blog" %>
 </div>
-<div>
-<%= render 'comments/new' %>
-</div>
-
-
-<%= render "blogs/blog_side_bar" %>
-
-
-
 
