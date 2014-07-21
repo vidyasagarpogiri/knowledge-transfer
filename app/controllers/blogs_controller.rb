@@ -40,7 +40,7 @@ class BlogsController < ApplicationController
   end
   
   def tags
-    @blogs = Blog.where("tags LIKE ?",  "%#{params[:tag]}%").page(params[:page]).per(4)
+    @blogs = Blog.where("tags LIKE ?",  "%#{params[:tag]}%").page(params[:page]).per(3)
     respond_to do |format|
       format.js
     end

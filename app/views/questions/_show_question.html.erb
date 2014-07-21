@@ -1,0 +1,36 @@
+<% if current_user.present? %>
+  <% if @question.user_id == current_user.id %>
+    
+    <%= link_to "Edit", edit_question_path(@question.id), :class=>"icon-edit pull-right" %><br/>
+  <% end %>
+<% end %>
+<div class="clear"></div>
+
+<p class="pull-right">
+<% @question.tags.split(',').each do |tag| %> 
+  <span class="label label-info"><i class=" icon-tag"></i><%= link_to tag, tags_questions_path(:tag => tag), :remote => true %></span>
+  <% end %>
+</p>
+<p>
+   <span class="label label-inverse"><i class="icon-briefcase"></i><%= link_to @question.category.title, show_questions_category_path(@question.category.id)%></span>
+</p>
+<h4 class="post_title">
+  <%= @question.title %> 
+</h4>
+<p class="post_content">
+  <%= raw @question.content %>
+</p>
+
+<div class="clear"></div>
+
+<p class="pull-right posted_by">
+  <i class="icon-user"></i> <%= @question.user.name %>
+  <i class="icon-time"></i> <%= format_time(@question.created_at) %>
+</p>
+
+<div class="clear"></div>
+
+<b>Posted by:</b><%= @question.user.name %><br/>
+
+<%= render "questions/answer" %>
+<%= render "questions/question_side_bar" %>

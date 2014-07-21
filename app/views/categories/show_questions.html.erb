@@ -1,10 +1,10 @@
 <h3 class="h3_title"><%= @category.title %></h3>
 
 
-<div class="btn btn-link pull-right"><i class="icon-plus-sign"></i> <%= link_to "Post Article", new_article_path %></div>
+<div class="btn btn-link pull-right"><i class="icon-plus-sign"></i> <%= link_to "Post A New Question", new_article_path %></div>
 <div class="clear"></div>
 
-<div class="list_of_articles">
+<div class="questions_list">
   <%=  render 'questions/list_of_questions', :questions=>@category_related_questions %>
 </div>
 

@@ -3,7 +3,7 @@
     <div class="comment">
         <p class="pull-right">
           <% code.tags.split(",").each do|tag| %>
-            <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= tag %></a></span>
+            <span class="label label-info"><i class=" icon-tag"></i> <%= link_to tag, tags_code_snippets_path(:tag => tag), :remote => true %></span>
           <% end %>
         </p>
         <p>

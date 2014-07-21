@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     def create
       @comment = current_user.comments.new(comment_params)
       if @comment.save
-        flash[:success] = "Commented successfully"
+        #flash[:success] = "Commented successfully"
         redirect_to @comment.commentable_type.classify.constantize.find(@comment.commentable_id)
        else
          flash[:error] = "Please enter some text"

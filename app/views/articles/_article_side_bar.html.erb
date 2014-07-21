@@ -33,8 +33,7 @@
         <%  a<<tag.split(",") %>
       <% end %>
       <% a=  a.flatten.uniq %>
-      
-      <% a.each do |tag|%>
+      <% a.first(5).each do |tag|%>
         <li><%= link_to tag, tags_articles_path(:tag => tag), :remote => true %></li>
       <% end %>
   </ul>
