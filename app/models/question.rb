@@ -5,4 +5,9 @@ class Question < ActiveRecord::Base
   has_many :answers
   validates :title,  :presence => true
   validates :content, :presence => true
+  
+  searchable do
+    text :tags
+  end
+  
 end

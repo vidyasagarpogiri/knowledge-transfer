@@ -55,6 +55,7 @@ Rails.application.routes.draw do
       get '/users/auth/:provider/callback' => 'omniauth_callbacks#all'
     end
     
+    get 'search' => 'search#search_engine'
     
     
   # Example of regular route:
