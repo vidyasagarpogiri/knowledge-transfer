@@ -1,1 +1,34 @@
-<%= debug(@result) %>
+<div id="comments">
+  <% @result.each do |result| %>
+    <div class="comment">
+        <p class="pull-right">
+          <% result.tags.split(",").each do|tag| %>
+            <% @model_type = result.class.to_s.downcase.pluralize %>
+            <%
+            @model_type = "code_snippets" if @model_type=="codesnippets"
+            %>
+            <span class="label label-info"><i class=" icon-tag"></i> 
+               <a data-remote="true" href="/tags/<%= @model_type%>?tag=<%=tag%>">rails</a>
+            </span>
+          <% end %>
+        </p>
+        <p>
+            <span class="label label-inverse">
+                <i class="icon-briefcase"></i> 
+                <a href="/categories/<%= result.category.id %>/show_<%= @model_type%>"><%= result.category.title %></a>
+             </span>
+        </p>
+        <div class="clear"></div>
+      <h4><a class="post_title" href="/<%=@model_type %>/<%=result.id%>"><%=result.title%></a></h4>
+      <%# truncate(result.content, :ommision => "... Read More", :length => 350) %>
+        <span class="content_in_list"><%= raw(result.content) %></span>
+        <a class="post_title" href="/<%=@model_type %>/<%=result.id%>">Read More</a><br>
+      <p class="pull-right posted_by">
+        <i class="icon-user"></i><a href="/users/<%= result.user.id %>/user_<%= @model_type%>"><%=result.user.name%></a>
+        <i class="icon-time"></i> <%= (result.created_at) %>
+      </p>
+    </div>
+    <br/>
+  <% end %>  
+</div>
+
