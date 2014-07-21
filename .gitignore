@@ -23,6 +23,7 @@ public/*
 
 db/schema.rb
 
+/solr/data
 solr/data
 solr/data/*
 solr/pids
