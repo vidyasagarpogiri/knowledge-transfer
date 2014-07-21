@@ -26,4 +26,4 @@ db/schema.rb
 solr/data
 solr/data/*
 solr/pids
-
+solr/*

@@ -18,8 +18,9 @@
         <%= link_to "Read More",question_path(question.id) %><br>
       <p class="pull-right posted_by">
         <i class="icon-user"></i> <%= link_to question.user.name, user_questions_user_path(question.user.id) %>
-        <i class="icon-time"></i> <%= (question.created_at) %>
+        <i class="icon-time"></i> <%= (question.created_at) %><br/>
       </p>
+      <div class="clear"></div>
       </div>
     <br/>
   <% end %>  
