@@ -18,7 +18,7 @@
 *.*~
 */*/*.*~
 .*
-
+*.gen
 public/*
 
 db/schema.rb
