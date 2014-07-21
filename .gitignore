@@ -27,3 +27,4 @@ solr/data
 solr/data/*
 solr/pids
 solr/*
+solr/development/*
