@@ -26,8 +26,9 @@
         <a class="post_title" href="/<%=@model_type %>/<%=result.id%>">Read More</a><br>
       <p class="pull-right posted_by">
         <i class="icon-user"></i><a href="/users/<%= result.user.id %>/user_<%= @model_type%>"><%=result.user.name%></a>
-        <i class="icon-time"></i> <%= (result.created_at) %>
+        <i class="icon-time"></i> <%= (result.created_at) %><br/>
       </p>
+      <div class="clear"></div>
     </div>
     <br/>
   <% end %>
