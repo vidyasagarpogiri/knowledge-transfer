@@ -23,5 +23,7 @@ public/*
 
 db/schema.rb
 
-solr/*
+solr/data
+solr/data/*
+solr/pids
 
