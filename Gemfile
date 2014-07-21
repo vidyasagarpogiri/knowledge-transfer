@@ -44,6 +44,14 @@ gem "kaminari"
 #for devise gem 
 gem 'devise'
 gem "omniauth-google-oauth2"
+
+
+gem 'sunspot_rails'
+
+gem 'sunspot_solr'
+
+gem 'progress_bar'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

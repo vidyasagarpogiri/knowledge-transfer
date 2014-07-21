@@ -6,4 +6,8 @@ class Article < ActiveRecord::Base
   validates :title,  :presence => true
   validates :content, :presence => true
   
+  searchable do
+    text :tags
+  end
+  
 end
