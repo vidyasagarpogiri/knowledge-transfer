@@ -7,7 +7,7 @@ class SearchController < ApplicationController
           Question.search do
              fulltext params[:q] do
               fields :title
-              minimum_match 1
+              minimum_match 3
             end
           end.results
       when "article"
@@ -28,7 +28,7 @@ class SearchController < ApplicationController
           CodeSnippet.search do
              fulltext params[:q] do
               fields :title
-              minimum_match 1
+              minimum_match 2
             end
           end.results
     end
