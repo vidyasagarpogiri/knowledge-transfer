@@ -8,7 +8,7 @@ class CodeSnippet < ActiveRecord::Base
   validates :content, presence: true
   
   searchable do
-    text :tags
+    text :tags, :title
   end
    
 end

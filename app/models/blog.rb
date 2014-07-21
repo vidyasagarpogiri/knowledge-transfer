@@ -7,7 +7,7 @@ class Blog < ActiveRecord::Base
   validates :content, :presence => true
   
   searchable do
-    text :tags
+    text :tags, :title
   end
   
 end
