@@ -37,6 +37,7 @@ Rails.application.routes.draw do
         get 'user_blogs'
         get 'user_code_snippets'
         get 'user_questions'
+        get 'user_profiles'
       end
     end
    

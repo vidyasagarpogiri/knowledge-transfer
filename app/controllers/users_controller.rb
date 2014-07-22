@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:user_articles, :user_blogs, :user_code_snippets, :user_questions]
+  before_action :find_user, only: [:user_articles, :user_blogs, :user_code_snippets, :user_questions, :user_profiles]
   
   def user_articles
     @user_related_articles = @user.articles.order(:id).page(params[:page]).per(4)
@@ -15,6 +15,12 @@ class UsersController < ApplicationController
   
   def user_questions
      @user_related_questions = @user.questions.order(:id).page(params[:page]).per(4)
+  end
+  
+  def user_profiles
+  
+    #raise params.inspect
+    @user= User.find(params[:id])
   end
   
   private
