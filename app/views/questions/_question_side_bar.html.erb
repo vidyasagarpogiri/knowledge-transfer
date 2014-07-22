@@ -19,7 +19,7 @@
   <div class="title_div">Recent questions</div>
     <div class="post_content">
       <ul>
-         <% Question.all.limit(5).each do |question| %>
+         <% Question.order('created_at DESC').limit(5).each do |question| %>
            <li><%= link_to truncate(question.title, :ommision => "... Read More", :length => 25), question %></li> 
          <% end %>
       </ul>

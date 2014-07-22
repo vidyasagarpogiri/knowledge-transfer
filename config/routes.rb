@@ -57,6 +57,7 @@ Rails.application.routes.draw do
     end
     
     get 'search' => 'search#search_engine'
+    get 'search/global_search_engine' => 'search#global_search_engine'
     
     
   # Example of regular route:
