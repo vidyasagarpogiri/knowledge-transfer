@@ -8,4 +8,5 @@ class UserMailer < ActionMailer::Base
   	@comment_user = comment_user
   	mail(:to => @email, :subject => "User Commented on your post")
   end
+
 end
