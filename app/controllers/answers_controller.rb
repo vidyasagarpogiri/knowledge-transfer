@@ -14,8 +14,7 @@ class AnswersController < ApplicationController
     @answer = @question.answers.new(answer_params)
     @answer_user=current_user
     @answer.save
-    #raise params.inspect
-    UserMailer.answers(@answer_user, @answer.content).deliver
+    UserMailer.answers(@answer_user, @answer.content, @question).deliver
     redirect_to @question
   end
   
