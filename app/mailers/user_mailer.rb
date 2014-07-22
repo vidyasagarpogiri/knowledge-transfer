@@ -8,5 +8,13 @@ class UserMailer < ActionMailer::Base
   	@comment_user = comment_user
   	mail(:to => @email, :subject => "User Commented on your post")
   end
-
+  
+  def answers(user, answer)
+    @user=user
+  	@email = @user.email
+  	@answer_user = answer
+  	  	#raise params.inspect
+  	mail(:to => @email, :subject => "User answered to your question", )
+  end
+  
 end

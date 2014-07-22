@@ -9,9 +9,13 @@ class AnswersController < ApplicationController
   end
   
   def create
+    @answer = current_user.answers.new(answer_params)
     @question = Question.find(params[:question_id])
     @answer = @question.answers.new(answer_params)
+    @answer_user=current_user
     @answer.save
+    #raise params.inspect
+    UserMailer.answers(@answer_user, @answer.content).deliver
     redirect_to @question
   end
   
