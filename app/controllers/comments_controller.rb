@@ -5,16 +5,21 @@ class CommentsController < ApplicationController
       @comment = Comment.new
     end
     
-    def create
+  def create
       @comment = current_user.comments.new(comment_params)
       if @comment.save
+        @user = @comment.commentable_type.classify.constantize.find(@comment.commentable_id).user
         #flash[:success] = "Commented successfully"
+        @comment_user = current_user
         redirect_to @comment.commentable_type.classify.constantize.find(@comment.commentable_id)
-       else
+        #raise params.inspect
+        @title = @comment.commentable_type.classify.constantize.find(@comment.commentable_id).title
+        UserMailer.comments(@user, @comment.content , @title, @comment_user).deliver
+      else
          flash[:error] = "Please enter some text"
          redirect_to @comment.commentable_type.classify.constantize.find(@comment.commentable_id)
        end
-    end
+   end
   
   
     private
