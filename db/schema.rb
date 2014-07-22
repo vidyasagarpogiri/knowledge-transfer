@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716061207) do
+ActiveRecord::Schema.define(version: 20140722091730) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20140716061207) do
     t.string   "token"
     t.string   "secret"
     t.string   "name"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
