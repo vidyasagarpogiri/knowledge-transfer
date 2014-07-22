@@ -20,6 +20,9 @@
         <i class="icon-user"></i> <%= link_to question.user.name, user_questions_user_path(question.user.id) %>
         <i class="icon-time"></i> <%= (question.created_at) %><br/>
       </p>
+      <p class="pull-left posted_by">
+        Answers:<%= question.answers.count %>
+      </p>
       <div class="clear"></div>
       </div>
     <br/>
