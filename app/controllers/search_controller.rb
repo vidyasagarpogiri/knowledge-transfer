@@ -7,13 +7,15 @@ class SearchController < ApplicationController
           Question.search do
              fulltext params[:q] do
               fields :title
-              minimum_match 3
+              fields :tags
+              minimum_match 1
           end
           end.results
       when "article"
           Article.search do
              fulltext params[:q] do
               fields :title
+              fields :tags
               minimum_match 1
           end
           end.results  
@@ -21,6 +23,7 @@ class SearchController < ApplicationController
           Blog.search do
              fulltext params[:q] do
               fields :title
+              fields :tags
               minimum_match 1
           end
           end.results  
@@ -28,6 +31,7 @@ class SearchController < ApplicationController
           CodeSnippet.search do
              fulltext params[:q] do
               fields :title
+              fields :tags
               minimum_match 2
           end
           end.results
