@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  layout "home_template", only: :user_profiles
+  
   before_action :find_user, only: [:user_articles, :user_blogs, :user_code_snippets, :user_questions, :user_profiles]
   
   def user_articles
@@ -18,9 +20,7 @@ class UsersController < ApplicationController
   end
   
   def user_profiles
-  
-    #raise params.inspect
-    @user= User.find(params[:id])
+ 
   end
   
   private
