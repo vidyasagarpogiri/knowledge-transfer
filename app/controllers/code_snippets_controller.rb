@@ -26,7 +26,7 @@ class CodeSnippetsController < ApplicationController
   
   def show
     @code =CodeSnippet.find(params[:id])
-    @comments = @code.comments
+    @comments = @code.comments.page(params[:page]).per(4)
   end
   
   def edit
