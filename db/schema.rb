@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723083935) do
+ActiveRecord::Schema.define(version: 20140723094634) do
 
   create_table "answers", force: true do |t|
     t.text     "content"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20140723083935) do
     t.datetime "updated_at"
     t.boolean  "stack_over_flow"
     t.integer  "category_id"
+    t.integer  "project_id"
   end
 
   create_table "users", force: true do |t|
