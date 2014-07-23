@@ -11,6 +11,7 @@ Blog.destroy_all
 Question.destroy_all
 CodeSnippet.destroy_all
 User.destroy_all
+Project.destroy_all
 
 Category.create(:title => "Web Technologies")
 Category.create(:title => "Mobile Technologies")
@@ -19,16 +20,23 @@ Category.create(:title => "Database")
 categories = Category.all.pluck(:id)
 
 
+Project.create(:title => "Eteki")
+Project.create(:title => "Listing By Seller")
+Project.create(:title => "Amzur Connect")
+Project.create(:title => "sportsmanSafe")
+Project.create(:title => "Color Design")
+projects = Project.all.pluck(:id)
+
 User.create(:name => "user1", :email => "user1@mailinator.com", :password => "password")
 User.create(:name => "user2", :email => "user2@mailinator.com", :password => "password")
 User.create(:name => "user3", :email => "user3@mailinator.com", :password => "password")
 User.create(:name => "user4", :email => "user4@mailinator.com", :password => "password")
 users = User.all.pluck(:id)
 
-Article.create(:title => "iOS Developers – Give a boost to your programming experience with Swift ", :content => "iOS Developers – Give a boost to your programming experience with Swift", :tags => "ios", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )            
-Article.create(:title => "SuiteWorld 2014 – A “suite” experience! ", :content => "SuiteWorld 2014, held at San Jose, was a great experience and exposure for us. Being first-timers at SuiteWorld, we wanted to get a good look at EVERYTHING – all the sessions, all the booths, all the networking opportunities", :tags => "rails", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )     
-Article.create(:title => "DBA on the Cloud – Is this the Present and the Future! ", :content => "Today’s Business Computing world stands to gain a lot from the Cloud – a new age digital networking phenomenon that is behind the notion of the Global enterprise – aptly integrating to the existing networking infrastructure after an optimal evaluation of the costs to arrive at effective business solutions.", :tags => "database", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )     
-Article.create(:title => "Ubuntu web server utilizing Apache2, Passenger, and using MySQL as the RDBMS ", :content => "Ubuntu web server utilizing Apache2, Passenger, and using MySQL as the RDBMS", :tags => "database", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )     
+Article.create(:title => "iOS Developers – Give a boost to your programming experience with Swift ", :content => "iOS Developers – Give a boost to your programming experience with Swift", :tags => "ios", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )            
+Article.create(:title => "SuiteWorld 2014 – A “suite” experience! ", :content => "SuiteWorld 2014, held at San Jose, was a great experience and exposure for us. Being first-timers at SuiteWorld, we wanted to get a good look at EVERYTHING – all the sessions, all the booths, all the networking opportunities", :tags => "rails", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )       
+Article.create(:title => "DBA on the Cloud – Is this the Present and the Future! ", :content => "Today’s Business Computing world stands to gain a lot from the Cloud – a new age digital networking phenomenon that is behind the notion of the Global enterprise – aptly integrating to the existing networking infrastructure after an optimal evaluation of the costs to arrive at effective business solutions.", :tags => "database", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )       
+Article.create(:title => "Ubuntu web server utilizing Apache2, Passenger, and using MySQL as the RDBMS ", :content => "Ubuntu web server utilizing Apache2, Passenger, and using MySQL as the RDBMS", :tags => "database", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )      
 
 
 Blog.create(:title => "Ubuntu web server utilizing Apache2, Passenger, and using MySQL as the RDBMS ", :content => "Ubuntu web server utilizing Apache2, Passenger, and using MySQL as the RDBMS", :tags => "database", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )  
