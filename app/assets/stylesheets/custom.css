@@ -305,7 +305,7 @@ color: rgb(49, 62, 100);
 }
 
 
-/* home page css*/
+/* -----------------------home page css-------------------*/
 
 .home
 {
@@ -368,15 +368,180 @@ color: rgb(49, 62, 100);
 {
   text-align: center;
   color:#525263;
+  width:1860px;
+  height:100px;
 }
+
+
+.btndiv
+{
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 800px;
+  width: 300px;
+  height:300px;
+}
+
+
+
+.btndiv .button
+{
+  padding:22px 26px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  position: relative;
+  height: 500px;
+  text-decoration:none;
+  font-size:20px;
+  
+}
+
+ .btndiv a:hover
+{
+  background-color: #fff;
+  color:#47A3FF;
+  opacity: 0.5px;
+}
+
+
+
+
+.cell6
+{
+  height: 300px;
+  width: 1100px;
+  margin-left: 300px; 
+  padding:50px;
+
+}
+.cell6 .image
+{
+  background-image: url('article.png');
+  background-size: cover;
+  height: 290px;
+  width: 350px;
+  margin-left: 1px; 
+  padding:2px;
+}
+
+.cell6 .article
+{
+  height: 290px;
+  width: 645px;
+  margin-left:390px; 
+  padding:px;
+  margin-top: -294px;
+}
+
+
+
+.cell7
+{
+  height: 300px;
+  width: 1100px;
+  padding:0px;
+  margin-left: 300px; 
+ 
+}
+
+.cell7 .que
+{
+  height: 290px;
+  width: 645px;
+  margin-top: -28px;
+}
+
+.cell7 .image
+{
+  background-image: url('que.jpg');
+  background-size: cover;
+  height: 290px;
+  width: 350px;
+  margin-left: 670px; 
+  margin-top:-290px
+}
+.cell8
+{
+  padding:0px;
+  height: 300px;
+  width: 1100px;
+  margin-left: 300px; 
+  margin-top:20px; 
+}
+
+.cell8 .image
+{
+  background-image: url('que.jpeg');
+  background-size: cover;
+  height: 290px;
+  width: 350px;
+  margin-left: 1px; 
+  padding:-5px;
+}
+.cell8 .blog
+{
+  height: 290px;
+  width: 645px;
+  margin-left:390px; 
+  padding:px;
+  margin-top: -290px;
+}
+
+
+.cell9
+{
+  padding:0px;
+  height: 300px;
+  width: 1100px;
+  margin-left: 300px; 
+  margin-top:40px; 
+}  
+
+
+
+.cell9 .code
+{
+  height: 290px;
+  width: 645px;
+  margin-top: 40px;
+}
+
+.cell9 .image
+{
+  background-image: url('blog.jpg');
+  background-size: cover;
+  height: 290px;
+  width: 350px;
+  margin-left: 670px; 
+  margin-top:-280px;
+  }
+
+.cell6 h1,.cell7 h1,.cell8 h1,.cell9 h1
+{
+ font-family:Arial Verdana !important;
+ color: #1947A3 !important;
+ font-size:30px !important;
+ font-weight: normal !important;
+}
+
+.cell6 p,.cell7 p,.cell8 p,.cell9 p
+{
+  word-spacing: 5px;
+  font-size:16px;
+  color:#666666;
+  font-family: Open Sans;
+}
+
+
+
 
 @media  screen and (max-width: 980px){
    .cell1 
    { 
       width: 100%;
-      color:#0F2E4C;
      float:left;
-     margin-top:-160px;
+     margin-top:-170px;
      margin-left: 50px;
      font-size: 30px;
      text-align: center;
@@ -386,13 +551,13 @@ color: rgb(49, 62, 100);
     .cell2 
   {
     font-weight: bold;
-    color:#0F2E4C;
+    color:#525263;
     font-family:Arial Verdana;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     width: 100%;
     height:100%
-    margin-top:-140px;
+    margin-top:180px;
     
   }
   
@@ -400,10 +565,10 @@ color: rgb(49, 62, 100);
   .cell3
 {
   text-align: center;
-  color:#0F2E4C;
+  color:#525263;
   font-family:Arial Verdana;
   font-size: 20px;
-  margin-top:-50px;
+  margin-top:40px;
   width: 100%;
    height:100%
 }
@@ -413,12 +578,16 @@ color: rgb(49, 62, 100);
   {
     text-align: center;
     margin-top:60px;
-    color:#0F2E4C;
+    color:#525263;
     font-family:Arial Verdana;
     font-size: 20px;
     width: 100%;
       height:100%
    }
+   
+   .home{
+    padding:25% 0% 45% 0%;
+  }
    
   }
 
@@ -428,15 +597,259 @@ color: rgb(49, 62, 100);
     max-width: 90%;
     max-height: 90%; 
   }
-  
-  .home{
-    padding:25% 0% 45% 0%;
-  }
-  
 }
 
 
 
 
+.aboutus
+{
+  width: 1860px;
+  height:500px;
+  background-color:#EFF7FB;
+  margin-top: 120px;
+}
+ 
+ .what
+ {
+  
+  padding-top:40px;
+  margin-left: 50px;
+  font-family: normal;
+ }
 
 
+.what h1
+{
+  font-weight: normal !important;
+  font-size:25px;
+  color:#002EB8;
+}
+
+
+.desc
+{
+  margin-top: 50px;
+  margin-left: 50px;
+  word-spacing: 5px;
+  font-size:15px;
+  color:black
+}  
+
+.holder
+{
+  margin-left:250px;
+  width: 1100px;
+}
+
+
+/* -------------------------- end of home page css -----------------------*/
+
+/* -------------------------- user page css -----------------------*/
+
+
+.nav-tabs
+{
+  margin-top: 50px;
+}
+
+.nav-tabs li
+{
+  list-style-type: none;
+}
+
+
+.nav-tabs li a
+{
+  text-decoration:none;
+}
+
+
+.subtabs
+{
+  width: 100%;
+  float: right;
+  font-weight: normal;
+}
+
+
+.subtabs a
+{
+  border: 1px solid #CCC;
+  text-decoration:none;
+  display: block;
+  float: right;
+  margin-right: 5px;
+  padding: 2px 4px 4px;
+  color: #808185;
+  font-size: 13px;
+}
+
+.subtabs a:visited 
+{
+    color: ;
+}
+
+.user-info 
+{
+    clear: both;
+    height: 100px;
+    width: 340px;
+    margin: 8px 5px;
+    overflow: hidden;
+}
+
+ #user-browser 
+{
+    margin-left: 5px !important;
+    margin-top: -15px;
+}
+
+ .user-info .user-gravatar48 
+{
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+
+.user-gravatar48 
+{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-collapse: separate;
+}
+
+.user-gravatar48 a 
+{                                                                     
+    color: #07C;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.user-details 
+{
+    width: 175px !important;
+}
+
+
+.user-info .user-details 
+{
+    float: left;
+    margin-left: 10px;
+    width: 145px;
+    overflow: hidden;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.user-info .reputation-score 
+{
+    font-size: 12px;
+    margin-right: 0px;
+}
+.reputation-score 
+{
+    font-weight: bold;
+    color: #444;
+    font-size: 12px;
+    margin-right: 2px;
+    margin-top: -15px;
+}
+
+.user-tags 
+{
+    clear: both;
+    font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif;
+    font-size: 13px;
+    margin-left: 53px;
+    color: #888;
+}
+
+/* -------------------------- end of user index page css -----------------------*/
+
+/* -------------------------- user profile page css -----------------------*/
+
+
+#name
+{
+  font-size: 18px;
+  color:#07C;
+  font-weight: normal;  
+}
+
+.userdetails 
+{
+  font-size: 14px;
+  font-weight:normal;
+  margin-top:0px;
+  margin-left: 0px;
+}
+
+.userdetails th,.userdetails  td
+{
+padding: 3px 20px 3px 0px;
+}
+
+.userdetails th
+{
+  font-size: 13px;
+  font-weight:normal;
+  color:#A0A0A0;
+}
+
+.userimage
+{
+  padding: 10px;
+  margin-left: 0px !important;
+}
+
+
+.usercomment 
+{ 
+  background-color: #EFF7FB;
+  font-size: 14px;
+  font-family: italic;
+  color:#727B82;
+  margin-left: 20px !important;
+  height: 200px;
+}
+
+.dis ul.nav li a
+{
+  color: #07C!important;
+}  
+
+
+/* -------------------------- end of profile page css -----------------------*/
+
+/* -------------------------- user edit profile page css -----------------------*/
+
+
+
+#inputEmail, #inputPassword
+{
+  width:400px;
+}
+
+#submit
+{
+  margin-left: 520px;
+  margin-top: 20px;
+}
+
+
+/* --------------------------end of user edit profile page css -----------------------*/
+
+
+
+
+
+
+ul.dropdown-menu li a
+{
+  color: black!important;
+}
+
+a .btn .dropdown
+{
+  background-color: red !important;
+}

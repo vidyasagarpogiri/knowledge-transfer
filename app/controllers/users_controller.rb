@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  layout "home_template", only: [:edit, :profile]
+  
+  layout "profile_template", only: [:edit, :profile]
   
   before_action :find_user, only: [:user_articles, :user_blogs, :user_code_snippets, :user_questions, :edit, :update, :profile, :new]
   
@@ -25,18 +26,18 @@ class UsersController < ApplicationController
   end
   
   def edit
-      if @user.id == current_user.id
-       @user =User.new
-      else
-      redirect_to profile_user_path(@user)
-    end
+
   end
   
   
   def update
     #@user
+    if @user.id == current_user.id
       @user.update(user_params)
       redirect_to profile_user_path(@user)
+     else
+     redirect_to profile_user_path(@user)
+     end
   end
   
   
