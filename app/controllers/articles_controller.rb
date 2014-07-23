@@ -54,7 +54,7 @@ class ArticlesController < ApplicationController
   private
   
   def params_articles
-    params.require(:article).permit(:title, :content, :tags, :category_id)
+    params.require(:article).permit(:title, :content, :tags, :category_id, :project_id)
   end
   
   def user_identification
