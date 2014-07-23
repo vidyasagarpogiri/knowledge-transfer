@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
- # mount_uploader :avatar, AvatarUploader
+  mount_uploader :avatar, AvatarUploader
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
       user.secret = auth.credentials.secret
       user.email = auth.info.email
       user.name = auth.info.name
-      user.avatar = auth.info.image
+      user.remote_avatar_url = auth.info.image
       user.save!
     end
   end
