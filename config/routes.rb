@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
     root :to => 'home#index'
     
+    resources :projects
     
     resources :questions do 
       resources :answers
@@ -37,7 +38,7 @@ Rails.application.routes.draw do
         get 'user_blogs'
         get 'user_code_snippets'
         get 'user_questions'
-        get 'user_profiles'
+        get 'profile'
       end
     end
    

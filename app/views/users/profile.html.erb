@@ -1,0 +1,12 @@
+<% if @user.id == current_user.id %>
+<div class = "right-pull"><%= link_to "Edit", edit_user_path(@user) %></div>
+<% end %>
+<h3 class="h3_title">User Profile</h3>
+<div class="clear"></div>
+ <%= image_tag(@user.avatar_url, :size => "160x180") if @user.avatar? %>
+<br>
+
+Name:<%= @user.name%><br>
+Profile Name: <%= @user.profile_name %><br>
+Email:<%= @user.email %><br>
+
