@@ -407,70 +407,6 @@ color: rgb(49, 62, 100);
 
 
 
-@media  screen and (max-width: 980px){
-   .cell1 
-   { 
-      width: 100%;
-      color:#0F2E4C;
-     float:left;
-     margin-top:-160px;
-     margin-left: 50px;
-     font-size: 30px;
-     text-align: center;
-       height:100%
-   }
-   
-    .cell2 
-  {
-    font-weight: bold;
-    color:#0F2E4C;
-    font-family:Arial Verdana;
-    font-size: 50px;
-    text-align: center;
-    width: 100%;
-    height:100%
-    margin-top:-140px;
-    
-  }
-  
-   
-  .cell3
-{
-  text-align: center;
-  color:#0F2E4C;
-  font-family:Arial Verdana;
-  font-size: 20px;
-  margin-top:-50px;
-  width: 100%;
-   height:100%
-}
- 
-  
-  .cell4
-  {
-    text-align: center;
-    margin-top:60px;
-    color:#0F2E4C;
-    font-family:Arial Verdana;
-    font-size: 20px;
-    width: 100%;
-      height:100%
-   }
-   
-  }
-
-  @media screen and (orientation: portrait) {
-  body 
-  { 
-    max-width: 90%;
-    max-height: 90%; 
-  }
-  
-  .home{
-    padding:25% 0% 45% 0%;
-  }
-  
-}
 .cell6
 {
   height: 300px;
@@ -481,7 +417,7 @@ color: rgb(49, 62, 100);
 }
 .cell6 .image
 {
-  background-image: url('article.png');
+  background-image: url('/home/priyanka/Desktop/modified/bootstrap/img/article.png');
   background-size: cover;
   height: 290px;
   width: 350px;
@@ -518,7 +454,7 @@ color: rgb(49, 62, 100);
 
 .cell7 .image
 {
-  background-image: url('que.jpg');
+  background-image: url('/home/priyanka/Desktop/modified/bootstrap/img/que.jpg');
   background-size: cover;
   height: 290px;
   width: 350px;
@@ -536,7 +472,7 @@ color: rgb(49, 62, 100);
 
 .cell8 .image
 {
-  background-image: url('que.jpeg');
+  background-image: url('/home/priyanka/Desktop/modified/bootstrap/img/que.jpeg');
   background-size: cover;
   height: 290px;
   width: 350px;
@@ -573,7 +509,7 @@ color: rgb(49, 62, 100);
 
 .cell9 .image
 {
-  background-image: url('blog.jpg');
+  background-image: url('/home/priyanka/Desktop/modified/bootstrap/img/blog.jpg');
   background-size: cover;
   height: 290px;
   width: 350px;
@@ -662,6 +598,19 @@ color: rgb(49, 62, 100);
     max-height: 90%; 
   }
 }
+
+.bg
+{
+  background-image: url('/home/priyanka/Desktop/modified/bootstrap/img/.jpg') !important;
+   background-repeat:no-repeat;
+   height:100%;
+   width:100%;
+   background-position: center;
+   background-size: cover;  
+  
+}
+
+
 
 
 .aboutus
@@ -900,9 +849,3 @@ padding: 3px 20px 3px 0px;
 
 
 /* --------------------------end of user edit profile page css -----------------------*/
-
-
-
-
-
-
