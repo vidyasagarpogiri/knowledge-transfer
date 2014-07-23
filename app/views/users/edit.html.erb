@@ -1,15 +1,44 @@
-<%= form_for @user do |f| %>
-  <%= f.label :avatar, "Profile Pic" %>
-  <img src=<%= @user.avatar %> width="160" height="180"/> <br>
-  <%= f.file_field :avatar %><br>
+<div id="username"> 
+  <h1 id="name"> Update My Profile </h1>
+</div><hr>
 
-  <%= f.label :name, "Name" %>
-  <%= f.text_field :name %><br>
-  <%= f.label :profile_name, "Profile Name" %>
-  <%= f.text_field :profile_name %><br>
-  <%= f.label :email, "Email"%>
-  <%= f.text_field :email %><br>
- 
-  
-  <%= f.submit "Submit"%>
+<%= form_for @user do |f| %>
+  <div class="control-group">
+    <label class="control-label" for="username">Profile Name</label>
+    <div class="controls">
+      <%= f.text_field :name, :id => "inputEmail", :placeholder => "First Name" %>
+    </div>
+  </div>
+         
+  <div class="control-group">
+    <label class="control-label" for="firstname">First Name</label>
+    <div class="controls">
+      <%= f.text_field :name, :id => "inputEmail", :placeholder => "Last Name" %>
+    </div>
+   </div>
+         
+   <div class="control-group">
+     <label class="control-label" for="secondname">Last Name</label>
+     <div class="controls">
+      <%= f.text_field :profile_name, :id => "inputEmail", :placeholder => "Profile Name" %>
+     </div>
+   </div>
+         
+   <div class="control-group">
+     <label class="control-label" for="inputEmail">Email</label>
+     <div class="controls">
+       <%= f.text_field :email, :id => "inputEmail", :placeholder => "Email" %>
+     </div>
+    </div>
+         
+   <div class="control-group">
+     <label class="control-label" for="inputCNewPassword">Upload New Photo</label>
+     <div class="controls">
+       <img src=<%= @user.avatar %> width="160" height="180"/> <br>
+       <%= f.file_field :avatar %><br>
+     </div>
+    </div>
+    
+    <%= f.submit "Update", :class => "btn btn-success"%>
 <% end %>
+
