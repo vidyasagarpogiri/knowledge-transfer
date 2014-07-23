@@ -54,7 +54,7 @@ class CodeSnippetsController < ApplicationController
   private
   
   def code_params
-    params.require(:code_snippet).permit(:title, :content, :tags, :category_id)
+    params.require(:code_snippet).permit(:title, :content, :tags, :category_id, :project_id)
   end
   
   def user_identification
