@@ -12,9 +12,8 @@ class AnswersController < ApplicationController
     @answer = current_user.answers.new(answer_params)
     @question = Question.find(params[:question_id])
     @answer = @question.answers.new(answer_params)
-    @answer_user=current_user
     @answer.save
-    UserMailer.answers(@answer_user, @answer.content, @question).deliver
+    UserMailer.answers(@answer).deliver
     redirect_to @question
   end
   
