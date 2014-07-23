@@ -30,22 +30,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script type='text/javascript'>
-            jQuery(document).ready(function()
-            {
-	            var page2TopPosition = jQuery('#page2').offset().top;
-	            jQuery('#scroll').click(function()
-	            {
-		            jQuery('html, body').animate({scrollTop:page2TopPosition}, 'slow');
-		            return false;
-	            });
-	
-	           jQuery('#page2').parent().click(function(){
-		         jQuery('html, body').animate({scrollTop:0}, 'slow');
-		         return false;
-	         })
-          });
-      </script>
+
     
   </head>
   <body >

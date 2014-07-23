@@ -10,7 +10,7 @@ namespace :dev do
   task :reset do
     system('echo "$(tput setaf 7)$(tput setab 1)********Installing Gems********$(tput sgr 0)"')
     system('bundle install')  
-    [ "db:drop", "db:create", "db:migrate", "db:seed", "sunspot:solr:restart", "sunspot:solr:reindex"].each { |t| puts "#{t}......"; Rake::Task[t].invoke }
+    [ "db:drop", "db:create", "db:migrate", "db:seed", "sunspot:solr:restart"].each { |t| puts "#{t}......"; Rake::Task[t].invoke }
     system("rm -rf *~")
     system("rm -rf *.*~")
     system("rm -rf */*/*.*~")

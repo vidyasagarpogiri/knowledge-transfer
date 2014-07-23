@@ -838,3 +838,18 @@ padding: 3px 20px 3px 0px;
 
 
 /* --------------------------end of user edit profile page css -----------------------*/
+
+
+
+
+
+
+ul.dropdown-menu li a
+{
+  color: black!important;
+}
+
+a .btn .dropdown
+{
+  background-color: red !important;
+}
