@@ -17,9 +17,15 @@
           <% end %>
         </div><hr>
         <div class="span12">
+        <%  if @user.avatar? %>
           <div class="userimage span3">
-             <%= image_tag(@user.avatar_url, :size => "160x180") if @user.avatar? %>
+             <%= image_tag(@user.avatar_url, :size => "160x180") %>
           </div>
+        <% else %>
+          <div class="userimage span3">
+            <img alt="" src="/assets/user.jpeg" height="160" width="180"></img>
+          </div>
+        <% end %>
           <div class="userdetails span4">
             <table>
               <tbody>
