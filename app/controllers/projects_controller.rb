@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-
+  layout "home_template", only: [:new, :edit, :create, :show, :index]
   def index
     @projects = Project.all
   end

@@ -1,4 +1,7 @@
 class CodeSnippetsController < ApplicationController
+
+  layout "home_template", only: [:new, :edit]
+  
   before_filter :authenticate_user!, only: [:new, :edit]
   
   before_filter :user_identification, only: :edit
@@ -14,8 +17,7 @@ class CodeSnippetsController < ApplicationController
   def create
     #raise params.inspect
     @code= current_user.code_snippets.create(code_params)
-    if @code.save
-      flash[:success] = "Successfully saved"
+    if @code.save     
       redirect_to @code
     else
       flash[:error] = "Title and content should not be empty"
@@ -35,8 +37,7 @@ class CodeSnippetsController < ApplicationController
   
   def update
    @code = CodeSnippet.find(params[:id])
-   if @code.update(code_params)
-     flash[:success] = "Successfully updated"
+   if @code.update(code_params)     
      redirect_to @code
      else
       flash[:error] = "Title and content should not be empty"

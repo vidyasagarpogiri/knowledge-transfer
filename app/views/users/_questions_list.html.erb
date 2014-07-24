@@ -1,0 +1,8 @@
+<div>
+<% @user_questions.each do |question|%>
+  <%= link_to question.title, question_path %><hr/>
+<% end %>
+</div>
+<div class="pull-right">
+<%= link_to 'More questions',  user_questions_user_path %>
+</div>

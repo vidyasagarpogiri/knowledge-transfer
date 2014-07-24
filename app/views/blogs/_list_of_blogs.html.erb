@@ -14,10 +14,11 @@
         </p>
         <div class="clear"></div>
       <h4><%= link_to blog.title, blog_path(blog.id), :class=>"post_title"  %></h4>
-      <%= truncate(blog.content, :ommision => "... Read More", :length => 350) %>
+      <%# truncate(blog.content, :ommision => "... Read More", :length => 350) %>
+      <span class="content_in_list"><%= raw(blog.content) %></span>
         <%= link_to "Read More",blog_path(blog.id) %><br>
       <p class="pull-right posted_by">
-        <i class="icon-user"></i> <%= link_to blog.user.name, user_blogs_user_path(blog.user.id) %>
+        <i class="icon-user"></i> <%= link_to blog.user.name, profile_user_path(blog.user.id) %>
         <i class="icon-time"></i> <%= (blog.created_at) %>
       </p>
     </div>
@@ -29,3 +30,6 @@
 </div>
 <%= render "blogs/blog_side_bar" %>
 
+
+
+ 

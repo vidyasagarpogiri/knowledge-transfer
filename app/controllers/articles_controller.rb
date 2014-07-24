@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+
+ layout "home_template", only: [:new, :edit]
+  
   before_filter :authenticate_user!, only: [:new, :edit]
   
   before_filter :user_identification, only: :edit 
@@ -30,14 +33,8 @@ class ArticlesController < ApplicationController
     @comment = Comment.new
   end
   
-  def edit
-   
-   #if @article.find(params[:user_id]) == current_user.id
-    @article = Article.find(params[:id])
-   #else
-   # redirect_to @article
-  # end  
-     
+  def edit     
+    @article = Article.find(params[:id])        
   end
   
   def update
@@ -63,7 +60,7 @@ class ArticlesController < ApplicationController
    @article = Article.find(params[:id])
    if @article.user_id ==current_user.id
    else
-    flash[:notice]= "you are not autherised for this action"
+    flash[:notice]= "you are not authorised for this action"
     redirect_to @article
    end 
   end

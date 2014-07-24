@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  layout "home_template", only: [:new, :edit, :create, :show, :index]
   before_action :find_category, only: [:show_articles, :show_blogs, :show_code_snippets, :show_questions]
   def index
     @categories = Category.all

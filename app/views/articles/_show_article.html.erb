@@ -26,7 +26,7 @@
   <%= raw @article.content %>
 </p>
 
-<p class="post_content">
+<p class="pull-down">
 <b>Project:</b><%= @article.project.title %>
 </p>
 
@@ -47,5 +47,8 @@
 <div>
   <%= render 'comments/new' %>
 </div>
+
+<p class="pull-left Back">
+<%= link_to "Back", articles_path %></p>
 
 <%= render "articles/article_side_bar" %>
