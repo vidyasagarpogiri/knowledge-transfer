@@ -1,6 +1,13 @@
 class CommentsController < ApplicationController
   before_filter :authenticate_user!, only: [:create]
-      
+    
+    def index
+      @comments = Comment.order('created_at DESC').page(params[:page]).per(4)
+      respond_to do |format|
+        format.js
+      end
+    end 
+   
     def new
       @comment = Comment.new
     end

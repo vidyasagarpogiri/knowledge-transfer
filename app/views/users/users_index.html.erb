@@ -1,0 +1,48 @@
+<div class="page-description" style="margin-top: 50px;">
+        <h1 id="name"> All users </h1>
+          <table style="width: 100%;">
+            <tbody>
+              <tr>
+                <td>
+                  Type to find users:
+                  <input id="userfilter" class="userfilter" type="text" style="margin-left: 10px;" value="" name="userfilter"></input>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+     <div class="clear"></div> 
+      <div id="user-browse">
+
+           <% @users.each do |user| %>
+
+                  <div class="user-info user-hover">
+                      <div class="user-gravatar48">
+                          <a href="/users/1144035/gordon-linoff">
+                          <% if user.avatar? %>
+                              <div class="gravatar-wrapper-48">
+                                  <%= image_tag(user.avatar_url, :size => "160x180") %>
+                              </div>
+                          <% else %>
+                              <div class="gravatar-wrapper-48">
+                                   <img alt="" src="/assets/user.jpeg"></img>
+                              </div>
+                          <%end%>
+                          </a>
+                      </div>
+                      <div class="user-details">
+                       <%= link_to user.name, profile_user_path(user.id) %>
+                       <br>
+                       <span class="user-location"><%= user.email %></span>                       
+                  
+                    <!--   <span class="reputation-score" dir="ltr" title="reputation this month: 8093 total reputation: 187179">10 </span> -->
+                      
+                      </div>
+                  </div>
+                  <div class="clear"></div>
+            <% end %>
+        
+      </div>
+     
+
+

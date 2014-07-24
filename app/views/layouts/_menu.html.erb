@@ -1,4 +1,8 @@
 <ul class="nav pull-right">
+  
+  <li>
+    <%= link_to "Users",users_users_index_path, :class=>params[:controller]=="users"? "active":"" %>
+  </li>
   <li>
     <%= link_to "Articles",articles_path, :class=>params[:controller]=="articles"? "active":"" %>
   </li>
@@ -11,11 +15,14 @@
   <li>
     <%= link_to "Code Base", code_snippets_path, :class=>params[:controller]=="code_snippets"? "active":"" %>
   </li>
-  <% if session["oauth"].present? %>
-      <!-- <li><a href="#"><%= session["oauth"]["first_name"] %></a></li> -->
+  <% if current_user.present? %>
+  
+  <li><a class="" data-toggle="dropdown" href="#"><%= session["oauth"]["first_name"] %></a>
+    <ul class="dropdown-menu">
+      <li><%= link_to "Profile", profile_user_path(current_user.id) %><br/></li>
       <li><%= link_to "Logout", destroy_user_session_path, id: "logout" %></li>
-      <li><%= link_to "Profile", profile_user_path(current_user) %></li>
-      
+    </ul>
+  </li>
   <% else %>
       <li> 
         <%= link_to "Login", new_user_session_path, id: "login" %>

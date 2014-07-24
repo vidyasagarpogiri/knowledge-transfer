@@ -14,3 +14,7 @@
       <div class="clear"></div>
     <% end %>
 </div>
+<div id="paginator">
+  <%= paginate @comments, :remote => true %>
+</div>
+
