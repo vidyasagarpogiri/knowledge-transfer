@@ -14,7 +14,8 @@
         </p>
         <div class="clear"></div>
       <h4><%= link_to code.title, code_snippet_path(code.id), :class=>"post_title"  %></h4>
-      <%= truncate(code.content, :ommision => "... Read More", :length => 350) %>
+      <%# truncate(code.content, :ommision => "... Read More", :length => 350) %>
+        <span class="content_in_list"><%= raw(code.content) %></span>
         <%= link_to "Read More",code_snippet_path(code.id) %><br>
       <p class="pull-right posted_by">
         <i class="icon-user"></i> <%= link_to code.user.name, user_code_snippets_user_path(code.user.id) %>
@@ -29,7 +30,4 @@
 </div>
 
 <%= render "code_snippets/code_snippet_side_bar" %>
-
-
-
 
