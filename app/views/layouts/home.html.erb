@@ -30,7 +30,15 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+      <script type='text/javascript'>
+            $(document).ready(function(){
+	            var page2TopPosition = $('#page2').offset().top;
+	            $('#scroll').click(function() {
+	            $('html, body').animate( { scrollTop:page2TopPosition } , 'slow'); 
+	            return false; 
+	            });
+           } );
+      </script>
     
   </head>
   <body >
@@ -47,7 +55,7 @@
        <p >Amzur's community for sharing Articles,Blogs and Questions</p>
   </div>
   <div class="cell4">
-       <p>Sign with Amzur id:</p>
+       <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSign with Amzur id:</p>
        
        <a href="/users/auth/google_oauth2" class="btn btn-large btn-success"> SignIn </a>
 
