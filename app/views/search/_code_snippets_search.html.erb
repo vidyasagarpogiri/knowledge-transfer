@@ -1,0 +1,16 @@
+  <div id="span12" class="span12">
+     <h3 class="title"> Code Bases</h3><br/><hr>
+       <% if @code_snipets.present? %>
+       <ul>
+         <% @code_snippets.each do |code_snippet|%>
+          <li>
+            <%= link_to code_snippet.title, code_snippet_path(code_snippet.id) %><hr/>
+          </li>
+         <% end %>
+       </ul>
+      <% else %>
+      <div class="alert alert-success fade in">
+        <a class="close" data-dismiss="alert" href="#">×</a>No Code found related to your Search      
+      </div>
+      <% end %>
+   </div> 

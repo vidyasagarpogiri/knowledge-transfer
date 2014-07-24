@@ -1,0 +1,16 @@
+  <div  id="span12" class="span12">
+    <h3 class="title"> Questions</h3><br/><hr>
+      <% if @questions.present? %>
+      <ul>
+        <% @questions.each do |question|%>
+          <li>
+            <%= link_to question.title, question_path(question.id) %><hr/>
+          </li>
+        <% end %>
+      </ul>
+      <% else %>
+        <div class="alert alert-success fade in">
+          <a class="close" data-dismiss="alert" href="#">×</a>No questions found related to your Search      
+        </div>
+      <% end %>
+  </div>

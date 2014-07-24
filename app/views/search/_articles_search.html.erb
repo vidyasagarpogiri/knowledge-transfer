@@ -1,0 +1,17 @@
+  <div id="span12" class="span12">
+    <h3 class="title">Articles</h3><br/><hr>
+      <ul>
+        <% if @articles.present? %>
+        <% @articles.each do |article| %>
+          <li>
+            <%= link_to article.title, article_path(article.id) %><hr/>
+          </li>
+        <% end %>
+      </ul>
+      <% else %>
+      <div class="alert alert-success fade in">
+        <a class="close" data-dismiss="alert" href="#">×</a>No Articles found related to your Search      
+      </div>
+
+      <% end %>
+  </div>
