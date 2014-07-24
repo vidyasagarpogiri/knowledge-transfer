@@ -1,7 +1,9 @@
 class UserMailer < ActionMailer::Base
   default from: "from@example.com"
   
-  def comments(user, comment, title, comment_user)
+  def comments(user, comment, title, comment_user, type)
+  #raise params.inspect
+    @commentable_type = type
   	@email = user.email
   	@content = comment
   	@title = title

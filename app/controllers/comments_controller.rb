@@ -21,7 +21,9 @@ class CommentsController < ApplicationController
         redirect_to @comment.commentable_type.classify.constantize.find(@comment.commentable_id)
         #raise params.inspect
         @title = @comment.commentable_type.classify.constantize.find(@comment.commentable_id).title
-        UserMailer.comments(@user, @comment.content , @title, @comment_user).deliver
+        @type = @comment.commentable_type
+        #raise params.inspect
+        UserMailer.comments(@user, @comment.content , @title, @comment_user, @type).deliver
       else
          flash[:error] = "Please enter some text"
          redirect_to @comment.commentable_type.classify.constantize.find(@comment.commentable_id)
