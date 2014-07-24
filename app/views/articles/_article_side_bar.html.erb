@@ -30,7 +30,7 @@
   <ul>
     <% a= [] %>
       <% Article.all.map(&:tags).each do |tag| %>
-        <%  a<<tag.split(",") %>
+        <%  a << tag.split(",") %>
       <% end %>
       <% a=  a.flatten.uniq %>
       <% a.first(5).each do |tag|%>
