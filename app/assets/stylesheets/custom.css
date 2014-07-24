@@ -49,6 +49,11 @@ p
 {
    width: 94%;
 }
+.wysihtml5-sandbox
+{
+  width:800px !important;
+}
+
 
 .posts
 {
