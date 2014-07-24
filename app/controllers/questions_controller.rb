@@ -1,4 +1,7 @@
 class QuestionsController < ApplicationController
+
+ layout "home_template", only: [:new, :edit]
+  
   before_filter :authenticate_user!, only: [:new, :edit]
   
   # before_action is to perform action, before actions in the array
@@ -17,7 +20,7 @@ class QuestionsController < ApplicationController
     def create
       @question = current_user.questions.new(question_params)
       if @question.save
-        flash[:success] = "Successfully saved"
+        
         redirect_to @question
       else
         flash[:error] = "Title and content should not be empty"

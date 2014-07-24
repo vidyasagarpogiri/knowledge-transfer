@@ -1,4 +1,7 @@
 class CodeSnippetsController < ApplicationController
+
+  layout "home_template", only: [:new, :edit]
+  
   before_filter :authenticate_user!, only: [:new, :edit]
   
   before_filter :user_identification, only: :edit
