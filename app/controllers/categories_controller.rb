@@ -30,19 +30,19 @@ class CategoriesController < ApplicationController
   end
   
   def show_articles
-    @category_related_articles = @category.articles.order(:id).page(params[:page]).per(4)
+    @category_related_articles = @category.articles.order(:id).page(params[:page]).per(5)
   end
   
   def show_blogs
-     @category_related_blogs =@category.blogs.order(:id).page(params[:page]).per(4)
+     @category_related_blogs =@category.blogs.order(:id).page(params[:page]).per(5)
   end
   
   def show_code_snippets
-     @category_related_code_snippets = @category.code_snippets.order(:id).page(params[:page]).per(4)
+     @category_related_code_snippets = @category.code_snippets.order(:id).page(params[:page]).per(5)
   end
   
   def show_questions
-     @category_related_questions = @category.questions.order(:id).page(params[:page]).per(4)
+     @category_related_questions = @category.questions.order(:id).page(params[:page]).per(5)
   end
      
   private
