@@ -842,7 +842,7 @@ padding: 3px 20px 3px 0px;
 
 
 
-
+/* profile drop down */
 
 
 ul.dropdown-menu li a
@@ -855,7 +855,9 @@ a .btn .dropdown
   background-color: red !important;
 }
 
+/* end of profile drop down */
 
+/* user index display */
 .singleuser
 {
   box-shadow:  2px 2px 5px #888888;
@@ -865,3 +867,28 @@ a .btn .dropdown
   margin-left: 10px;
   margin-top: 20px;
 }
+
+/* end of user index */
+
+
+/* global search */
+ .span12 h3.title
+{
+padding-left: 10px;
+}
+h5 a
+{
+  color:black !important;
+  font-weight:normal;
+  text-decoration:none;
+}
+
+#span12
+{
+  box-shadow: 1px 2px 1px #C7C7C7;
+  /*height:270px;*/
+  width: 1050px;
+  margin-top: 50px;
+}
+
+/* end of global search */
