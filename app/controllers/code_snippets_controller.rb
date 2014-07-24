@@ -26,7 +26,7 @@ class CodeSnippetsController < ApplicationController
   
   def show
     @code =CodeSnippet.find(params[:id])
-    @comments = @code.comments
+    @comments = @code.comments.page(params[:page]).per(4)
   end
   
   def edit
@@ -54,7 +54,7 @@ class CodeSnippetsController < ApplicationController
   private
   
   def code_params
-    params.require(:code_snippet).permit(:title, :content, :tags, :category_id)
+    params.require(:code_snippet).permit(:title, :content, :tags, :category_id, :project_id)
   end
   
   def user_identification

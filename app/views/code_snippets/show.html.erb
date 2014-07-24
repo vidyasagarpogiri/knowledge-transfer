@@ -18,6 +18,7 @@
 <p class="post_content">
   <%= raw @code.content %>
 </p>
+<b>Project:</b><%= @code.project.title %>
 <div class="clear"></div>
 <%# link_to "Show All", code_snippets_path %>
 <p class="pull-right posted_by">
@@ -27,7 +28,8 @@
 
 <div class="clear"></div>
 
-<div>
+
+  <div class="comments_index">
   <%= render 'comments/index' %>
 </div>
 <div>
