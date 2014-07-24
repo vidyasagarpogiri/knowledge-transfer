@@ -196,9 +196,9 @@ h3.title
 {
   text-align: left;
   font-family: normal;
-  font-style: oblique;
   font-weight: 100;
-  color: black;
+  color:  #1947A3;
+   float:left;
 }
 
 span p strong
@@ -835,6 +835,7 @@ padding: 3px 20px 3px 0px;
   margin-left: 520px;
   margin-top: 20px;
 }
+
 
 
 /* --------------------------end of user edit profile page css -----------------------*/
