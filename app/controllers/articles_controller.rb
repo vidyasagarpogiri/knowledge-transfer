@@ -29,14 +29,8 @@ class ArticlesController < ApplicationController
     @comment = Comment.new
   end
   
-  def edit
-   
-   #if @article.find(params[:user_id]) == current_user.id
-    @article = Article.find(params[:id])
-   #else
-   # redirect_to @article
-  # end  
-     
+  def edit     
+    @article = Article.find(params[:id])        
   end
   
   def update
