@@ -10,11 +10,25 @@ namespace :dev do
   task :reset do
     system('echo "$(tput setaf 7)$(tput setab 1)********Installing Gems********$(tput sgr 0)"')
     system('bundle install')  
-    [ "sunspot:solr:restart", "db:drop", "db:create", "db:migrate", "db:seed"].each { |t| puts "#{t}......"; Rake::Task[t].invoke }
+   
+    sleep 5 # FIXME: add a timer/loop to check if solr/dj started
+    ["dev:restart_solr", "db:drop", "db:create", "db:migrate", "db:seed"].each { |t| puts "#{t}......"; Rake::Task[t].invoke }
+
     system("rm -rf *~")
     system("rm -rf *.*~")
     system("rm -rf */*/*.*~")
     system("rm -rf */*/*/*.*~")
+  end
+  
+  
+  task :restart_solr do
+    begin
+      Rake::Task["sunspot:solr:stop"].invoke
+    rescue
+      puts "Failed to stop Solr. May be it wasn't running"
+    end
+    sleep 3 # FIXME: add a timer/loop to check if solr stopped
+    Rake::Task["sunspot:solr:start"].invoke
   end
   
   task :codeDiff do
@@ -25,4 +39,4 @@ namespace :dev do
   end
   
   
-end
+ end
