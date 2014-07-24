@@ -1,8 +1,8 @@
-<div>
+<div class="articles">
 <% @user_articles.each do |article|%>
   <%= link_to article.title, article_path %><hr/>
 <% end %>
 </div>
-<div class="pull-right">
-<%= link_to 'More blogs',  user_articles_user_path %>
+<div class= "pull-right">
+<%= link_to 'More articles',  user_articles_user_path, :remote=> true %>
 </div>

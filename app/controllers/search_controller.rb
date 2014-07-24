@@ -35,6 +35,9 @@ class SearchController < ApplicationController
               minimum_match 1
           end
           end.results
+      when "users"
+          redirect_to "/search/users_search?q=#{params[:q]}"
+          
     end
   end
 
@@ -70,6 +73,10 @@ class SearchController < ApplicationController
                 minimum_match 1
               end 
           end.results
+  end
+  
+  def users_search
+    
   end
 
 
