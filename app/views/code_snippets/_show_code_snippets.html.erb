@@ -22,7 +22,7 @@
 <div class="clear"></div>
 <%# link_to "Show All", code_snippets_path %>
 <p class="pull-right posted_by">
-  <i class="icon-user"></i> <%= @code.user.name %>
+  <i class="icon-user"></i><%= link_to @code.user.name, profile_user_path(@code.user.id) %>
   <i class="icon-time"></i> <%= format_time(@code.created_at) %>
 </p>
 
