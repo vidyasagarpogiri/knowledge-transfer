@@ -1,0 +1,8 @@
+<div>
+<% @user_blogs.each do |blog|%>
+  <%= link_to blog.title, blog_path %><hr/>
+<% end %>
+</div>
+<div class="pull-right">
+<%= link_to 'More posts',  user_blogs_user_path %>
+</div>

@@ -26,7 +26,13 @@ class UsersController < ApplicationController
   
  
   def profile
+    @user_questions = @user.questions.order('created_at DESC').limit(5)
     
+    @user_code_snippets = @user.code_snippets.order('created_at DESC').limit(5)
+    
+    @user_blogs = @user.blogs.order('created_at DESC').limit(5)
+    
+    @user_articles = @user.articles.order('created_at DESC').limit(5)
   end
   
   def edit
