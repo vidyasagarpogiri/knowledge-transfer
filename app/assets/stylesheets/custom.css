@@ -18,6 +18,15 @@ margin-top: 50px;
  */
 
 
+p
+{
+  overflow-wrap: break-word;
+}
+
+
+
+
+
 .search
 {
   margin-top :30px;
@@ -599,31 +608,16 @@ color: rgb(49, 62, 100);
   }
 }
 
-
-
-
-.aboutus
+.hero-unit
 {
-  width: 1860px;
-  height:500px;
-  background-color:#EFF7FB;
-  margin-top: 120px;
+background-color: #EFF7FB;
 }
- 
- .what
- {
-  
-  padding-top:40px;
-  margin-left: 50px;
-  font-family: normal;
- }
 
-
-.what h1
+.hero-unit h3
 {
-  font-weight: normal !important;
-  font-size:25px;
-  color:#002EB8;
+  font-weight: normal;
+  color:#002EB8;;
+  margin-left: 50px;
 }
 
 
@@ -638,8 +632,8 @@ color: rgb(49, 62, 100);
 
 .holder
 {
-  margin-left:250px;
-  width: 1100px;
+  margin-left:50px;
+  width: 950px;
 }
 
 
