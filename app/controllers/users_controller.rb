@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
   
-  layout "profile_template", only: [:edit, :profile]
+  layout "profile_template", only: [:edit, :profile, :users_index]
   
   before_action :find_user, only: [:user_articles, :user_blogs, :user_code_snippets, :user_questions, :edit, :update, :profile, :new]
+  
+  def users_index
+    @users = User.all
+  end
   
   def user_articles
     @user_related_articles = @user.articles.order(:id).page(params[:page]).per(4)
