@@ -59,7 +59,7 @@ class ArticlesController < ApplicationController
    @article = Article.find(params[:id])
    if @article.user_id ==current_user.id
    else
-    flash[:notice]= "you are not autherised for this action"
+    flash[:notice]= "you are not authorised for this action"
     redirect_to @article
    end 
   end

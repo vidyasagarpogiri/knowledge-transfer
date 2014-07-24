@@ -55,8 +55,8 @@ CodeSnippet.create(:title => "Email Validation in Rails",:content => "validates_
 CodeSnippet.create(:title => "Creating table in Sqlite",:content => "CREATE TABLE database_name.table_name(
 column1 datatype  PRIMARY KEY(one or more columns),
 column2 datatype,column3 datatype,columnN datatype,); ",:tags => "sqlite", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )  
-CodeSnippet.create(:title => "Creating New Rails Application",:content => "In cmd prmpt type rails new '<project name>'  and press <Enter> key",:tags => "rails", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )  
-CodeSnippet.create(:title => "Strating Rails Application server ",:content => "In cmd prmpt type rails server or rails s and press <Enter> key",:tags => "rails", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] ) 
+CodeSnippet.create(:title => "Creating New Rails Application",:content => "In cmd prmpt type rails new '<project name>'  and press <Enter> key",:tags => "ruby", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )  
+CodeSnippet.create(:title => "Strating Rails Application server ",:content => "In cmd prmpt type rails server or rails s and press <Enter> key",:tags => "java", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] ) 
 
 
    
