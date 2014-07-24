@@ -855,3 +855,14 @@ a .btn .dropdown
 {
   background-color: red !important;
 }
+
+
+.singleuser
+{
+  box-shadow:  2px 2px 5px #888888;
+  width: 350px!important;
+  height: 165px;
+  float:left;
+  margin-left: 10px;
+  margin-top: 20px;
+}

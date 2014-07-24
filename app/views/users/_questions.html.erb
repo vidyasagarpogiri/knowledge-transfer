@@ -1,0 +1,8 @@
+<div class="list_of_questions">
+  <% @user_related_questions.each do |question|%>
+  <%= link_to question.title, question_path(question.id) %><hr/>
+<% end %>
+</div>
+<div id="paginator">
+  <%= paginate @user_related_questions, :remote => true %>
+</div>

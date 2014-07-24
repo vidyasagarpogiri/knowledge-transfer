@@ -42,6 +42,7 @@ Rails.application.routes.draw do
       end
     end
    
+    
      get 'users/users_index'
 
     mount Bootsy::Engine => '/bootsy', as: 'bootsy'
@@ -59,6 +60,7 @@ Rails.application.routes.draw do
     
     get 'search' => 'search#search_engine'
     get 'search/global_search_engine' => 'search#global_search_engine'
+    get 'search/users_search' => 'search#users_search'
     
     
   # Example of regular route:

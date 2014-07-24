@@ -34,7 +34,7 @@
 <div class="clear"></div>
 
 <p class="pull-right posted_by">
-  <i class="icon-user"></i> <%= @article.user.name %>
+  <i class="icon-user"></i> <%= link_to @article.user.name, profile_user_path(@article.user.id) %>
   <i class="icon-time"></i> <%= format_time(@article.created_at) %>
 </p>
 
