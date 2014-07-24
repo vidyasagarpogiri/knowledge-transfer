@@ -1,4 +1,61 @@
-<%= render  'articles/list_of_articles', :articles=>@articles %>
-<%= render  'blogs/list_of_blogs', :blogs=>@blogs %>
-<%= render  'code_snippets/list_of_code_snippets', :code_snippets=>@code_snippets %>
-<%= render  'questions/list_of_questions', :questions=>@questions %>
+
+   <div  id="span12" class="span12">
+    <h3 class="title"> Questions</h3><br/><hr>
+      <% if @questions.present? %>
+      <ul>
+        <% @questions.each do |question|%>
+          <li>
+            <%= link_to question.title, question_path(question.id) %><hr/>
+          </li>
+        <% end %>
+      </ul>
+      <% else %>
+        <h2>No Questions found related to your Search</h2>
+      <% end %>
+  </div>
+  
+  <div id="span12" class="span12">
+    <h3 class="title">Articles</h3><br/><hr>
+      <ul>
+        <% if @articles.present? %>
+        <% @articles.each do |article| %>
+          <li>
+            <%= link_to article.title, article_path(article.id) %><hr/>
+          </li>
+        <% end %>
+      </ul>
+      <% else %>
+        <h2>No Articles found related to your Search</h2>
+      <% end %>
+  </div>
+  
+  <div id="span12" class="span12">
+    <h3 class="title"> Blog</h3><br/><hr/>
+     <% if @blogs.present? %>
+     <ul>
+        <% @blogs.each do |blog| %>
+          <li>
+            <%= link_to blog.title, blog_path(blog.id) %><hr/>
+          </li>
+        <% end %>
+      </ul>
+     <% else %>
+         <h2>No blogs found related to your Search</h2>
+     <% end %>
+  </div>
+  
+  <div id="span12" class="span12">
+     <h3 class="title"> Code Bases</h3><br/><hr>
+       <% if @code_snipets.present? %>
+       <ul>
+         <% @code_snippets.each do |code_snippet|%>
+          <li>
+            <%= link_to code_snippet.title, code_snippet_path(code_snippet.id) %><hr/>
+          </li>
+         <% end %>
+       </ul>
+      <% else %>
+           <h2>No Codebases found related to your Search</h2>
+      <% end %>
+   </div> 
+

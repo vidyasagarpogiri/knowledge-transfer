@@ -11,7 +11,7 @@
               <div class="user-info user-hover">
                   <% if user.avatar? %>
                     <div class="gravatar-wrapper-48">
-                      <%= link_to image_tag(user.avatar_url, :size => "160x180"), profile_user_path(user.id) %>
+                      <%= link_to image_tag(user.avatar_url, :size => "100x100"), profile_user_path(user.id) %>
                     </div>
                   <% else %>
                     <div class="gravatar-wrapper-48">
