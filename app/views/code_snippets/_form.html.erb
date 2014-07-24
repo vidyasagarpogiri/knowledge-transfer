@@ -7,6 +7,8 @@
   <%= code.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 650px; height: 354px;" %>
   <%= code.label :tags, "Category" %> 
   <%= code.select :category_id, options_from_collection_for_select(Category.all, :id, :title) %><br>
+  <%= code.label :tags, "Project" %> 
+  <%= code.select :project_id, options_from_collection_for_select(Project.all, :id, :title) %><br>
   <%= code.label :tags, "Tags" %>
   <%= code.hidden_field :tags %> 
     <input type="text" id="tag">

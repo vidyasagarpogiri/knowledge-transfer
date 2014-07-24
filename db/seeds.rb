@@ -23,7 +23,7 @@ categories = Category.all.pluck(:id)
 Project.create(:title => "Eteki")
 Project.create(:title => "Listing By Seller")
 Project.create(:title => "Amzur Connect")
-Project.create(:title => "sportsmanSafe")
+Project.create(:title => "SportsmanSafe")
 Project.create(:title => "Color Design")
 projects = Project.all.pluck(:id)
 
@@ -51,12 +51,12 @@ Question.create(:title => "Rails engine / How to use seed?",:content => "I have 
 Question.create(:title => "no route matches controller",:content => "I get the following error Routing Error - No route matche controller - groups }",:tags => "ruby on rails",:category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )      
 
 
-CodeSnippet.create(:title => "Email Validation in Rails",:content => "validates_format_of:email,:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,:message => 'email must be valid'",:tags => "rails", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )  
+CodeSnippet.create(:title => "Email Validation in Rails",:content => "validates_format_of:email,:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,:message => 'email must be valid'",:tags => "rails", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )   
 CodeSnippet.create(:title => "Creating table in Sqlite",:content => "CREATE TABLE database_name.table_name(
 column1 datatype  PRIMARY KEY(one or more columns),
-column2 datatype,column3 datatype,columnN datatype,); ",:tags => "sqlite", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] ) 
-CodeSnippet.create(:title => "Creating New Rails Application",:content => "In cmd prmpt type rails new '<project name>'  and press <Enter> key",:tags => "rails", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] ) 
-
+column2 datatype,column3 datatype,columnN datatype,); ",:tags => "sqlite", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )  
+CodeSnippet.create(:title => "Creating New Rails Application",:content => "In cmd prmpt type rails new '<project name>'  and press <Enter> key",:tags => "rails", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )  
+CodeSnippet.create(:title => "Strating Rails Application server ",:content => "In cmd prmpt type rails server or rails s and press <Enter> key",:tags => "rails", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] ) 
 
 
    
