@@ -1,8 +1,9 @@
-<h3>List of Categories </h3>
-<%= link_to "Add New Category", new_category_path %><br><hr>
-<% @categories.each do |category| %>
-<b>Category Title:</b><%= category.title %><br>
-<%= link_to "Edit",edit_category_path(category.id) %> &nbsp;&nbsp;&nbsp;
+
+<h3 class="title">All Categories </h3>
+<%= link_to "Add New Category", new_category_path %><hr>
+<% @categories.each do |category| %><br>
+<b>Category Title:</b><%= category.title %>
+<%= link_to "Edit",edit_category_path(category.id) %>
 <%= link_to "Show",category_path(category.id) %><hr>
 <% end %>  <br>
 

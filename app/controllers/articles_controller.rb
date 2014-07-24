@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :edit]
   
   before_filter :user_identification, only: :edit 
+  layout "home_template" , only: [:edit , :new]
   
   def index
      @articles = Article.order('created_at DESC').page(params[:page]).per(4)
@@ -16,8 +17,9 @@ class ArticlesController < ApplicationController
   
   def create
     @article = current_user.articles.new(params_articles)
-    if @article.save
-      #flash[:success] = "Successfully saved"
+
+    if @article.save      
+
       redirect_to @article
     else
       flash[:error] = "Title and content should not be empty"

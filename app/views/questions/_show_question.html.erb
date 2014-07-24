@@ -29,7 +29,7 @@
 <div class="clear"></div>
 
 <p class="pull-right posted_by">
-  <i class="icon-user"></i> <%= @question.user.name %>
+  <i class="icon-user"></i> <%= link_to @question.user.name, profile_user_path(@question.user.id) %>
   <i class="icon-time"></i> <%= format_time(@question.created_at) %>
 </p>
 

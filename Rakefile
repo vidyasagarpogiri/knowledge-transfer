@@ -10,8 +10,10 @@ namespace :dev do
   task :reset do
     system('echo "$(tput setaf 7)$(tput setab 1)********Installing Gems********$(tput sgr 0)"')
     system('bundle install')  
+   
     sleep 5 # FIXME: add a timer/loop to check if solr/dj started
     ["dev:restart_solr", "db:drop", "db:create", "db:migrate", "db:seed"].each { |t| puts "#{t}......"; Rake::Task[t].invoke }
+
     system("rm -rf *~")
     system("rm -rf *.*~")
     system("rm -rf */*/*.*~")
