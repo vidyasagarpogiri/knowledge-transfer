@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
   has_many :code_snippets
   has_many :blogs
   has_many :answers
+  
+  searchable do
+    text :name
+  end
          
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|

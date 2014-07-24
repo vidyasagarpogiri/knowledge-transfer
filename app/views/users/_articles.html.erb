@@ -1,0 +1,8 @@
+
+  <% @user_related_articles.each do |article|%>
+  <%= link_to article.title, article_path %><hr/>
+<% end %>
+
+<div id="paginator">
+  <%= paginate @user_related_articles, :remote => true %>
+</div>
