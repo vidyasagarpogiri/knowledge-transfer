@@ -1,6 +1,6 @@
 
   <% @user_related_articles.each do |article|%>
-  <%= link_to article.title, article_path %><hr/>
+  <%= link_to article.title, article_path(article.id) %><hr/>
 <% end %>
 
 <div id="paginator">

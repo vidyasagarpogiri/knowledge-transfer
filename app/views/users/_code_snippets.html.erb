@@ -1,0 +1,7 @@
+  <% @user_related_code_snippets.each do |code_snippet| %>
+  <%= link_to code_snippet.title, code_snippet_path(code_snippet.id) %><hr/>
+  <% end %>
+
+<div id="paginator">
+  <%= paginate @user_related_code_snippets, :remote => true %>
+</div>

@@ -1,0 +1,7 @@
+  <% @user_related_blogs.each do |blog|%>
+  <%= link_to blog.title, blog_path(blog.id) %><hr/>
+<% end %>
+
+<div id="paginator">
+  <%= paginate @user_related_blogs, :remote => true %>
+</div>
