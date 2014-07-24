@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
  
-  layout "home_template", only: :global_search_engine
+  layout "home_template", only: [:global_search_engine, :users_search]
   
   def search_engine
     @result=
@@ -76,7 +76,12 @@ class SearchController < ApplicationController
   end
   
   def users_search
-    
+    @users= User.search do
+      fulltext params[:q] do
+        fields :name
+        minimum_match 1
+      end
+    end.results
   end
 
 
