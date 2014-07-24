@@ -1,0 +1,40 @@
+<% if current_user.present? %>
+  <% if @code.user_id == current_user.id %>
+    <%= link_to "EDIT", edit_code_snippet_path(@code.id), :class=>"icon-edit pull-right" %><br/>
+  <% end %>
+<% end %>
+<div class="clear"></div>
+<p class="pull-right">
+<% @code.tags.split(',').each do |tag| %> 
+  <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= tag %></a></span>
+  <% end %>
+</p>
+<p>
+   <span class="label label-inverse"><i class="icon-briefcase"></i> <a href="#"><%= @code.category.title %></a></span>
+</p>
+<h4 class="post_title">
+  <%= @code.title %> 
+</h4>
+<p class="post_content">
+  <%= raw @code.content %>
+</p>
+<b>Project:</b><%= @code.project.title %>
+<div class="clear"></div>
+<%# link_to "Show All", code_snippets_path %>
+<p class="pull-right posted_by">
+  <i class="icon-user"></i> <%= @code.user.name %>
+  <i class="icon-time"></i> <%= format_time(@code.created_at) %>
+</p>
+
+<div class="clear"></div>
+
+
+  <div class="comments_index">
+  <%= render 'comments/index' %>
+</div>
+<div>
+  <%= render 'comments/new' %>
+</div>
+<p class="pull-left Back">
+<%= link_to "Back", articles_path %></p>
+<%= render "code_snippets/code_snippet_side_bar" %>
