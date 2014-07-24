@@ -46,7 +46,7 @@ class CodeSnippetsController < ApplicationController
   end
   
   def tags 
-    @code_snippets = CodeSnippet.where("tags LIKE ?",  "%#{params[:tag]}%").page(params[:page]).per(4)
+    @code_snippets = CodeSnippet.where("tags LIKE ?",  "%#{params[:tag]}%").page(params[:page]).per(5)
     respond_to do |format|
       format.js
     end

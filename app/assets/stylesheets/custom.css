@@ -18,6 +18,15 @@ margin-top: 50px;
  */
 
 
+p
+{
+  overflow-wrap: break-word;
+}
+
+
+
+
+
 .search
 {
   margin-top :30px;
@@ -32,6 +41,8 @@ margin-top: 50px;
   /*margin-top :70px;
   width :900px;*/
   background-color: rgb(239, 247, 251);
+  padding-left: 30px;
+  padding-right: 20px;
 }
 
  textarea
@@ -196,9 +207,9 @@ h3.title
 {
   text-align: left;
   font-family: normal;
-  font-style: oblique;
   font-weight: 100;
-  color: black;
+  color:  #1947A3;
+   float:left;
 }
 
 span p strong
@@ -599,31 +610,16 @@ color: rgb(49, 62, 100);
   }
 }
 
-
-
-
-.aboutus
+.hero-unit
 {
-  width: 1860px;
-  height:500px;
-  background-color:#EFF7FB;
-  margin-top: 120px;
+background-color: #EFF7FB;
 }
- 
- .what
- {
-  
-  padding-top:40px;
-  margin-left: 50px;
-  font-family: normal;
- }
 
-
-.what h1
+.hero-unit h3
 {
-  font-weight: normal !important;
-  font-size:25px;
-  color:#002EB8;
+  font-weight: normal;
+  color:#002EB8;;
+  margin-left: 50px;
 }
 
 
@@ -638,8 +634,8 @@ color: rgb(49, 62, 100);
 
 .holder
 {
-  margin-left:250px;
-  width: 1100px;
+  margin-left:50px;
+  width: 950px;
 }
 
 
@@ -835,6 +831,7 @@ padding: 3px 20px 3px 0px;
   margin-left: 520px;
   margin-top: 20px;
 }
+
 
 
 /* --------------------------end of user edit profile page css -----------------------*/

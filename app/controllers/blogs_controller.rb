@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
   def create
     @blog = current_user.blogs.new(blogs_params)
     if @blog.save
-      flash[:success] = "Successfully saved"
+      #flash[:success] = "Successfully saved"
       redirect_to @blog
     else
       flash[:error] = "Title and content should not be empty"
@@ -42,7 +42,7 @@ class BlogsController < ApplicationController
   end
   
   def tags
-    @blogs = Blog.where("tags LIKE ?",  "%#{params[:tag]}%").page(params[:page]).per(3)
+    @blogs = Blog.where("tags LIKE ?",  "%#{params[:tag]}%").page(params[:page]).per(5)
     respond_to do |format|
       format.js
     end

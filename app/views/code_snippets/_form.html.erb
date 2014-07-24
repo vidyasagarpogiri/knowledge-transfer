@@ -3,8 +3,8 @@
   
   <%= code.label :title, "Title" %>
   <%= code.text_field :title, :style => "margin: 0px 0px 10px; width: 650px;" %><br>
-  <%= code.label :content, "Add Content" %>
-  <%= code.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 650px; height: 354px;" %>
+  <%= code.label :content, "Content" %>
+  <%= code.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 650px; height: 221px;" %>
   <%= code.label :tags, "Category" %> 
   <%= code.select :category_id, options_from_collection_for_select(Category.all, :id, :title) %><br>
   <%= code.label :tags, "Project" %> 
@@ -14,7 +14,7 @@
     <input type="text" id="tag">
     <i class="icon-plus-sign hand_sym" id="add_tag"></i><br>
     <span id="tags"></span><br/>
-  <%= code.submit "Submit", :class=>"btn-info pull-right"%>
+  <%= code.submit "Submit", :class=>"btn-info pull-right"%><br><br>
   <% end %>
 
 <%= render "code_snippets/code_snippet_side_bar" %>
