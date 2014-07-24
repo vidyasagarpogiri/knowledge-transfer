@@ -43,7 +43,7 @@ class ArticlesController < ApplicationController
   end
   
   def tags
-    @articles = Article.where("tags LIKE ?",  "%#{params[:tag]}%").page(params[:page]).per(4)
+    @articles = Article.where("tags LIKE ?",  "%#{params[:tag]}%").page(params[:page]).per(5)
     respond_to do |format|
       format.js
     end
