@@ -67,7 +67,7 @@ class SearchController < ApplicationController
           end.results
  
        
-       @code_snippets= CodeSnippet.search do 
+       @code_snippets = CodeSnippet.search do 
              fulltext params[:q] do
                 fields :title, :tags
                 minimum_match 1
