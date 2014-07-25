@@ -7,7 +7,7 @@
 <div class="clear"></div>
 <p class="pull-right">
 <% @blog.tags.split(',').each do |tag| %> 
-  <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= tag %></a></span>
+  <span class="label label-info"><i class=" icon-tag"></i> <a href="#"><%= link_to tag, tags_blogs_path(:tag => tag), :remote => true %></a></span>
 <% end %>
 </p>
 <p>
