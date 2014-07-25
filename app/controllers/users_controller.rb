@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   
   def user_articles
     @user_related_articles = @user.articles.order(:id).page(params[:page]).per(5)
+    
   end
   
   def user_blogs

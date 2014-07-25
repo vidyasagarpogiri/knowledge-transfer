@@ -1,9 +1,9 @@
 class BlogsController < ApplicationController
   layout "home_template", only: [:new, :edit]
   
-  before_filter :authenticate_user!, only: [:new, :edit, :index]
+  before_filter :authenticate_user!, only: [:new, :edit]
   
-  before_filter :user_identification, only: [:edit , :index]
+  before_filter :user_identification, only: :edit 
   
   after_action :add_points, only: :create
   
