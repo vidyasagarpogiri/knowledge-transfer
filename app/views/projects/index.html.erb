@@ -1,7 +1,7 @@
 <h3 class="title">All Projects </h3><br><hr>
 &nbsp;&nbsp;<%= link_to "Add New Project", new_project_path %><hr>
 <% @projects.each do |project| %>
-<b>Project Title:</b><%= project.title %><br>
+<b><%= project.title %></b><br>
 <%= link_to "Edit",edit_project_path(project.id) %> &nbsp;&nbsp;&nbsp;
 <%= link_to "Show",project_path(project.id) %><hr>
 <% end %> 
