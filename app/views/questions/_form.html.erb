@@ -1,7 +1,7 @@
 <%= form_for @question do |q| %>
   <%= render "shared/validations" %>
   <%= q.label :title %>
-  <%= q.text_field :title, :style => "margin: 0px 0px 10px; width: 650px;" %>
+  <%= q.text_field :title, :style => "margin: 0px 0px 10px; width: 800px;" %>
   <%= q.label :content %>
   <%= q.bootsy_area :content, :style => "margin: 0px 0px 10px; width: 650px; height: 221px;" %>
   <%= q.label :tags, "Category" %> 
