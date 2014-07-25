@@ -52,10 +52,34 @@
                   <td> 2hrs ago </td>
                 </tr>
                 <tr>
-                  <th> repuation</th>  
-                  <td> Badges: </td>
-                  <td> 20 </td>
+                  <th>Total posted</th>  
+                  <td> Questions: </td>
+                  <td> <%= @user.questions.count %> </td>
                 </tr>
+                
+                 <tr>
+                  <th></th>  
+                  <td> Articles: </td>
+                  <td> <%= @user.articles.count %> </td>
+                </tr>
+                
+                <tr>
+                  <th></th>  
+                  <td> Answers: </td>
+                  <td> <%= @user.answers.count %> </td>
+                </tr>
+                
+                <tr>
+                  <th></th>  
+                  <td> Codebases: </td>
+                  <td> <%= @user.code_snippets.count %> </td>
+                </tr>
+                
+                 <tr>
+                  <th></th>  
+                  <td> Blogs: </td>
+                  <td> <%= @user.blogs.count %> </td>
+                 </tr>
               </table>
             </tbody>
           </div> 

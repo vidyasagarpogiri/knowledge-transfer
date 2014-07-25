@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   
+  before_filter :authenticate_user!, only: [:users_index, :user_articles, :user_blogs, :user_code_snippets, :user_questions, :edit, :update, :profile]
+  
   layout "profile_template", only: [:edit, :profile, :users_index]
   
   before_action :find_user, only: [:user_articles, :user_blogs, :user_code_snippets, :user_questions, :edit, :update, :profile, :new]
