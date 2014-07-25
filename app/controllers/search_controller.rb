@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
  
-  layout "home_template", only: [:global_search_engine, :users_search]
+  layout "home_template"
   
   def search_engine
     @result=
