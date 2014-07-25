@@ -982,6 +982,11 @@ color: #0F0F0F !important;
  height:40px;
 }
 
+#minhight.span12
+{
+  min-height:870px;
+}
+
 
 
 /*------------end of  footer css ------------- */
