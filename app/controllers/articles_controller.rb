@@ -1,11 +1,15 @@
 class ArticlesController < ApplicationController
 
- layout "home_template", only: [:new, :edit]
+  layout "home_template", only: [:new, :edit]
+  
+  layout "home_template" , only: [:edit , :new]
   
   before_filter :authenticate_user!, only: [:new, :edit]
   
   before_filter :user_identification, only: :edit 
-  layout "home_template" , only: [:edit , :new]
+  
+  after_action :add_points, only: :create
+  
   
   def index
      @articles = Article.order('created_at DESC').page(params[:page]).per(4)
@@ -50,8 +54,16 @@ class ArticlesController < ApplicationController
       format.js
     end
   end
+  
+ 
       
   private
+  
+   def add_points
+    @user = User.find(@article.user_id)
+    points = @user.points+10
+    @user.update(:points => points)
+   end
   
   def params_articles
     params.require(:article).permit(:title, :content, :tags, :category_id, :project_id)

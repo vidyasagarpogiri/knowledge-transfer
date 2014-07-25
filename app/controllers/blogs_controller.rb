@@ -5,6 +5,8 @@ class BlogsController < ApplicationController
   
   before_filter :user_identification, only: :edit 
   
+  after_action :add_points, only: :create
+  
   def index
     @blogs = Blog.order('created_at DESC').page(params[:page]).per(4)
   end
@@ -49,6 +51,12 @@ class BlogsController < ApplicationController
   end   
   
   private
+  
+  def add_points
+    @user=User.find(@blog.user_id)
+    points = @user.points+10
+    @user.update(:points=> points)
+  end 
   
   def blogs_params
      params.require(:blog).permit(:title, :content, :tags, :category_id)

@@ -1,6 +1,6 @@
-<h3>User Commented</h3>
-<b>Title:</b><%= @title%><br>
-<b>Commented on: </b> <%= @commentable_type%> <br>
-<b>Name:</b><%=@comment_user.name%><br>
-<b>Commented As:</b><%= @content %>
+<h3>Hello <%= @user.name %>,</h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b><%=@comment_user.name%>  </b>  commented on your <b><%= @commentable_type%></b>
+<b>"<%= @title%></b>" as <b>" <%= @content %> "</b>
+
 
