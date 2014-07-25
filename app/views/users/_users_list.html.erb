@@ -2,36 +2,33 @@
         <h1 id="name"> All users </h1>
          
       </div>
-     <div class="clear"></div> 
+     <div class="clear">
+     </div> 
       <div id="user-browse">
-
-           <% @users.each do |user| %>
-
+          <% @users.each do |user| %>  
             <div class="singleuser">
-              <div class="user-info user-hover">
+               <div class="user-info user-hover">
                   <% if user.avatar? %>
-                    <div class="gravatar-wrapper-48">
-                      <%= link_to image_tag(user.avatar_url, :size => "50x50"), profile_user_path(user.id) %>
+                    <div class="user-gravatar48">
+                      <%= link_to image_tag(user.avatar_url), profile_user_path(user.id) %>
                     </div>
                   <% else %>
-                    <div class="gravatar-wrapper-48">
-                      <img alt="" src="/assets/user.jpeg" height="50" width="50"></img>
+                    <div class="user-gravatar48">
+                      <img src="/assets/user.jpeg" height="85" width="85"></img>
                     </div>
                   <%end%>
+                  <div class="user-details">
+                     <%= link_to user.name, profile_user_path(user.id) %><br>
+                     <span class="user-location"><%= user.email %></span>                       
+                     <!--   <span class="reputation-score" dir="ltr" title="reputation this month: 8093 total reputation: 187179">10 </span> -->                   
                   </div>
-                 <div class="user-details">
-                       <%= link_to user.name, profile_user_path(user.id) %><br>
-                       <span class="user-location"><%= user.email %></span>
-                       <span class="user-location">Points:<%= user.points %></span>                       
-                  
-                    <!--   <span class="reputation-score" dir="ltr" title="reputation this month: 8093 total reputation: 187179">10 </span> -->
-                      
-                      </div>
-                  </div>
-                  
-            <% end %>
-             </div>
-        </div>
 
-      </div>
+                   
+                  </div>
+                 </div> 
+            <% end %>
+     
+             </div>
+
+     
      
