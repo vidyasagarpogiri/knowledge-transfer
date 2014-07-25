@@ -6,6 +6,8 @@ class CodeSnippetsController < ApplicationController
   
   before_filter :user_identification, only: :edit
   
+  after_action :add_points, only: :create
+  
   def index
     @code_snippets = CodeSnippet.order('created_at DESC').page(params[:page]).per(4)
   end
@@ -53,6 +55,12 @@ class CodeSnippetsController < ApplicationController
   end
   
   private
+  
+  def add_points
+    @user = User.find(@code.user_id)
+    points = @user.points+10
+    @user.update(:points => points)
+   end
   
   def code_params
     params.require(:code_snippet).permit(:title, :content, :tags, :category_id, :project_id)
