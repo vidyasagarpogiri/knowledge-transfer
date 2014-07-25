@@ -36,6 +36,16 @@
                   <td> Email:</td>
                   <td> <%= @user.email %> </td>
                 </tr>
+                
+                <tr>
+                  <th>Points:</th>
+                  <% if @user.points.present? %>  
+                  <td><%= @user.points %></td>
+                  <% else %>
+                  <td>0</td>
+                  <% end %>
+                </tr>
+                
                 <tr>
                   <th> visits</th>  
                   <td> last seen: </td>

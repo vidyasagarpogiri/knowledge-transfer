@@ -18,11 +18,11 @@
                       <img alt="" src="/assets/user.jpeg" height="50" width="50"></img>
                     </div>
                   <%end%>
-                  
-                      </div>
-                      <div class="user-details">
+                  </div>
+                 <div class="user-details">
                        <%= link_to user.name, profile_user_path(user.id) %><br>
-                       <span class="user-location"><%= user.email %></span>                       
+                       <span class="user-location"><%= user.email %></span>
+                       <span class="user-location">Points:<%= user.points %></span>                       
                   
                     <!--   <span class="reputation-score" dir="ltr" title="reputation this month: 8093 total reputation: 187179">10 </span> -->
                       

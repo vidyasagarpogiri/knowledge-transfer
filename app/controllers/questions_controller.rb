@@ -9,6 +9,8 @@ class QuestionsController < ApplicationController
   
   before_filter :user_identification, only: :edit 
   
+  after_action :add_points, only: :create
+  
     def index
       @questions=Question.order('created_at DESC').page(params[:page]).per(4)
     end
@@ -62,6 +64,12 @@ class QuestionsController < ApplicationController
     end
  
     private
+    
+    def add_points
+      @user = User.find(@question.user_id)
+      points = @user.points+5
+      @user.update(:points => points)
+    end
  
     def question_params
       params.require(:question).permit(:title, :content, :tags, :bootsy_image_gallery_id, :category_id, :project_id)
