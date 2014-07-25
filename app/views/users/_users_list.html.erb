@@ -10,17 +10,17 @@
                <div class="user-info user-hover">
                   <% if user.avatar? %>
                     <div class="user-gravatar48">
-                      <%= link_to image_tag(user.avatar_url), profile_user_path(user.id) %>
+                      <%= link_to image_tag(user.avatar_url), profile_user_path(user.id)%>
                     </div>
                   <% else %>
                     <div class="user-gravatar48">
-                      <img src="/assets/user.jpeg" height="85" width="85"></img>
+                      <img src="/assets/user.jpeg" height="75" width="75"></img>
                     </div>
                   <%end%>
                   <div class="user-details">
-                     <%= link_to user.name, profile_user_path(user.id) %><br>
-                     <span class="user-location"><%= user.email %></span>                       
-                     <!--   <span class="reputation-score" dir="ltr" title="reputation this month: 8093 total reputation: 187179">10 </span> -->                   
+                     <%= link_to user.name, profile_user_path(user.id) %><br/>
+                     <span class="user-location"><%= user.email %></span><br/>                       
+                     <!--   <span class="reputation-score" dir="ltr" title="reputation this month: 8093 total reputation: 187179">10 </span> -->                    <span class="user-location">Points:<%= user.points %></span>
                   </div>
 
                    

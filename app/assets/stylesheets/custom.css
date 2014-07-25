@@ -731,6 +731,7 @@ background-color: #EFF7FB;
     height: 75px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     border-collapse: separate;
+    overflow: inherit;
 }
 
 .user-gravatar48 a 
