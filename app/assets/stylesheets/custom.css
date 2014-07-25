@@ -114,6 +114,7 @@ background: #525263;
 .row
 {
   width : 750px;
+  margin-top: -20px;
 }
 .content_description
 {
@@ -195,9 +196,21 @@ ul.nav li a:hover
   color: #000 /*#D6FF51*/ !important;
 }
 
+.footer ul.nav li a
+{
+color: #0F0F0F !important;
+}
+
+
+
 
 .footer{
-height: 5px;
+text-align: center;
+padding: 20px 0;
+height: -50px !important;
+border-top: 1px solid #e5e5e5;
+background-color: #EEEEEF;
+
 }
 
 .footer ul li{
@@ -645,7 +658,7 @@ background-color: #EFF7FB;
 
 /* -------------------------- end of home page css -----------------------*/
 
-/* -------------------------- user page css -----------------------*/
+/* -------------------------- user index page css -----------------------*/
 
 
 .nav-tabs
@@ -699,21 +712,23 @@ background-color: #EFF7FB;
     overflow: hidden;
 }
 
- #user-browser 
+
+.singleuser
 {
-    margin-left: 5px !important;
-    margin-top: -15px;
+ 
+  width: 250px!important;
+  height: 150px;
+  float:left;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 
- .user-info .user-gravatar48 
+
+ .user-gravatar48 
 {
     float: left;
-    width: 80px;
-    height: 80px;
-}
-
-.user-gravatar48 
-{
+    width: 75px;
+    height: 75px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     border-collapse: separate;
 }
@@ -725,23 +740,18 @@ background-color: #EFF7FB;
     cursor: pointer;
 }
 
+
 .user-details 
-{
-    width: 175px !important;
-}
-
-
-.user-info .user-details 
 {
     float: left;
     margin-left: 10px;
-    width: 145px;
+    width: 175px;
     overflow: hidden;
-    font-size: 16px;
+    font-size: 14px;
     white-space: nowrap;
 }
 
-.user-info .reputation-score 
+ .reputation-score 
 {
     font-size: 12px;
     margin-right: 0px;
@@ -757,12 +767,66 @@ background-color: #EFF7FB;
 
 .user-tags 
 {
-    clear: both;
     font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif;
     font-size: 13px;
-    margin-left: 53px;
-    color: #888;
+  
+    
 }
+
+/* -------------------------- end of user index page css -----------------------*/
+
+/* -------------------------- user profile page css -----------------------*/
+
+
+#name
+{
+  font-size: 18px;
+  color:#07C;
+  font-weight: normal;  
+}
+
+.userdetails 
+{
+  font-size: 14px;
+  font-weight:normal;
+  margin-top:0px;
+  margin-left: 0px;
+}
+
+.userdetails th,.userdetails  td
+{
+padding: 3px 20px 3px 0px;
+}
+
+.userdetails th
+{
+  font-size: 13px;
+  font-weight:normal;
+  color:#A0A0A0;
+}
+
+.userimage
+{
+  padding: 10px;
+  margin-left: 0px !important;
+}
+
+
+.usercomment 
+{ 
+  background-color: #EFF7FB;
+  font-size: 14px;
+  font-family: italic;
+  color:#727B82;
+  margin-left: 20px !important;
+  height: 200px;
+}
+
+.dis ul.nav li a
+{
+  color: #07C!important;
+}  
+
 
 /* -------------------------- end of user index page css -----------------------*/
 
@@ -858,15 +922,7 @@ a .btn .dropdown
 /* end of profile drop down */
 
 /* user index display */
-.singleuser
-{
-  box-shadow:  2px 2px 5px #888888;
-  width: 350px!important;
-  height: 165px;
-  float:left;
-  margin-left: 10px;
-  margin-top: 20px;
-}
+
 
 /* end of user index */
 
