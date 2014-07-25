@@ -160,11 +160,6 @@ font-weight: bold;
 }
 
 
-.nav-collapse .collapse .footer
-{
-  margin-left :100px;
-}
-
 a.brand
 {
 color: #FFF !important;
@@ -196,30 +191,7 @@ ul.nav li a:hover
   color: #000 /*#D6FF51*/ !important;
 }
 
-.footer ul.nav li a
-{
-color: #0F0F0F !important;
-}
 
-
-
-
-.footer{
-text-align: center;
-padding: 20px 0;
-height: -50px !important;
-border-top: 1px solid #e5e5e5;
-background-color: #EEEEEF;
-
-}
-
-.footer ul li{
-  border-right:solid 1px;
-}
-
-.footer ul li a{
-padding: 0px 10px 0px 10px !important;
-}
 
 h3.title
 {
@@ -731,7 +703,6 @@ background-color: #EFF7FB;
     height: 75px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     border-collapse: separate;
-    overflow: inherit;
 }
 
 .user-gravatar48 a 
@@ -949,3 +920,74 @@ h5 a
 }
 
 /* end of global search */
+
+
+/*------------ footer css ------------- */
+
+.foot,.push
+{
+  height: 50px;
+}
+
+
+.foot ul.nav li a
+{
+color: #0F0F0F !important;
+padding: 0px 10px 0px 10px !important;
+
+}
+
+span.pull-left{
+padding: 10px 0;
+}
+
+.foot
+{
+  background-color: #EEEEEF;
+}
+
+.foot ul li{
+  
+  border-right:solid 1px;
+  float:left;
+}
+
+.list
+{
+  padding:10px;
+}
+
+
+.footer{
+text-align: center;
+padding: 10px 0 20px 0;
+height: -50px !important;
+border-top: 1px solid #e5e5e5;
+background-color: #EEEEEF;
+margin-bottom:-20px;
+}
+
+.footer ul li{
+  border-right:solid 1px;
+}
+
+.footer ul li a{
+padding: 0px 10px 0px 10px !important;
+color: #0F0F0F !important;
+}
+
+
+.row .span12
+{
+ height:40px;
+}
+
+#minhight.span12
+{
+  min-height:870px;
+}
+
+
+
+/*------------end of  footer css ------------- */
+

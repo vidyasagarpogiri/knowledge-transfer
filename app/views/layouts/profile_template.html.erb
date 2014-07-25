@@ -37,11 +37,11 @@
   <!-- render search bar from shared folder -->
   <%= render 'shared/search_bar' %>
   <div class="container main_container">
-    <div class="span12">
+    <div id="minhight" class="span12">
       <%= yield %>
      </div>
    </div>
-  
+  <div class="push"></div>
   <%= render :partial=>"layouts/js_links" %>
   
   <%= render "shared/footer" %>

@@ -22,7 +22,6 @@
       <script src="../assets/js/html5shiv.js"></script>
     <![endif]-->
    
-
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://getbootstrap.com/2.3.2/assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://getbootstrap.com/2.3.2/assets/ico/apple-touch-icon-114-precomposed.png">
@@ -38,7 +37,7 @@
   <!-- render search bar from shared folder -->
   <%= render 'shared/search_bar' %>
   <div class="container main_container">
-    <div class="span12">
+    <div id="minhight"class="span12">
       <div class="span9 main_content">    
           <div class="form">
               <%= yield %>
@@ -48,11 +47,12 @@
         <%= render 'shared/side_bar'%>
         
       </div>
+      
   </div>
 
-  
+  <div class="push"></div>
   <%= render :partial=>"layouts/js_links" %>
-  
+
   <%= render "shared/footer" %>
   
 </body>
