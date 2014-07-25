@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
    
-  layout "home_template" , only: [:edit , :new]
+  layout "home_template" , only: [:edit , :new, :show]
   
   before_filter :authenticate_user!, only: [:new, :edit]
   
