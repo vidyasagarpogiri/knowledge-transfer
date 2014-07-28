@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
   	@content = comment
   	@title = title
   	@comment_user = comment_user
-  	mail(:to => @email, :subject => "#{@user.name} Commented on your #{@commentable_type} - #{@title} ")
+  	mail(:to => @email, :subject => "#{@comment_user.name} Commented on your #{@commentable_type} - #{@title} ")
   end
   
   def answers(answer)
