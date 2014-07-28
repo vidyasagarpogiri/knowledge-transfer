@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     def index
       @comments = Comment.order('created_at DESC').page(params[:page]).per(4)
       respond_to do |format|
-        format.js
+       format.js
       end
     end 
    

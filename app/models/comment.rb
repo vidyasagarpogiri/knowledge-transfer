@@ -9,7 +9,15 @@ class Comment < ActiveRecord::Base
   private 
   
   def user_points
+
     commentable.comments.map(&:user_id).include?(user_id)
+
+   count=Comment.select("user_id").where(:commentable_id =>self.commentable_id,:commentable_type=>self.commentable_type).count
+   if count==1
+    self.user.points += 5 if user_id?
+    self.user.save!
+   end
+    
   end
   
 end
