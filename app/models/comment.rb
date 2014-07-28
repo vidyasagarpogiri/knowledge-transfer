@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
   private 
   
   def user_points
-    raise commentable.comments.map(&:user_id).include?(user_id).inspect
+    commentable.comments.map(&:user_id).include?(user_id)
   end
   
 end
