@@ -5,8 +5,7 @@ class CodeSnippetsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :edit]
   
   before_filter :user_identification, only: :edit
-  
-  after_action :add_points, only: :create
+
   
   def index
     @code_snippets = CodeSnippet.order('created_at DESC').page(params[:page]).per(4)

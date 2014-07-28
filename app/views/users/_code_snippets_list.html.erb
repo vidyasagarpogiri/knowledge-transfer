@@ -1,4 +1,5 @@
 <div class="codebases">
+<% if @user_code_snippets.present? %>
 <% @user_code_snippets.each do |code_snippet| %>
   <%= link_to code_snippet.title, code_snippet_path(code_snippet.id) %><hr/>
 <% end %>
@@ -7,4 +8,10 @@
   <% if @user_code_snippets.length > 5 %>
   <%= link_to 'More codes',  user_code_snippets_user_path, :remote=> true %>
   <% end %>
+<% else %>
+<%= "No Code Base" %>
+<% end %>
 </div>
+
+
+
