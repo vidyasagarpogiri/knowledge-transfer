@@ -43,7 +43,7 @@ Rails.application.routes.draw do
     end
    
     
-     get 'users/users_index'
+     #get 'users/users_index'
 
     mount Bootsy::Engine => '/bootsy', as: 'bootsy'
     
