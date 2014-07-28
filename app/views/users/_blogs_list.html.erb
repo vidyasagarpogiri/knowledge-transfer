@@ -1,8 +1,11 @@
-<div>
+<div class="blogs">
 <% @user_blogs.each do |blog|%>
   <%= link_to blog.title, blog_path(blog.id) %><hr/>
 <% end %>
 </div>
 <div class="pull-right">
-<%= link_to 'More posts',  user_blogs_user_path, :remote=> true %>
+`<% if @user_blogs.length > 5 %>
+`<%= link_to 'More posts',  user_blogs_user_path, :remote=> true %>
+  <% end %>
 </div>
+
