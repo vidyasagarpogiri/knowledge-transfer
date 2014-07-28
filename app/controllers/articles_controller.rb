@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   
   before_filter :user_identification, only: :edit 
   
-  after_action :add_points, only: :create
+ 
   
   
   def index
