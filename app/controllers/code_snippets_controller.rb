@@ -56,11 +56,7 @@ class CodeSnippetsController < ApplicationController
   
   private
   
-  def add_points
-    @user = User.find(@code.user_id)
-    points = @user.points+10
-    @user.update(:points => points)
-   end
+ 
   
   def code_params
     params.require(:code_snippet).permit(:title, :content, :tags, :category_id, :project_id)

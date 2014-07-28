@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
 
+
   layout "home_template", only: [:new, :edit]
   
+
   
   before_filter :authenticate_user!, only: [:new, :edit]
   
@@ -57,12 +59,8 @@ class ArticlesController < ApplicationController
  
       
   private
+   
   
-   def add_points
-    @user = User.find(@article.user_id)
-    points = @user.points+10
-    @user.update(:points => points)
-   end
   
   def params_articles
     params.require(:article).permit(:title, :content, :tags, :category_id, :project_id)
