@@ -1,4 +1,5 @@
 <div class="questions">
+<% if @user_questions.present? %>
 <% @user_questions.each do |question|%>
   <%= link_to question.title, question_path(question.id) %><hr/>
 <% end %>
@@ -7,5 +8,7 @@
   <% if @user_questions.length >5 %>
   <%= link_to 'More questions',  user_questions_user_path, :remote => true %>
   <% end %> 
+<% else %>
+<%= "No Questions" %>
+<% end %>
 </div>
-
