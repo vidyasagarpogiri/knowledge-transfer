@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_filter :authenticate_user!, only: [:create]
   
-  after_action :add_points, only: :create
+
     
     def index
       @comments = Comment.order('created_at DESC').page(params[:page]).per(4)
@@ -32,11 +32,6 @@ class CommentsController < ApplicationController
        end
    end
    
-   def add_points
-    @user=User.find(@comment.user_id)
-    points = @user.points+5
-    @user.update(:points=> points)
-   end
   
   
     private
