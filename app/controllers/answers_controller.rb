@@ -2,7 +2,7 @@ class AnswersController < ApplicationController
   
   before_filter :authenticate_user!, only: [:new]
   
-  after_action :add_points, only: :create
+  
   
   def new
     @question = Question.find(params[:question_id])
@@ -22,11 +22,7 @@ class AnswersController < ApplicationController
   
   private
   
-  def add_points
-    @user=User.find(@answer.user_id)
-    points = @user.points+10
-    @user.update(:points=> points)
-  end 
+ 
   
   def answer_params
     params.require(:answer).permit(:content, :tags, :bootsy_image_gallery_id, :question_id).merge(user_id: current_user.id)

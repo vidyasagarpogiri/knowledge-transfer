@@ -52,11 +52,7 @@ class BlogsController < ApplicationController
   
   private
   
-  def add_points
-    @user=User.find(@blog.user_id)
-    points = @user.points+10
-    @user.update(:points=> points)
-  end 
+  
   
   def blogs_params
      params.require(:blog).permit(:title, :content, :tags, :category_id)
