@@ -4,5 +4,8 @@
 <% end %>
 </div>
 <div class= "pull-right">
+<% if @user_articles.length>5 %>
 <%= link_to 'More articles',  user_articles_user_path, :remote=> true %>
+<% end %>
 </div>
+
