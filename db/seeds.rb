@@ -27,10 +27,10 @@ Project.create(:title => "SportsmanSafe")
 Project.create(:title => "Color Design")
 projects = Project.all.pluck(:id)
 
-User.create(:name => "user1", :email => "user1@mailinator.com", :password => "password")
-User.create(:name => "user2", :email => "user2@mailinator.com", :password => "password")
-User.create(:name => "user3", :email => "user3@mailinator.com", :password => "password")
-User.create(:name => "user4", :email => "user4@mailinator.com", :password => "password")
+User.create(:name => "user1", :email => "user1@mailinator.com", :password => "password",:last_sign_in_at=>"2014-07-28 07:14:26")
+User.create(:name => "user2", :email => "user2@mailinator.com", :password => "password",:last_sign_in_at=>"2014-06-12 12:06:15")
+User.create(:name => "user3", :email => "user3@mailinator.com", :password => "password",:last_sign_in_at=>"2014-03-01 05:11:15")
+User.create(:name => "user4", :email => "user4@mailinator.com", :password => "password",:last_sign_in_at=>"2014-02-21 02:42:03")
 users = User.all.pluck(:id)
 
 Article.create(:title => "Ruby on Rails: An Open Source Success Story ", :content => "When we think about tech industry commercial triumphs and failures of the past decade, a flood of high profile successes and unforgettable crashes come to mind.  Apple’s reemergence as a dominant force in consumer technology is arguably the biggest story of the past decade. But there have been plenty of other success stories, even in the midst of one of the most harsh economic environments since The Great Depression. Google, Amazon, Twitter, Facebook, and Salesforce.com to name just a few.  And the list goes on and on.
@@ -95,7 +95,7 @@ CodeSnippet.create(:title => "Creating table in Sqlite",:content => "CREATE TABL
 column1 datatype  PRIMARY KEY(one or more columns),
 column2 datatype,column3 datatype,columnN datatype,); ",:tags => "sqlite", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )  
 CodeSnippet.create(:title => "Creating New Rails Application",:content => "In cmd prmpt type rails new '<project name>'  and press <Enter> key",:tags => "ruby", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )  
-CodeSnippet.create(:title => "Strating Rails Application server ",:content => "In cmd prmpt type rails server or rails s and press <Enter> key",:tags => "java", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] ) 
+CodeSnippet.create(:title => "Starting Rails Application server ",:content => "In cmd prmpt type rails server or rails s and press <Enter> key",:tags => "java", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] ) 
 CodeSnippet.create(:title => "Create a rake task from a template ",:content => "rakefile(hurra.rake) do
   <<-TASK
 namespace :hurra do
