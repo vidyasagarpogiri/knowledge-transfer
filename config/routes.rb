@@ -61,7 +61,7 @@ Rails.application.routes.draw do
     get 'search' => 'search#search_engine'
     get 'search/global_search_engine' => 'search#global_search_engine'
     get 'search/users_search' => 'search#users_search'
-    
+    get 'search/advance_search' => 'search#advance_search'
     
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

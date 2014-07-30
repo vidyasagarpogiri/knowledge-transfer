@@ -84,5 +84,16 @@ class SearchController < ApplicationController
     end.results
   end
 
+  def advance_search
+  #raise params.inspect
+   @response= HTTParty.get("https://api.stackexchange.com/2.2/search/advanced?order=desc&sort=activity&q=#{params[:title].gsub!(/\s+/, '%20')}&accepted=True&site=stackoverflow")
+   @result = @response.body
+   #raise @result.inspect
+     respond_to do |format|
+        format.html # show.html.erb
+        format.json {render :json => JSON(@result)   }
+        format.js
+     end
+   end
 
 end
