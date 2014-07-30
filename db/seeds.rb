@@ -63,10 +63,34 @@ So what do you think?  I’d love to hear your thoughts about Ruby on Rails.", :
 Article.create(:title => "SuiteWorld 2014 – A “suite” experience! ", :content => "SuiteWorld 2014, held at San Jose, was a great experience and exposure for us. Being first-timers at SuiteWorld, we wanted to get a good look at EVERYTHING – all the sessions, all the booths, all the networking opportunities", :tags => "rails", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )       
 Article.create(:title => "DBA on the Cloud – Is this the Present and the Future! ", :content => "Today’s Business Computing world stands to gain a lot from the Cloud – a new age digital networking phenomenon that is behind the notion of the Global enterprise – aptly integrating to the existing networking infrastructure after an optimal evaluation of the costs to arrive at effective business solutions.", :tags => "database", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] ) 
 Article.create(:title => "iOS Developers – Give a boost to your programming experience with Swift ", :content => "iOS Developers – Give a boost to your programming experience with Swift", :tags => "ios", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )       
-Article.create(:title => "Ubuntu web server utilizing Apache2, Passenger, and using MySQL as the RDBMS ", :content => "Ubuntu web server utilizing Apache2, Passenger, and using MySQL as the RDBMS", :tags => "database", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )      
+Article.create(:title => "Ubuntu web server utilizing Apache2, Passenger, and using MySQL as the RDBMS ", :content => "Web Servers are used to serve Web Pages requested by client  computers.Clients typically request and view Web Pages using Web Browser applications such as Firefox, Opera,or Mozilla.This video is intended to  cover the installation  of  Ubuntu web server utilizing Apache/2.2.22,Passenger Phusion 3.0.19, and using MySQL5.5.29  as the RDBMS.Create A New Sample Ruby App using the new command
+ $ rails new Sample_App
+A message indicating  the output that your structure is created. Now let’s  cd  to our app
+Rails scaffolding is a quick way to generate some of the major pieces of an application. If you want to create the models, views, and controllers for a new resource in a single operation, scaffolding is the tool for the job.
+Use the following command as shown in the screen for scaffolding our App
+Create a VirtualHost for Apache,by using the following  command,and follow the instructions as shown in the screen.
+sudo nano /etc/apache2/sites-available/Sample_Ap
+Enable Sample_App by using the sudo command.
+sudo a2ensite Sample_App
+Start the Apache2 server by using the Command.
+sudo /etc/init.d/apache2 start
+Run the URL localhost/posts,then you may observe a  few errors  given by phusion passenger as shown on the screen
+Use the “nautilus” command and follow these sequence of steps as shown in the screen for De-Bugging", :tags => "database", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)],:project_id => projects[rand(projects.length)] )      
 
 
-Blog.create(:title => "Ubuntu web server utilizing Apache2, Passenger, and using MySQL as the RDBMS ", :content => "Ubuntu web server utilizing Apache2, Passenger, and using MySQL as the RDBMS", :tags => "database", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )  
+Blog.create(:title => "Ubuntu web server utilizing Apache2, Passenger, and using MySQL as the RDBMS ", :content => "Web Servers are used to serve Web Pages requested by client  computers.Clients typically request and view Web Pages using Web Browser applications such as Firefox, Opera,or Mozilla.This video is intended to  cover the installation  of  Ubuntu web server utilizing Apache/2.2.22,Passenger Phusion 3.0.19, and using MySQL5.5.29  as the RDBMS.Create A New Sample Ruby App using the new command
+ $ rails new Sample_App
+A message indicating  the output that your structure is created. Now let’s  cd  to our app
+Rails scaffolding is a quick way to generate some of the major pieces of an application. If you want to create the models, views, and controllers for a new resource in a single operation, scaffolding is the tool for the job.
+Use the following command as shown in the screen for scaffolding our App
+Create a VirtualHost for Apache,by using the following  command,and follow the instructions as shown in the screen.
+sudo nano /etc/apache2/sites-available/Sample_Ap
+Enable Sample_App by using the sudo command.
+sudo a2ensite Sample_App
+Start the Apache2 server by using the Command.
+sudo /etc/init.d/apache2 start
+Run the URL localhost/posts,then you may observe a  few errors  given by phusion passenger as shown on the screen
+Use the “nautilus” command and follow these sequence of steps as shown in the screen for De-Bugging", :tags => "database", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )  
 Blog.create(:title => "SuiteWorld 2014 – A “suite” experience! ", :content => "SuiteWorld 2014, held at San Jose, was a great experience and exposure for us. Being first-timers at SuiteWorld, we wanted to get a good look at EVERYTHING – all the sessions, all the booths, all the networking opportunities", :tags => "rails", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )  
 Blog.create(:title => "DBA on the Cloud – Is this the Present and the Future! ", :content => "Today’s Business Computing world stands to gain a lot from the Cloud – a new age digital networking phenomenon that is behind the notion of the Global enterprise – aptly integrating to the existing networking infrastructure after an optimal evaluation of the costs to arrive at effective business solutions.", :tags => "database", :category_id => categories[rand(categories.length)], :user_id => users[rand(users.length)] )   
 Blog.create(:title => "Does Ruby on Rails (RoR) framework really improve Agility in Software Development? ", :content => "Ruby on Rails (RoR) improves Agility – is the common industry belief. Is that so? Or is it a common belief that has been misunderstood and misinterpreted by the industry pundits.
