@@ -14,10 +14,15 @@ class AnswersController < ApplicationController
     @answer = current_user.answers.new(answer_params)
     @question = Question.find(params[:question_id])
     @answer = @question.answers.new(answer_params)
-    @answer.save
+    if @answer.save
     @user = current_user.name
     UserMailer.answers(@answer).deliver
+     #flash[:success] = "Answered successfully"
     redirect_to @question
+    else
+         #flash[:error] = "Please enter some text"
+         redirect_to @question
+    end
   end
   
   private
