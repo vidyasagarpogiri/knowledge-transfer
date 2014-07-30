@@ -1,0 +1,9 @@
+<% @json=JSON(@result) %>
+<% @json["items"].each do |item| %>
+
+<%=link_to item["title"], item["link"], :target => "_blank" %><br>
+<%#=item["question_id"] %><br><hr>
+
+
+<% end %> 
+

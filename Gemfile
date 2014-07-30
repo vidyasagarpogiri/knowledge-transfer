@@ -41,6 +41,9 @@ gem 'bootsy'
 #for pagination
 gem "kaminari"
 
+#for api parsing
+gem 'httparty'
+
 #for devise gem 
 gem 'devise'
 gem "omniauth-google-oauth2"

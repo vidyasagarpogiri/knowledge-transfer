@@ -60,6 +60,9 @@ GEM
     hashie (3.2.0)
     highline (1.6.21)
     hike (1.2.3)
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.9)
     jbuilder (2.1.1)
       activesupport (>= 3.0.0, < 5)
@@ -200,6 +203,7 @@ DEPENDENCIES
   bootsy
   coffee-rails (~> 4.0.0)
   devise
+  httparty
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
