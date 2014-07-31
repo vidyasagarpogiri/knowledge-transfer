@@ -25,7 +25,8 @@ class CommentsController < ApplicationController
         @title = @comment.commentable_type.classify.constantize.find(@comment.commentable_id).title
         @type = @comment.commentable_type
         #raise params.inspect
-        UserMailer.comments(@user, @comment.content , @title, @comment_user, @type).deliver
+        #delay job applied to sens user mail insted of deliver delay is used
+        UserMailer.delay.comments(@user, @comment.content , @title, @comment_user, @type)
       else
          flash[:error] = "Please enter some text"
          redirect_to @comment.commentable_type.classify.constantize.find(@comment.commentable_id)

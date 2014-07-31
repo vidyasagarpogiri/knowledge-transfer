@@ -48,6 +48,10 @@ gem 'httparty'
 gem 'devise'
 gem "omniauth-google-oauth2"
 
+#for delayed job
+gem 'delayed_job_active_record'
+gem 'daemon-spawn'
+
 
 gem 'sunspot_rails'
 
