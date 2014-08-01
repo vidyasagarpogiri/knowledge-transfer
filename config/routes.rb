@@ -39,6 +39,7 @@ Rails.application.routes.draw do
         get 'user_code_snippets'
         get 'user_questions'
         get 'profile'
+        get 'subscribe'
       end
     end
    

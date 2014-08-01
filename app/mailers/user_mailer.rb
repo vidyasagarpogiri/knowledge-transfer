@@ -21,4 +21,19 @@ class UserMailer < ActionMailer::Base
     mail(:to => @email, :subject => "#{@answer_by} answered your question - #{@question_title}")
   end
   
+  def article_notifier(subscriber,article)
+    #raise subscribers.inspect
+    #raise article.inspect
+    @article_title = article.title
+    @article_content = article.content
+    @article_by= article.user.name 
+    @subscriber = subscriber
+          #puts subscriber.email
+      mail(:to => subscriber.email, :subject => "#{@article_by} added a new article - #{@article_title }")
+    
+    
+  end
+  
+  
+  
 end

@@ -25,11 +25,17 @@ class ArticlesController < ApplicationController
 
     if @article.save      
 
+      
+      @subscribers = Subscription.all
+      @subscribers.each do |subscriber|
+        UserMailer.article_notifier(subscriber, @article).deliver
+       end 
       redirect_to @article
     else
       flash[:error] = "Title and content should not be empty"
       render "new"
     end
+    
   end
    
   def show

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   
   layout "profile_template", only: [:edit, :profile, :index]
   
-  before_action :find_user, only: [:user_articles, :user_blogs, :user_code_snippets, :user_questions, :edit, :update, :profile, :new]
+  before_action :find_user, only: [:user_articles, :user_blogs, :user_code_snippets, :user_questions, :edit, :update, :profile, :new, :subscribe]
   
   def index
     @users = User.all
@@ -54,6 +54,12 @@ class UsersController < ApplicationController
      end
   end
   
+  def subscribe
+    Subscription.create(:email => @user.email)
+    
+    redirect_to profile_user_path(@user)
+      
+  end
   
   private
   
