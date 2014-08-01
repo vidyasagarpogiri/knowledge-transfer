@@ -16,7 +16,7 @@ class AnswersController < ApplicationController
     @answer = @question.answers.new(answer_params)
     if @answer.save
     @user = current_user.name
-    UserMailer.answers(@answer).deliver
+    UserMailer.delay.answers(@answer)
      #flash[:success] = "Answered successfully"
     redirect_to @question
     else
