@@ -30,8 +30,8 @@ namespace :dev do
     sleep 3 # FIXME: add a timer/loop to check if solr stopped
     Rake::Task["sunspot:solr:start"].invoke
   end
-  
-  task :codeDiff do
+   
+   task :codeDiff do
     system('echo "$(tput setaf 7)$(tput setab 1)********Modified code snippets********$(tput sgr 0)"')
     system('git diff')
     system('echo "$(tput setaf 7)$(tput setab 1)********List of modified or newly Created files in your system********$(tput sgr 0)"')
