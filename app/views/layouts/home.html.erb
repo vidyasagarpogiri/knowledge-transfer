@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
     <!-- Le styles -->
     <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
     <style>
@@ -33,9 +33,32 @@
       <script type='text/javascript'>
             $(document).ready(function(){
 	            var page2TopPosition = $('#page2').offset().top;
+	              $(".slide").hide();
+                $("#conimg1").hide();
+                $("#conimg2").hide();
+                $("#conimg3").hide();
+                $("#div1").hide();
+                $("#div2").hide();
+                $("#div3").hide();
+                $("#conimg4").hide();
+                $("#conimg5").hide();
+                $("#conimg6").hide();
+                $("#conimg7").hide();
 	            $('#scroll').click(function() {
 	            $('html, body').animate( { scrollTop:page2TopPosition } , 'slow'); 
-	            return false; 
+	            
+	            $(".slide").delay("slow").fadeIn();
+            $("#conimg1").delay("slow").fadeIn();
+            $("#conimg2").delay(1000).fadeIn();
+            $("#conimg3").delay(1500).fadeIn();
+            $("#div1").delay(2000).fadeIn();
+            $("#div2").delay(2500).fadeIn();
+            $("#div3").delay(3000).fadeIn();
+            $("#conimg4").delay(3500).fadeIn();
+            $("#conimg5").delay(400).fadeIn();
+            $("#conimg6").delay(4500).fadeIn();
+            $("#conimg7").delay(5000).fadeIn();
+            return false; 
 	            });
            } );
       </script>
@@ -78,12 +101,12 @@
       <div class="image">
       </div>
       <div class="article">
-        <h1> Learning to code is fun and easy with Amzur Connect </h1>
+        <h1> Create your own apps, games and websites while you learn</h1>
         <br>
-          <p>Whether this is your first time coding, or you have tried it before - our courses guide you each step of the way. Scripted by educators, we offer practical coding skills to help you learn at your own pace.
+          <p>With every task you complete you are actually building working products — not just watching videos and reading theory. Join fellow Amzur Connect to crack codes, fix bugs, share your creations with friends, and earn online badges to celebrate your achievements.
           </p>
           
-          <p>"It is a long established fact that a reader will be distracted"</p>
+          <p>"Soon, you will be a master."</p>
         </div>      
       <hr>
    </div>
@@ -102,9 +125,46 @@
     <hr>
   </div>
   
-  
+  <br><br>
     
+    <div class="slide">
+        <div id="divs">
+          <div id="conimg1">
+            <img src="/assets/confuse.jpg" width="400px" height="300px">
+          </div>
+          <div id="conimg2">
+            <img src="/assets/slide-concept-2-2.png">
+          </div>
+          <div id="conimg3">
+            <img src="/assets/slide-concept-2-3.png">
+          </div>
+          <div id="div1">
+            <p>Struked with code??</p>
+          </div>
+          <div id="div2">
+            <p> Post it </p>
+          </div>
+          <div id="div3">
+            <p>Get Answered!!!!</p>
+          </div>
+          <div id="conimg4">
+            <img src="/assets/slide-concept-2-4.png">
+          </div>
+           <div id="conimg5">
+            <img src="/assets/slide-concept-2-3.png">
+          </div>
+           <div id="conimg6">
+            <img src="/assets/slide-concept-2-2.png">
+          </div>
+           <div id="conimg7">
+            <img src="/assets/slide-concept-2-5.png" width="400px" height="300px">
+          </div>
+        </div>
+      </div>
+    
+  <br><br>   <br><br>   
      <div class="cell8">
+     <br><br>
     <div class="image">
       </div>
       <div class="blog">
@@ -113,7 +173,9 @@
           <p>Whether this is your first time coding, or you have tried it before - our courses guide you each step of the way. Scripted by educators, we offer practical coding skills to help you learn at your own pace.
           </p>
           
-          <p>"It is a long established fact that a reader will be distracted"</p>
+          <p>"Getting started is simple. Just begin with lesson one, and we'll guide you from there.
+
+"</p>
         </div>        
       <hr>
     </div>
