@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
       
       @subscribers = Subscription.all
       @subscribers.each do |subscriber|
-        UserMailer.article_notifier(subscriber, @article).deliver
+      UserMailer.delay.article_notifier(subscriber, @article)
        end 
       redirect_to @article
     else
