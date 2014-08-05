@@ -3,6 +3,9 @@
    <span class="pull-left"> Copyright &#169; Amzur Technologies , Inc </span>
    <div class="list">
    <ul class="nav pull-right">
+   <li>
+    <%= link_to "Subscribe NewsLetter", subscribe_user_path(current_user.id), :class=>params[:controller]=="users"? "active":"" %>
+  </li>
      <li><a href="#"><i class = "icon-envelope"></i> Contact Us</a></li>
      <li><a href="#"><i <font style="color: black;">i</font></i>  About Us</a></li> 
      <li><a href="#"><i class = "icon-pencil"></i> Feedback</a></li>
